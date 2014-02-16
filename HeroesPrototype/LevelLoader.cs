@@ -19,9 +19,9 @@ namespace HeroesPrototype
                 {
                     int val = bmp.GetPixel(j, i).ToArgb() & 0xff;
 
-                    if (val == Consts.Building)
+                    if (val == Consts.Mountain)
                     {
-                        map[i, j] = new Building(new P2d(j, i));
+                        map[i, j] = new Mountain(new P2d(j, i));
                     }
                     else if (val == Consts.Castle)
                     {
@@ -34,6 +34,14 @@ namespace HeroesPrototype
                     else if (val == Consts.Chest)
                     {
                         map[i, j] = new Chest(new P2d(j, i));
+                    }
+                    else if (val == Consts.TerrainCastle)
+                    {
+                        map[i, j] = new TerrainCastle(new P2d(j, i));
+                    }
+                    else if (val == Consts.TerrainInferno)
+                    {
+                        map[i, j] = new TerrainInferno(new P2d(j, i));
                     }
                     else
                     {

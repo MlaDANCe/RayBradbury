@@ -1,8 +1,9 @@
 ﻿using HeroesPrototype.geometry;
+using HeroesPrototype.mapConsts;
 using HeroesPrototype.MapObjects;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace HeroesPrototype
 {
@@ -50,14 +51,17 @@ namespace HeroesPrototype
         {
             Bitmap scene = new Bitmap(this.S.W, this.S.H);
             Graphics g = Graphics.FromImage(scene);
-            Terrain b = new Terrain(new P2d(0, 0));
+            TerrainCastle tCastle = new TerrainCastle(new P2d(0, 0));
+            //TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
             for (int i = this.visSpace.L; i < this.visSpace.R; i++)
             {
                 for (int j = this.visSpace.T; j < this.visSpace.B; j++)
                 {
                     int x = (i - this.visSpace.L) * MainScene.ScreenToMapUnits;
                     int y = (j - this.visSpace.T) * MainScene.ScreenToMapUnits;
-                    g.DrawImage(b.GetSprite(), x, y);
+                    
+                    g.DrawImage(tCastle.GetSprite(), x, y);
+
                     if (map[j, i] != null)
                     {
                         g.DrawImage(map[j, i].GetSprite(), new Point(x, y));
@@ -97,22 +101,22 @@ namespace HeroesPrototype
         {
             int cx = this.main.WP.X;
             int cy = this.main.WP.Y;
-            if(this.map[cy-1,cx] is Containable)
+            if (this.map[cy - 1, cx] is Containable)
             {
                 currentContainable = new P2d(cy - 1, cx);
                 return true;
             }
-            else if(this.map[cy+1,cx] is Containable)
+            else if (this.map[cy + 1, cx] is Containable)
             {
                 currentContainable = new P2d(cy + 1, cx);
                 return true;
             }
-            else if(this.map[cy, cx-1] is Containable)
+            else if (this.map[cy, cx - 1] is Containable)
             {
                 currentContainable = new P2d(cy, cx - 1);
                 return true;
             }
-            else if(this.map[cy, cx+1] is Containable)
+            else if (this.map[cy, cx + 1] is Containable)
             {
                 currentContainable = new P2d(cy, cx + 1);
                 return true;
