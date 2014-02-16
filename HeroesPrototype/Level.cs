@@ -50,7 +50,7 @@ namespace HeroesPrototype
         {
             Bitmap scene = new Bitmap(this.S.W, this.S.H);
             Graphics g = Graphics.FromImage(scene);
-            Blank b = new Blank(new P2d(0, 0));
+            Terrain b = new Terrain(new P2d(0, 0));
             for (int i = this.visSpace.L; i < this.visSpace.R; i++)
             {
                 for (int j = this.visSpace.T; j < this.visSpace.B; j++)

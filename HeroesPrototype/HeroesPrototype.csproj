@@ -64,7 +64,7 @@
     <Compile Include="MainScene.cs" />
     <Compile Include="mapConsts\Consts.cs" />
     <Compile Include="mapConsts\Objects.cs" />
-    <Compile Include="MapObjects\Blank.cs" />
+    <Compile Include="MapObjects\Terrain.cs" />
     <Compile Include="MapObjects\Building.cs" />
     <Compile Include="MapObjects\Castle.cs" />
     <Compile Include="MapObjects\Chest.cs" />

@@ -19,19 +19,19 @@ namespace HeroesPrototype
                 {
                     int val = bmp.GetPixel(j, i).ToArgb() & 0xff;
 
-                    if (val == Consts.BUILDING)
+                    if (val == Consts.Building)
                     {
                         map[i, j] = new Building(new P2d(j, i));
                     }
-                    else if (val == Consts.CASTLE)
+                    else if (val == Consts.Castle)
                     {
                         map[i, j] = new Castle(new P2d(j, i));
                     }
-                    else if (val == Consts.FOREST)
+                    else if (val == Consts.Forest)
                     {
                         map[i, j] = new Forest(new P2d(j, i));
                     }
-                    else if(val == Consts.CHEST)
+                    else if (val == Consts.Chest)
                     {
                         map[i, j] = new Chest(new P2d(j, i));
                     }

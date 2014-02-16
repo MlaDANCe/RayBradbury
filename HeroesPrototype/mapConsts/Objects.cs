@@ -8,7 +8,8 @@ namespace HeroesPrototype.mapConsts
         public static Bitmap castle = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\castle.png"));
         public static Bitmap forest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\forest.png"));
         public static Bitmap building = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\building.png"));
-        public static Bitmap blank = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\floor.png"));
+        public static Bitmap terrainCastle = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\terrainCastle.png"));
+        public static Bitmap terrainInferno = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\terrainInferno.png"));
         public static Bitmap chest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\chest.png"));
     }
 }
