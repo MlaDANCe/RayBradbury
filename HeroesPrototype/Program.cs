@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace HeroesPrototype
 {
     static class Program // try
-    {
+    { // other try
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
