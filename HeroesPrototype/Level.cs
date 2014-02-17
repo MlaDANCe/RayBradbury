@@ -26,6 +26,9 @@ namespace HeroesPrototype
 
         private P2d currentContainable;
 
+        Bitmap scene;
+        Graphics g;
+
         public Level(D2d sceneSize)
         {
             this.P = new P2d(0, 0);
@@ -42,6 +45,9 @@ namespace HeroesPrototype
             this.visSpace.B = c_y_t + (this.S.H / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
 
             this.main = new Character(new P2d(c_x_t, c_y_t), new P2d(this.S.W / 2, this.S.H / 2));
+
+            this.scene = new Bitmap(this.S.W, this.S.H);
+            this.g = Graphics.FromImage(scene);
         }
         private void CalcVisibleSpace()
         {
@@ -49,8 +55,7 @@ namespace HeroesPrototype
         }
         public Bitmap GetSprite()
         {
-            Bitmap scene = new Bitmap(this.S.W, this.S.H);
-            Graphics g = Graphics.FromImage(scene);
+
             TerrainCastle tCastle = new TerrainCastle(new P2d(0, 0));
             //TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
             for (int i = this.visSpace.L; i < this.visSpace.R; i++)

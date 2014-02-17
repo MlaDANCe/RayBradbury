@@ -20,89 +20,66 @@ namespace HeroesPrototype
         private D2d sceneDimension;
         private Level currentLevel;
         public const int ScreenToMapUnits = 50;
-        private bool inGame;
-        private bool inMenu;
-        private CharacterMenu cm;
+        private Bitmap buff;
+        private Graphics buffG;
+
         public MainScene(Graphics panelGraphics, D2d sceneSize)
         {
             this.scene = panelGraphics;
             this.sceneDimension = sceneSize;
             this.currentLevel = new Level(this.sceneDimension);
-            this.inGame = true;
-            this.inMenu = false;
-            cm = new CharacterMenu(new P2d(100, 100), new D2d(600, 400));
+            this.buff = new Bitmap(this.sceneDimension.W, this.sceneDimension.H);
+            this.buffG = Graphics.FromImage(this.buff);
         }
 
         internal void Draw()
         {
-            if (this.inGame)
-            {
-                this.scene.DrawImage(this.currentLevel.GetSprite(), this.currentLevel.P.X, this.currentLevel.P.Y);
-            }
-            else if(this.inMenu)
-            {
-                this.scene.DrawImage(this.cm.GetMenu(), this.cm.P.X, this.cm.P.Y);
-            }
+            this.scene.DrawImage(buff, new Point(0, 0)); // Here we draw the buffer over the screen
         }
 
         internal void GameLoop()
         {
-            
+            this.buffG.DrawImage(this.currentLevel.GetSprite(), this.currentLevel.P.X, this.currentLevel.P.Y); // Here we draw over the buffer
         }
 
         internal void MouseAction(int x, int y, MouseButtons mouseButtons)
         {
-            
+
         }
 
         internal void KeyboardAction(Keys keys)
         {
-            if (this.inGame)
+
+            P2d dxdy = new P2d(0, 0);
+            if (keys == Keys.Up)
             {
-                P2d dxdy = new P2d(0, 0);
-                if (keys == Keys.Up)
-                {
-                    dxdy.Y -= 1;
-                }
-                else if (keys == Keys.Down)
-                {
-                    dxdy.Y += 1;
-                }
-                else if (keys == Keys.Left)
-                {
-                    dxdy.X -= 1;
-                }
-                else if (keys == Keys.Right)
-                {
-                    dxdy.X += 1;
-                }
-                if (keys == Keys.Tab)
-                {
-                    List<Item> cItems = currentLevel.GetCharacterItems();
-                    this.inGame = false;
-                    this.inMenu = true;
-                }
-                if(keys == Keys.E)
-                {
-                    if(currentLevel.HaveContainableObjects())
-                    {
-                        List<Item> containement = currentLevel.GetContent();
-                        this.cm.AddContent(containement);
-                        this.inGame = false;
-                        this.inMenu = true;
-                    }
-                }
-                this.currentLevel.MovePlayer(dxdy);
+                dxdy.Y -= 1;
             }
-            else if (this.inMenu)
+            else if (keys == Keys.Down)
             {
-                if(keys == Keys.Tab)
+                dxdy.Y += 1;
+            }
+            else if (keys == Keys.Left)
+            {
+                dxdy.X -= 1;
+            }
+            else if (keys == Keys.Right)
+            {
+                dxdy.X += 1;
+            }
+            if (keys == Keys.Tab)
+            {
+                List<Item> cItems = currentLevel.GetCharacterItems();
+            }
+            if (keys == Keys.E)
+            {
+                if (currentLevel.HaveContainableObjects())
                 {
-                    this.inMenu = false;
-                    this.inGame = true;
-                    this.cm.ClearContent();
+                    List<Item> containement = currentLevel.GetContent();
                 }
             }
+            this.currentLevel.MovePlayer(dxdy);
+
         }
     }
 }
