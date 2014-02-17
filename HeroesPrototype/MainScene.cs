@@ -17,29 +17,41 @@ namespace HeroesPrototype
     public class MainScene
     {
         private Graphics scene;
+
         private D2d sceneDimension;
+
         private Level currentLevel;
+        private Character mainCharacter;
+
         public const int ScreenToMapUnits = 50;
+
         private Bitmap buff;
         private Graphics buffG;
 
         public MainScene(Graphics panelGraphics, D2d sceneSize)
         {
             this.scene = panelGraphics;
+
             this.sceneDimension = sceneSize;
+
             this.currentLevel = new Level(this.sceneDimension);
+
+            this.mainCharacter = new Character(new P2d(currentLevel.mapSize.W / 2, currentLevel.mapSize.W / 2), 
+                new P2d(this.sceneDimension.W / 2, this.sceneDimension.H / 2));
+
             this.buff = new Bitmap(this.sceneDimension.W, this.sceneDimension.H);
             this.buffG = Graphics.FromImage(this.buff);
         }
 
         internal void Draw()
         {
-            this.scene.DrawImage(buff, new Point(0, 0)); // Here we draw the buffer over the screen
+            this.scene.DrawImage(buff, new Point(0, 0)); // Here we draw the buffer on the screen
         }
 
         internal void GameLoop()
         {
-            this.buffG.DrawImage(this.currentLevel.GetSprite(), this.currentLevel.P.X, this.currentLevel.P.Y); // Here we draw over the buffer
+            this.buffG.DrawImage(this.currentLevel.GetSprite(), this.currentLevel.P.X, this.currentLevel.P.Y); // Here we draw the map on the buffer
+            this.buffG.DrawImage(this.mainCharacter.GetSprite(), this.mainCharacter.P.X, this.mainCharacter.P.Y); // Here we draw the character on the buffer
         }
 
         internal void MouseAction(int x, int y, MouseButtons mouseButtons)
@@ -67,19 +79,26 @@ namespace HeroesPrototype
             {
                 dxdy.X += 1;
             }
-            if (keys == Keys.Tab)
+            MovePosition(dxdy);
+        }
+
+        private void MovePosition(P2d dxdy)
+        {
+            P2d newPlPos = this.mainCharacter.WP + dxdy;
+            if(newPlPos.X >= 0 && newPlPos.X < this.currentLevel.mapSize.W &&
+                newPlPos.Y >= 0 && newPlPos.Y < this.currentLevel.mapSize.H)
             {
-                List<Item> cItems = currentLevel.GetCharacterItems();
-            }
-            if (keys == Keys.E)
-            {
-                if (currentLevel.HaveContainableObjects())
+                Rec newVis = currentLevel.visSpace + dxdy;
+                if(newVis.L>= 0 && newVis.R <= currentLevel.mapSize.W
+                    && newVis.T >= 0 && newVis.B < currentLevel.mapSize.H)
                 {
-                    List<Item> containement = currentLevel.GetContent();
+                    if(!currentLevel.IsPositionOccupied(newPlPos))
+                    {
+                        mainCharacter.MoveTo(newPlPos);
+                        currentLevel.visSpace = newVis;
+                    }
                 }
             }
-            this.currentLevel.MovePlayer(dxdy);
-
         }
     }
 }
