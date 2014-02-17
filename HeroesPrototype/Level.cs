@@ -52,7 +52,7 @@ namespace HeroesPrototype
         public Bitmap GetSprite()
         {
             TerrainCastle tCastle = new TerrainCastle(new P2d(0, 0));
-            //TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
+            TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
             for (int i = this.visSpace.L; i < this.visSpace.R; i++)
             {
                 for (int j = this.visSpace.T; j < this.visSpace.B; j++)
@@ -60,6 +60,16 @@ namespace HeroesPrototype
                     int x = (i - this.visSpace.L) * MainScene.ScreenToMapUnits;
                     int y = (j - this.visSpace.T) * MainScene.ScreenToMapUnits;
 
+                    //if (map[j, i] == TerrainCastle)
+                    // {
+                    //   g.DrawImage(tCastle.GetSprite(), x, y);
+                    // }
+
+                    //if (map[j, i] == TerrainInferno)
+                    //{
+                    //    g.DrawImage(tInferno.GetSprite(), x, y);
+                    //}
+                    
                     g.DrawImage(tCastle.GetSprite(), x, y);
 
                     if (map[j, i] != null)
