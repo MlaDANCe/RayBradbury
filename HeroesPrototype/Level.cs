@@ -33,7 +33,7 @@ namespace HeroesPrototype
         {
             this.P = new P2d(0, 0);
             this.S = sceneSize;
-            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
+            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map_new.bmp");
 
             this.mapSize = new D2d(this.map.GetLength(1), this.map.GetLength(0));
 
@@ -52,7 +52,7 @@ namespace HeroesPrototype
         public Bitmap GetSprite()
         {
             TerrainCastle tCastle = new TerrainCastle(new P2d(0, 0));
-            //TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
+            TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
             for (int i = this.visSpace.L; i < this.visSpace.R; i++)
             {
                 for (int j = this.visSpace.T; j < this.visSpace.B; j++)
@@ -60,6 +60,16 @@ namespace HeroesPrototype
                     int x = (i - this.visSpace.L) * MainScene.ScreenToMapUnits;
                     int y = (j - this.visSpace.T) * MainScene.ScreenToMapUnits;
 
+                    //if (map[j, i] == TerrainCastle)
+                    // {
+                    //   g.DrawImage(tCastle.GetSprite(), x, y);
+                    // }
+
+                    //if (map[j, i] == TerrainInferno)
+                    //{
+                    //    g.DrawImage(tInferno.GetSprite(), x, y);
+                    //}
+                    
                     g.DrawImage(tCastle.GetSprite(), x, y);
 
                     if (map[j, i] != null)
@@ -73,7 +83,14 @@ namespace HeroesPrototype
 
         public bool IsPositionOccupied(P2d pos)
         {
-            return this.map[pos.Y, pos.X] != null;
+            bool isFree = false;
+            if(this.map[pos.Y, pos.X] is TerrainCastle || 
+                this.map[pos.Y, pos.X] is TerrainInferno || 
+                this.map[pos.Y,pos.X] == null )
+            {
+                return false;
+            }
+            return true;
         }
         
     }

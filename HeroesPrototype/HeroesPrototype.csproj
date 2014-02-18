@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="MainCharacter.cs" />
     <Compile Include="CharacterMenu.cs" />
     <Compile Include="character\CharacterSprites.cs" />
     <Compile Include="Containable.cs" />
