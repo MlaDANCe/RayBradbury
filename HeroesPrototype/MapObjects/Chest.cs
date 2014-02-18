@@ -1,9 +1,8 @@
 ﻿using HeroesPrototype.geometry;
 using System;
 using System.Collections.Generic;
-using HeroesPrototype.Items;
 
-namespace HeroesPrototype
+namespace HeroesPrototype.MapObjects
 {
     public class Chest : Drawable, Containable
     {

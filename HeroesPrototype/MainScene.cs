@@ -16,7 +16,6 @@ namespace HeroesPrototype
     /// 
     public class MainScene
     {
-        
         private Graphics scene;
 
         private D2d sceneDimension;

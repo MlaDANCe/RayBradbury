@@ -18,7 +18,6 @@ namespace HeroesPrototype
             this.mScene = new MainScene(this.Scene.CreateGraphics(), new geometry.D2d(this.Scene.Width, this.Scene.Height));
             this.MainLoop.RunWorkerAsync();
         }
-  
 
         private void Draw(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -46,11 +45,6 @@ namespace HeroesPrototype
         private void MouseAction(object sender, MouseEventArgs e)
         {
             mScene.MouseAction(e.X, e.Y, e.Button);
-        }
-
-        private void Scene_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
     }

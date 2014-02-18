@@ -60,22 +60,12 @@
     </Compile>
     <Compile Include="geometry\D2d.cs" />
     <Compile Include="geometry\P2d.cs" />
-    <Compile Include="Items\Armor.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Items\Axe.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Items\heavyArmor.cs" />
-    <Compile Include="Items\Helm.cs" />
-    <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\Shield.cs" />
-    <Compile Include="Items\staff.cs" />
-    <Compile Include="Items\Sword.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MainScene.cs" />
     <Compile Include="mapConsts\Consts.cs" />
     <Compile Include="mapConsts\Objects.cs" />
+    <Compile Include="MapObjects\DefaultTerrain.cs" />
     <Compile Include="MapObjects\TerrainCastle.cs" />
     <Compile Include="MapObjects\Mountain.cs" />
     <Compile Include="MapObjects\Castle.cs" />
@@ -87,7 +77,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LevelLoader.cs" />
-    <Compile Include="Items\Weapon.cs" />
     <EmbeddedResource Include="HeroesPrototype.resx">
       <DependentUpon>HeroesPrototype.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,7 +89,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="HeroesPrototype.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,28 +103,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="sprites\item\axe.bmp" />
-    <Content Include="sprites\item\heavyArmor.bmp" />
-    <Content Include="sprites\item\helm.bmp" />
-    <Content Include="sprites\item\shield.bmp" />
-    <Content Include="sprites\charac\luke_bottom.png" />
-    <Content Include="sprites\charac\luke_left.png" />
-    <Content Include="sprites\charac\luke_right.png" />
-    <Content Include="sprites\charac\luke_top.png" />
-    <Content Include="sprites\mapobj\border.png" />
-    <Content Include="sprites\mapobj\castle.png" />
-    <Content Include="sprites\mapobj\chest.png" />
-    <Content Include="sprites\mapobj\forest.png" />
-    <Content Include="sprites\mapobj\map.bmp" />
-    <Content Include="sprites\mapobj\mountain.png" />
-    <Content Include="sprites\mapobj\terrainCastle.png" />
-    <Content Include="sprites\mapobj\terrainInferno.png" />
-    <Content Include="sprites\menuobj\really-old-manuscript-paper.jpg" />
-    <Content Include="sprites\item\staff.png" />
-    <Content Include="sprites\item\sword.jpeg" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
