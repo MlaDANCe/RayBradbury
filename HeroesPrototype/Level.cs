@@ -33,7 +33,7 @@ namespace HeroesPrototype
         {
             this.P = new P2d(0, 0);
             this.S = sceneSize;
-            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
+            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map_new.bmp");
 
             this.mapSize = new D2d(this.map.GetLength(1), this.map.GetLength(0));
 
@@ -83,7 +83,14 @@ namespace HeroesPrototype
 
         public bool IsPositionOccupied(P2d pos)
         {
-            return this.map[pos.Y, pos.X] != null;
+            bool isFree = false;
+            if(this.map[pos.Y, pos.X] is TerrainCastle || 
+                this.map[pos.Y, pos.X] is TerrainInferno || 
+                this.map[pos.Y,pos.X] == null )
+            {
+                return false;
+            }
+            return true;
         }
         
     }

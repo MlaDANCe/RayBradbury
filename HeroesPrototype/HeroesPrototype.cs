@@ -15,7 +15,6 @@ namespace HeroesPrototype
         public HeroesPrototype()
         {
             InitializeComponent();
-            // I use the namespace geometry here
             this.mScene = new MainScene(this.Scene.CreateGraphics(), new geometry.D2d(this.Scene.Width, this.Scene.Height));
             this.MainLoop.RunWorkerAsync();
         }
@@ -30,7 +29,7 @@ namespace HeroesPrototype
         {
             mScene.GameLoop();
 
-            Thread.Sleep(100);
+            Thread.Sleep(50);
         }
 
         private void HandleMouse(object sender, MouseEventArgs e)

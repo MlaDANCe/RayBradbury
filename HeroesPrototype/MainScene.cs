@@ -21,7 +21,7 @@ namespace HeroesPrototype
         private D2d sceneDimension;
 
         private Level currentLevel;
-        private Character mainCharacter;
+        private MainCharacter mainCharacter;
 
         public const int ScreenToMapUnits = 50;
 
@@ -36,7 +36,7 @@ namespace HeroesPrototype
 
             this.currentLevel = new Level(this.sceneDimension);
 
-            this.mainCharacter = new Character(new P2d(currentLevel.mapSize.W / 2, currentLevel.mapSize.W / 2), 
+            this.mainCharacter = new MainCharacter(new P2d(currentLevel.mapSize.W / 2, currentLevel.mapSize.W / 2), 
                 new P2d(this.sceneDimension.W / 2, this.sceneDimension.H / 2));
 
             this.buff = new Bitmap(this.sceneDimension.W, this.sceneDimension.H);

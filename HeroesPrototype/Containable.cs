@@ -11,6 +11,5 @@ namespace HeroesPrototype
     {
         List<Item> Items { get; set; }
 
-        List<Item> GetItems();
     }
 }
