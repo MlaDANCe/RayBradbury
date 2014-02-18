@@ -1,4 +1,5 @@
 ﻿using HeroesPrototype.geometry;
+using HeroesPrototype.Items;
 using HeroesPrototype.MapObjects;
 using System;
 using System.Collections.Generic;

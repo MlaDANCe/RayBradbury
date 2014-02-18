@@ -10,6 +10,5 @@ namespace HeroesPrototype.MenuObjects
     {
         public static System.Drawing.Bitmap background =
             new System.Drawing.Bitmap(System.Drawing.Bitmap.FromFile(@"..\..\sprites\menuobj\really-old-manuscript-paper.jpg"));
-        
     }
 }

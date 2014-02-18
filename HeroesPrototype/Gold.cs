@@ -1,4 +1,5 @@
-﻿using HeroesPrototype.MapObjects;
+﻿using HeroesPrototype.Items;
+using HeroesPrototype.MapObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace HeroesPrototype
 {
-    class Gold : Item
+    internal class Gold : Item
     {
-        public Gold()
+        public Gold() : base("gold")
         {
             base.Quantity = (new Random()).Next(1, 50);
         }
