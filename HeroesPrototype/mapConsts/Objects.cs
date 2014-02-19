@@ -12,12 +12,12 @@ namespace HeroesPrototype.mapConsts
         public static Bitmap terrainInferno = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\terrainInferno.png"));
         public static Bitmap chest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\chest.png"));
 ////items
-public static Bitmap staff = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\staff.png"));
-   public static Bitmap sword = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\sword.png"));
-       public static Bitmap heavyArmor = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\heavyArmor.png"));
+        public static Bitmap staff = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\staff.png"));
+        public static Bitmap sword = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\sword.png"));
+        public static Bitmap heavyArmor = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\heavyArmor.png"));
         public static Bitmap shield = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\shield.png"));
-       public static Bitmap helm = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\helm.png"));
-       public static Bitmap axe = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\axe.bmp"));
+        public static Bitmap helm = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\helm.png"));
+        public static Bitmap axe = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\axe.bmp"));
 
 ////needs sprite for Gold
     }

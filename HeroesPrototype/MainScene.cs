@@ -96,6 +96,7 @@ namespace HeroesPrototype
                     {
                         mainCharacter.MoveTo(newPlPos);
                         currentLevel.visSpace = newVis;
+                        currentLevel.SetNotUpToDate();
                     }
                 }
             }
