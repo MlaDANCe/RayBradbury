@@ -39,6 +39,7 @@
             this.Scene.Name = "Scene";
             this.Scene.Size = new System.Drawing.Size(800, 600);
             this.Scene.TabIndex = 0;
+            this.Scene.Paint += new System.Windows.Forms.PaintEventHandler(this.Scene_Paint);
             this.Scene.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseAction);
             // 
             // MainLoop

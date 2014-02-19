@@ -35,7 +35,8 @@ namespace HeroesPrototype.Items
 
              return (Bitmap)(typeof(Objects)
                     .GetField(Name)
-                    .GetValue(null));//method that shoud be inherited
+                   .GetValue(null));//method that shoud be inherited
+             
          }
 
     }
