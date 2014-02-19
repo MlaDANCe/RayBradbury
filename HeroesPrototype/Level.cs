@@ -27,6 +27,8 @@ namespace HeroesPrototype
         private Bitmap scene;
         private Graphics g;
 
+        private bool isUpToDate; // I add this check because if the map is up to date the scene have not to be redrawn it safes 50% processing time 
+
         public D2d mapSize { get; private set; }
 
         public Level(D2d sceneSize)
@@ -48,8 +50,18 @@ namespace HeroesPrototype
 
             this.scene = new Bitmap(this.S.W, this.S.H);
             this.g = Graphics.FromImage(scene);
+
+            this.isUpToDate = false;
         }
         public Bitmap GetSprite()
+        {
+            if(!this.isUpToDate)
+            {
+                RenderScene();
+            }
+            return scene;
+        }
+        private void RenderScene()
         {
             TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
             for (int i = this.visSpace.L; i < this.visSpace.R; i++)
@@ -67,9 +79,8 @@ namespace HeroesPrototype
                     }
                 }
             }
-            return scene;
+            this.isUpToDate = true;
         }
-
         public bool IsPositionOccupied(P2d pos)
         {
             bool isFree = false;
@@ -81,6 +92,9 @@ namespace HeroesPrototype
             }
             return true;
         }
-        
+        public void SetNotUpToDate()
+        {
+            this.isUpToDate = false;
+        }
     }
 }
