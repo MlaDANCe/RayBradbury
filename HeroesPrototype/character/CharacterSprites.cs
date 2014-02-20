@@ -9,9 +9,40 @@ namespace HeroesPrototype.character
 {
     public static class CharacterSprites
     {
-        public static Bitmap charac_left = new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\luke_left.png"));
-        public static Bitmap charac_right = new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\luke_right.png"));
-        public static Bitmap charac_top = new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\luke_top.png"));
-        public static Bitmap charac_bottom = new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\luke_bottom.png"));
+        public static Bitmap[] characLeft = new Bitmap[]
+        {
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s1_l.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s2_l.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s3_l.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s4_l.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s5_l.png"))
+        };
+
+        public static Bitmap[] characRight = new Bitmap[]
+        {
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s1_r.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s2_r.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s3_r.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s4_r.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s5_r.png"))
+        };
+
+        public static Bitmap[] characTop = new Bitmap[]
+        {
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s1_u.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s2_u.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s3_u.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s4_u.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s5_u.png"))
+        };
+
+        public static Bitmap[] characBottom = new Bitmap[]
+        {
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s1_b.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s2_b.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s3_b.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s4_b.png")),
+            new Bitmap(Bitmap.FromFile(@"..\..\sprites\charac\Heroes\keroez_s5_b.png"))
+        };
     }
 }

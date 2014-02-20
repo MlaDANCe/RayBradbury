@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="character\Position.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Axe.cs" />
     <Compile Include="Items\heavyArmor.cs" />
