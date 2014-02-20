@@ -1,19 +1,13 @@
-﻿using HeroesPrototype.geometry;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Units
 {
-    public class Marksman : UnitLevel2
-    {
-        public Marksman(P2d p, string name, int attack, int defence, int health)
-            : base("Marksman", 10, 10, 10)
-        {
-            this.P = p;
-        }
-    }
+	public class Marksman : UnitLevel2
+	{
+		public Marksman(Point2D origin) : base("Marksman", origin, 10, 10, 10)
+		{
+		}
+	}
 }

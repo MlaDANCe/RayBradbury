@@ -1,38 +1,19 @@
-﻿using HeroesPrototype.geometry;
-using HeroesPrototype.Items;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HeroesPrototype.Geometry;
+using HeroesPrototype.Items;
+using HeroesPrototype.MapConsts;
 
 namespace HeroesPrototype.MapObjects
 {
-    public class Chest : Drawable, Containable
-    {
-        public P2d P { get; set; }
-        public D2d S { get; private set; }
+	public class Chest : MapObjectBase, IContaining
+	{
+		public List<Item> Items { get; set; }
 
-        public Chest(P2d xy)
-        {
-            this.P = xy;
-            this.Items = new List<Item>();
-            this.Items.Add(new Gold());
-        }
-
-        public System.Drawing.Bitmap GetSprite()
-        {
-            return mapConsts.Objects.chest;
-        }
-
-        public List<Item> Items
-        {
-            get;
-            set;
-        }
-
-
-
-        public List<Item> GetItems()
-        {
-            return this.Items;
-        }
-    }
+		public Chest(Point2D origin) : base(origin, Objects.Chest)
+		{
+			this.Items = new List<Item>();
+			this.Items.Add(new Gold(origin));
+		}
+	}
 }

@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Items
 { 
-    abstract class Weapon:Item
-    {
-        public int Damage { get; set; }
-        public int Attack { get; set; }
-        public int Speed { get; set; }
+	public abstract class Weapon : Item
+	{
+		public int Damage { get; set; }
 
-        protected Weapon(int attack, int damage, int speed, string name):base(name)
-        {
-            Attack = attack;
-            Damage = damage;
-            Speed = speed;
-        }
-    }
+		public int Attack { get; set; }
+
+		public int Speed { get; set; }
+
+		protected Weapon(string name, Point2D origin, int attack, int damage, int speed) : base(name, origin)
+		{
+			this.Attack = attack;
+			this.Damage = damage;
+			this.Speed = speed;
+		}
+	}
 }

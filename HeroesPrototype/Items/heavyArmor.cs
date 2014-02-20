@@ -1,17 +1,13 @@
-﻿using HeroesPrototype.geometry;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Items
 {
-    class heavyArmor:Armor
-    {
-        public heavyArmor(P2d p) : base("heavyArmour", 5)
-        {
-            P = p;
-        }
-    }
+	public class HeavyArmor : Armor
+	{
+		public HeavyArmor(Point2D origin) : base("heavyArmour", origin, 5)
+		{
+		}
+	}
 }

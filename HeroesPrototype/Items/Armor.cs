@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Items
 {
-    class Armor:Item
-    {
-        public int Defense { get; set; }
+	public abstract class Armor : Item
+	{
+		public int Defense { get; set; }
 
-        public Armor(string name, int defense) : base(name)
-        {
-            Defense = defense;
-        }
-    }
+		public Armor(string name, Point2D origin, int defense) : base(name, origin)
+		{
+			this.Defense = defense;
+		}
+	}
 }
