@@ -1,57 +1,40 @@
-﻿using HeroesPrototype.geometry;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HeroesPrototype.mapConsts;
+using HeroesPrototype.Geometry;
+using HeroesPrototype.MapConsts;
 
 namespace HeroesPrototype.Units
 {
-    public abstract class Unit : Drawable //,IDisappearing //can create a list of items in hero to store all the items
-    {
-        public string Name { get; set; }
-        public int attack;
-        public int defence;
-        public int health;
+	public abstract class Unit : IDrawable //,IDisappearing //can create a list of items in hero to store all the items
+	{
+		public string Name { get; set; }
 
-        public int Attack
-        {
-            get { return this.attack; }
-            set { this.attack = value; }
-        }
+		public int Attack { get; set; }
 
-        public int Defence
-        {
-            get { return this.defence; }
-            set { this.defence = value; }
-        }
+		public int Defence { get; set; }
 
-        public int Health
-        {
-            get { return this.health; }
-            set { this.health = value; }
-        }
+		public int Health { get; set; }
         
-        //public Bitmap CurrentSprite { get; set; }
-        public Unit(string name, int attack, int defence, int health)
-        {
-            this.Name = name;
-            this.Attack = attack;
-            this.Defence = defence;
-            this.Health = health;
-        }
+		public Point2D Origin { get; set; }
 
-        public P2d P { get; set; }
-        public D2d S { get; private set; }
+		public Size2D Size { get; private set; }
 
-        Bitmap Drawable.GetSprite()
-        {
+		//public Bitmap CurrentSprite { get; set; }
+		public Unit(string name, Point2D origin, int attack, int defence, int health)
+		{
+			this.Name = name;
+			this.Attack = attack;
+			this.Defence = defence;
+			this.Health = health;
+			this.Origin = origin;
+		}
 
-            return (Bitmap)(typeof(Objects)
-                   .GetField(Name)
-                  .GetValue(null)); //method that shoud be inherited
-        }
-    }
+		Bitmap IDrawable.GetSprite()
+		{
+			return (Bitmap)(typeof(Objects)
+										   .GetField(this.Name)
+										   .GetValue(null)); //method that shoud be inherited
+		}
+	}
 }

@@ -1,18 +1,13 @@
-﻿using HeroesPrototype.geometry;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Units
 {
-    public class Pikeman : UnitLevel1
-    {
-        public Pikeman(P2d p, string name, int attack, int defence, int health) : base("Pikeman", 10, 10, 10)
-        {
-            this.P = p;
-        }
-    }
+	public class Pikeman : UnitLevel1
+	{
+		public Pikeman(Point2D origin) : base("Pikeman", origin, 10, 10, 10)
+		{
+		}
+	}
 }

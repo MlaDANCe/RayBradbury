@@ -44,23 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Character.cs" />
-    <Compile Include="character\Position.cs" />
+    <Compile Include="Character\CharacterBase.cs" />
+    <Compile Include="Character\Position.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Axe.cs" />
-    <Compile Include="Items\heavyArmor.cs" />
+    <Compile Include="Items\HeavyArmor.cs" />
     <Compile Include="Items\Helm.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Shield.cs" />
-    <Compile Include="Items\staff.cs" />
+    <Compile Include="Items\Staff.cs" />
     <Compile Include="Items\Sword.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="MainCharacter.cs" />
+    <Compile Include="Character\MainCharacter.cs" />
     <Compile Include="CharacterMenu.cs" />
-    <Compile Include="character\CharacterSprites.cs" />
-    <Compile Include="Containable.cs" />
-    <Compile Include="Drawable.cs" />
-    <Compile Include="geometry\Rec.cs" />
+    <Compile Include="Character\CharacterSprites.cs" />
+    <Compile Include="IContaining.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="Geometry\Rectangle2D.cs" />
     <Compile Include="Gold.cs" />
     <Compile Include="HeroesPrototype.cs">
       <SubType>Form</SubType>
@@ -68,12 +68,13 @@
     <Compile Include="HeroesPrototype.Designer.cs">
       <DependentUpon>HeroesPrototype.cs</DependentUpon>
     </Compile>
-    <Compile Include="geometry\D2d.cs" />
-    <Compile Include="geometry\P2d.cs" />
+    <Compile Include="Geometry\Size2D.cs" />
+    <Compile Include="Geometry\Point2D.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MainScene.cs" />
-    <Compile Include="mapConsts\Consts.cs" />
-    <Compile Include="mapConsts\Objects.cs" />
+    <Compile Include="MapConsts\Consts.cs" />
+    <Compile Include="MapConsts\Objects.cs" />
+    <Compile Include="MapObjects\MapObjectBase.cs" />
     <Compile Include="MapObjects\TerrainCastle.cs" />
     <Compile Include="MapObjects\Mountain.cs" />
     <Compile Include="MapObjects\Castle.cs" />

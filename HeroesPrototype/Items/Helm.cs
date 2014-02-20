@@ -1,20 +1,13 @@
-﻿using HeroesPrototype.geometry;
-using HeroesPrototype.mapConsts;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Items
 {
-    class Helm:Armor
-    {
-          public Helm(P2d p) : base("helm", 3)
-        {
-            P = p;
-        }
-          
-    }
+	public class Helm : Armor
+	{
+		public Helm(Point2D origin) : base("helm", origin, 3)
+		{
+		}
+	}
 }
