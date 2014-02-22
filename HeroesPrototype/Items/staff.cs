@@ -1,17 +1,13 @@
-﻿using HeroesPrototype.geometry;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype.Items
 {
-    class Staff:Weapon
-    {
-        public Staff(P2d p) : base(4,10,2,"staff")
-        {
-            this.P = p;
-        }
-    }
+	public class Staff : Weapon
+	{
+		public Staff(Point2D origin) : base("Staff", origin, 4, 10, 2)
+		{
+		}
+	}
 }

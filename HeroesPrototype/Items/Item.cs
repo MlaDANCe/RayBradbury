@@ -1,44 +1,45 @@
-﻿using HeroesPrototype.geometry;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HeroesPrototype.mapConsts;
+using HeroesPrototype.Geometry;
+using HeroesPrototype.MapConsts;
 
 namespace HeroesPrototype.Items
 {
-    public class Item:Drawable//,IDisappearing//can create a list of items in hero to store all the items
-    {
-        public string  Name { get; set; }
-        public int quantity=1;
+	public abstract class Item : IDrawable//,IDisappearing//can create a list of items in hero to store all the items
+	{
+		private int quantity = 1;
 
-        public int Quantity
-        {
-            get { return quantity; }
-            set { quantity = value; }
-        }
+		public string Name { get; set; }
 
+		public int Quantity
+		{
+			get
+			{
+				return this.quantity;
+			}
+			set
+			{
+				this.quantity = value;
+			}
+		}
        
-        //public Bitmap CurrentSprite { get; set; }
-         protected Item(string name)
-         {
-             Name = name;
-         }
+		public Point2D Origin { get; set; }
 
-         public P2d P { get; set; }
-         public D2d S { get; private set; }
+		public Size2D Size { get; private set; }
 
-         Bitmap Drawable.GetSprite()
-         {
+		//public Bitmap CurrentSprite { get; set; }
+		protected Item(string name, Point2D origin)
+		{
+			this.Name = name;
+			this.Origin = origin;
+		}
 
-             return (Bitmap)(typeof(Objects)
-                    .GetField(Name)
-                   .GetValue(null));//method that shoud be inherited
-             
-         }
-
-    }
-
+		Bitmap IDrawable.GetSprite()
+		{
+			return (Bitmap)(typeof(Objects)
+										   .GetField(this.Name)
+										   .GetValue(null));//method that shoud be inherited
+		}
+	}
 }

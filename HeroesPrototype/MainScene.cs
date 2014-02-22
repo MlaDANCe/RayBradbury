@@ -1,10 +1,9 @@
-﻿using HeroesPrototype.geometry;
-using HeroesPrototype.mapConsts;
-using HeroesPrototype.MapObjects;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using HeroesPrototype.CharacterAssets;
+using HeroesPrototype.Geometry;
+using HeroesPrototype.Items;
 
 namespace HeroesPrototype
 {
@@ -13,22 +12,21 @@ namespace HeroesPrototype
     /// background worker and have instance of panel
     /// graphics ( passed in the constructor )
     /// </summary>
-    /// 
     public class MainScene
     {
-        private Graphics scene;
-
-        private D2d sceneDimension;
-
-        private Level currentLevel;
-        private MainCharacter mainCharacter;
-
         public const int ScreenToMapUnits = 50;
 
-        private Bitmap buff;
-        private Graphics buffG;
+        private readonly Graphics scene;
 
-        public MainScene(Graphics panelGraphics, D2d sceneSize)
+        private readonly Size2D sceneDimension;
+
+        private readonly Level currentLevel;
+        private readonly MainCharacter mainCharacter;
+
+        private readonly Bitmap buff;
+        private readonly Graphics buffG;
+
+        public MainScene(Graphics panelGraphics, Size2D sceneSize)
         {
             this.scene = panelGraphics;
 
@@ -36,33 +34,31 @@ namespace HeroesPrototype
 
             this.currentLevel = new Level(this.sceneDimension);
 
-            this.mainCharacter = new MainCharacter(new P2d(currentLevel.mapSize.W / 2, currentLevel.mapSize.W / 2), 
-                new P2d(this.sceneDimension.W / 2, this.sceneDimension.H / 2));
+            this.mainCharacter = new MainCharacter(new Point2D(this.currentLevel.MapSize.Width / 2, this.currentLevel.MapSize.Width / 2),
+                new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
 
-            this.buff = new Bitmap(this.sceneDimension.W, this.sceneDimension.H);
+            this.buff = new Bitmap(this.sceneDimension.Width, this.sceneDimension.Height);
             this.buffG = Graphics.FromImage(this.buff);
         }
 
         internal void Draw()
         {
-            this.scene.DrawImage(buff, new Point(0, 0)); // Here we draw the buffer on the screen
+            this.scene.DrawImage(this.buff, new Point(0, 0)); // Here we draw the buffer on the screen
         }
 
         internal void GameLoop()
         {
-            this.buffG.DrawImage(this.currentLevel.GetSprite(), this.currentLevel.P.X, this.currentLevel.P.Y); // Here we draw the map on the buffer
-            this.buffG.DrawImage(this.mainCharacter.GetSprite(), this.mainCharacter.P.X, this.mainCharacter.P.Y); // Here we draw the character on the buffer
+            this.buffG.DrawImage(this.currentLevel.GetSprite(), this.currentLevel.Origin.X, this.currentLevel.Origin.Y); // Here we draw the map on the buffer
+            this.buffG.DrawImage(this.mainCharacter.GetSprite(), this.mainCharacter.ScreenCoordinates.X, this.mainCharacter.ScreenCoordinates.Y); // Here we draw the character on the buffer
         }
 
         internal void MouseAction(int x, int y, MouseButtons mouseButtons)
         {
-
         }
 
         internal void KeyboardAction(Keys keys)
         {
-
-            P2d dxdy = new P2d(0, 0);
+            Point2D dxdy = new Point2D(0, 0);
             if (keys == Keys.Up)
             {
                 dxdy.Y -= 1;
@@ -79,24 +75,31 @@ namespace HeroesPrototype
             {
                 dxdy.X += 1;
             }
-            MovePosition(dxdy);
+            this.MovePosition(dxdy);
         }
 
-        private void MovePosition(P2d dxdy)
+        private void MovePosition(Point2D dxdy)
         {
-            P2d newPlPos = this.mainCharacter.WP + dxdy;
-            if(newPlPos.X >= 0 && newPlPos.X < this.currentLevel.mapSize.W &&
-                newPlPos.Y >= 0 && newPlPos.Y < this.currentLevel.mapSize.H)
+            Point2D newPlPos = this.mainCharacter.WorldPosition + dxdy;
+            if (newPlPos.X >= 0 && newPlPos.X < this.currentLevel.MapSize.Width &&
+                newPlPos.Y >= 0 && newPlPos.Y < this.currentLevel.MapSize.Height)
             {
-                Rec newVis = currentLevel.visSpace + dxdy;
-                if(newVis.L>= 0 && newVis.R <= currentLevel.mapSize.W
-                    && newVis.T >= 0 && newVis.B < currentLevel.mapSize.H)
+                Rectangle2D newVis = this.currentLevel.VisibleSpace + dxdy;
+                if (newVis.Left >= 0 &&
+                    newVis.Right <= this.currentLevel.MapSize.Width &&
+                    newVis.Top >= 0 &&
+                    newVis.Bottom < this.currentLevel.MapSize.Height)
                 {
-                    if(!currentLevel.IsPositionOccupied(newPlPos))
+                    Item itm = currentLevel.GetItem(newPlPos);
+                    if (itm != null)
                     {
-                        mainCharacter.MoveTo(newPlPos);
-                        currentLevel.visSpace = newVis;
-                        currentLevel.SetNotUpToDate();
+                        this.mainCharacter.AddItem(itm);
+                    }
+                    if (!this.currentLevel.IsPositionOccupied(newPlPos))
+                    {
+                        this.mainCharacter.MoveTo(newPlPos);
+                        this.currentLevel.VisibleSpace = newVis;
+                        this.currentLevel.SetNotUpToDate();
                     }
                 }
             }

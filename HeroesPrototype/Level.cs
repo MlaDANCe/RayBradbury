@@ -1,100 +1,136 @@
-﻿using HeroesPrototype.geometry;
-using HeroesPrototype.mapConsts;
-using HeroesPrototype.MapObjects;
-using System;
+﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
+using HeroesPrototype.Geometry;
+using HeroesPrototype.MapObjects;
+using HeroesPrototype.Items;
 
 namespace HeroesPrototype
 {
-    /// <summary>
-    /// In this class we start to work with map units
-    /// lets assume that one map unit equals 50x50px screen units
-    /// </summary>
+	/// <summary>
+	/// In this class we start to work with map units
+	/// lets assume that one map unit equals 50x50px screen units
+	/// </summary>
+	public class Level : IDrawable
+	{
+		private readonly IDrawable[,] map;
 
-    public class Level : Drawable
-    {
+		private readonly Point2D currentContainable;
 
-        public P2d P { get; set; }
-        public D2d S { get; private set; }
+		private readonly Bitmap scene;
+		private readonly Graphics graphics;
 
-        public Rec visSpace { get; set; }
+		private bool isUpToDate;// I add this check because if the map is up to date the scene have not to be redrawn it safes 50% processing time 
 
-        private Drawable[,] map;
+		public Point2D Origin { get; set; }
 
-        private P2d currentContainable;
+		public Size2D Size { get; private set; }
 
-        private Bitmap scene;
-        private Graphics g;
+		public Rectangle2D VisibleSpace { get; set; }
 
-        private bool isUpToDate; // I add this check because if the map is up to date the scene have not to be redrawn it safes 50% processing time 
+		public Size2D MapSize { get; private set; }
 
-        public D2d mapSize { get; private set; }
+		public Level(Size2D sceneSize)
+		{
+			this.Origin = new Point2D(0, 0);
+			this.Size = sceneSize;
+			this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
 
-        public Level(D2d sceneSize)
+			this.MapSize = new Size2D(this.map.GetLength(1), this.map.GetLength(0));
+
+			int c_x_t = this.map.GetLength(1) / 2;
+			int c_y_t = this.map.GetLength(0) / 2;
+
+			int left = c_x_t - (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int right = c_x_t + (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int top = c_y_t - (this.Size.Height / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int bottom = c_y_t + (this.Size.Height / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+
+            this.VisibleSpace = new Rectangle2D(new Point2D(left, top), new Size2D(right - left, bottom - top));
+
+			this.scene = new Bitmap(this.Size.Width, this.Size.Height);
+			this.graphics = Graphics.FromImage(this.scene);
+
+			this.isUpToDate = false;
+		}
+
+		public Bitmap GetSprite()
+		{
+			if (!this.isUpToDate)
+			{
+				this.RenderScene();
+			}
+			return this.scene;
+		}
+
+		public bool IsPositionOccupied(Point2D pos)
+		{
+			var tile = this.map[pos.Y, pos.X];
+			return !(tile == null || tile is TerrainCastle || tile is TerrainInferno);
+		}
+
+		public void SetNotUpToDate()
+		{
+			this.isUpToDate = false;
+		}
+
+		private void RenderScene()
+		{
+			TerrainInferno tInferno = new TerrainInferno(new Point2D(0, 0));
+			for (int i = this.VisibleSpace.Left; i < this.VisibleSpace.Right; i++)
+			{
+				for (int j = this.VisibleSpace.Top; j < this.VisibleSpace.Bottom; j++)
+				{
+					int x = (i - this.VisibleSpace.Left) * MainScene.ScreenToMapUnits;
+					int y = (j - this.VisibleSpace.Top) * MainScene.ScreenToMapUnits;
+
+					this.graphics.DrawImage(tInferno.GetSprite(), x, y);
+
+					if (this.map[j, i] != null)
+					{
+						this.graphics.DrawImage(this.map[j, i].GetSprite(), new Point(x, y));
+					}
+				}
+			}
+			this.isUpToDate = true;
+		}
+
+        internal Item GetItem(Point2D newPlPos)
         {
-            this.P = new P2d(0, 0);
-            this.S = sceneSize;
-            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
-
-            this.mapSize = new D2d(this.map.GetLength(1), this.map.GetLength(0));
-
-            int c_x_t = map.GetLength(1) / 2;
-            int c_y_t = map.GetLength(0) / 2;
-
-            this.visSpace = new Rec();
-            this.visSpace.L = c_x_t - (this.S.W / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-            this.visSpace.R = c_x_t + (this.S.W / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-            this.visSpace.T = c_y_t - (this.S.H / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-            this.visSpace.B = c_y_t + (this.S.H / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-
-            this.scene = new Bitmap(this.S.W, this.S.H);
-            this.g = Graphics.FromImage(scene);
-
-            this.isUpToDate = false;
-        }
-        public Bitmap GetSprite()
-        {
-            if(!this.isUpToDate)
+            if(this.map[newPlPos.Y, newPlPos.X] is Item)
             {
-                RenderScene();
+                Item i = this.map[newPlPos.Y, newPlPos.X] as Item;
+                this.map[newPlPos.Y, newPlPos.X] = this.GetSurrounding(newPlPos);
+                return i;
             }
-            return scene;
+            return null;
         }
-        private void RenderScene()
+
+        private IDrawable GetSurrounding(Point2D newPlPos)
         {
-            TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
-            for (int i = this.visSpace.L; i < this.visSpace.R; i++)
+            int terrInfCont = 0;
+            int terrCastlCount = 0;
+            for(int i = newPlPos.Y-1 ; i >= newPlPos.Y+1 ; i++)
             {
-                for (int j = this.visSpace.T; j < this.visSpace.B; j++)
+                for(int j = newPlPos.X-1; j < newPlPos.X+1 ; j++)
                 {
-                    int x = (i - this.visSpace.L) * MainScene.ScreenToMapUnits;
-                    int y = (j - this.visSpace.T) * MainScene.ScreenToMapUnits;
-
-                    g.DrawImage(tInferno.GetSprite(), x, y);
-
-                    if (map[j, i] != null)
+                    if(this.map[i,j] is TerrainInferno)
                     {
-                        g.DrawImage(map[j, i].GetSprite(), new Point(x, y));
+                        terrInfCont++;
+                    }
+                    else if(this.map[i,j] is TerrainCastle)
+                    {
+                        terrCastlCount++;
                     }
                 }
             }
-            this.isUpToDate = true;
-        }
-        public bool IsPositionOccupied(P2d pos)
-        {
-            bool isFree = false;
-            if(this.map[pos.Y, pos.X] is TerrainCastle || 
-                this.map[pos.Y, pos.X] is TerrainInferno || 
-                this.map[pos.Y,pos.X] == null )
+            if(terrCastlCount>=terrInfCont)
             {
-                return false;
+                return new TerrainCastle(newPlPos);
             }
-            return true;
-        }
-        public void SetNotUpToDate()
-        {
-            this.isUpToDate = false;
+            else
+            {
+                return new TerrainInferno(newPlPos);
+            }
         }
     }
 }

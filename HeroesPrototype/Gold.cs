@@ -1,18 +1,15 @@
-﻿using HeroesPrototype.Items;
-using HeroesPrototype.MapObjects;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HeroesPrototype.Geometry;
+using HeroesPrototype.Items;
 
 namespace HeroesPrototype
 {
-    internal class Gold : Item
-    {
-        public Gold() : base("gold")
-        {
-            base.Quantity = (new Random()).Next(1, 50);
-        }
-    }
+	internal class Gold : Item
+	{
+		public Gold(Point2D origin) : base("gold", origin)
+		{
+			base.Quantity = (new Random()).Next(1, 50);
+		}
+	}
 }
