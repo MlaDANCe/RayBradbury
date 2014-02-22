@@ -13,6 +13,7 @@ namespace HeroesPrototype.CharacterAssets
 		private int currentCharacterStage;
 		private Position position;
 
+
 		public Point2D WorldPosition { get; set; }
 
 		public Point2D ScreenCoordinates { get; set; }
@@ -31,9 +32,21 @@ namespace HeroesPrototype.CharacterAssets
 		{
 			this.WorldPosition = worldPosition;
 			this.ScreenCoordinates = screenCoordinates;
+
 			this.currentSprite = CharacterSprites.CharacterRight[this.currentCharacterStage];
+
 			this.currentCharacterStage = 0;
 			this.position = Position.Right;
+
+            this.currentA = new DefArmor();
+            this.currentW = new DefWeapon();
+
+            this.Attack = this.currentW.Attack;
+            this.Defense = this.currentA.Defense;
+
+            this.Items = new List<Item>();
+
+
 		}
 
 		public void MoveTo(Point2D point)
@@ -110,7 +123,27 @@ namespace HeroesPrototype.CharacterAssets
 			}
 			this.WorldPosition = point;
 		}
-
+        public void AddItem(Item item)
+        {
+            if (item is Weapon)
+            {
+                var itm = item as Weapon;
+                if(itm.Attack > this.currentW.Attack)
+                {
+                    this.Items.Add(this.currentW);
+                    this.currentW = itm;
+                }
+            }
+            else if (item is Armor)
+            {
+                var itm = item as Armor;
+                if(itm.Defense > this.currentA.Defense)
+                {
+                    this.Items.Add(this.currentA);
+                    this.currentA = itm;
+                }
+            }
+        }
 		public override Bitmap GetSprite()
 		{
 			return this.currentSprite;

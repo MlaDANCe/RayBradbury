@@ -24,5 +24,9 @@ namespace HeroesPrototype.CharacterAssets
 		public List<Item> Items { get; set; }
 
 		public abstract Bitmap GetSprite();
+
+        protected Weapon currentW;
+
+        protected Armor currentA;
 	}
 }

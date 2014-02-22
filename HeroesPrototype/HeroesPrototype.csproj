@@ -48,6 +48,8 @@
     <Compile Include="Character\Position.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Axe.cs" />
+    <Compile Include="Items\DefArmor.cs" />
+    <Compile Include="Items\DefWeapon.cs" />
     <Compile Include="Items\HeavyArmor.cs" />
     <Compile Include="Items\Helm.cs" />
     <Compile Include="Items\Item.cs" />

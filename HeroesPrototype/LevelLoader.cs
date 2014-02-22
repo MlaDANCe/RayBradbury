@@ -3,6 +3,7 @@ using System.Drawing;
 using HeroesPrototype.Geometry;
 using HeroesPrototype.MapConsts;
 using HeroesPrototype.MapObjects;
+using HeroesPrototype.Items;
 
 namespace HeroesPrototype
 {
@@ -44,6 +45,26 @@ namespace HeroesPrototype
 					{
 						map[i, j] = new TerrainInferno(new Point2D(j, i));
 					}
+                    else if(val == Consts.Axe)
+                    {
+                        map[i, j] = new Axe(new Point2D(j, i));
+                    }
+                    else if (val == Consts.HeavyArmor)
+                    {
+                        map[i, j] = new HeavyArmor(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Helm)
+                    {
+                        map[i, j] = new Helm(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Sword)
+                    {
+                        map[i, j] = new Sword(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Staff)
+                    {
+                        map[i, j] = new Staff(new Point2D(j, i));
+                    }
 					else
 					{
 						map[i, j] = null;

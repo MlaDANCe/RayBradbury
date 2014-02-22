@@ -2,6 +2,7 @@
 using System.Drawing;
 using HeroesPrototype.Geometry;
 using HeroesPrototype.MapObjects;
+using HeroesPrototype.Items;
 
 namespace HeroesPrototype
 {
@@ -92,5 +93,44 @@ namespace HeroesPrototype
 			}
 			this.isUpToDate = true;
 		}
-	}
+
+        internal Item GetItem(Point2D newPlPos)
+        {
+            if(this.map[newPlPos.Y, newPlPos.X] is Item)
+            {
+                Item i = this.map[newPlPos.Y, newPlPos.X] as Item;
+                this.map[newPlPos.Y, newPlPos.X] = this.GetSurrounding(newPlPos);
+                return i;
+            }
+            return null;
+        }
+
+        private IDrawable GetSurrounding(Point2D newPlPos)
+        {
+            int terrInfCont = 0;
+            int terrCastlCount = 0;
+            for(int i = newPlPos.Y-1 ; i >= newPlPos.Y+1 ; i++)
+            {
+                for(int j = newPlPos.X-1; j < newPlPos.X+1 ; j++)
+                {
+                    if(this.map[i,j] is TerrainInferno)
+                    {
+                        terrInfCont++;
+                    }
+                    else if(this.map[i,j] is TerrainCastle)
+                    {
+                        terrCastlCount++;
+                    }
+                }
+            }
+            if(terrCastlCount>=terrInfCont)
+            {
+                return new TerrainCastle(newPlPos);
+            }
+            else
+            {
+                return new TerrainInferno(newPlPos);
+            }
+        }
+    }
 }
