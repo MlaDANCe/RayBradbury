@@ -16,12 +16,12 @@ namespace HeroesPrototype.Units
 
 		public int Health { get; set; }
         
-		public Point2D Origin { get; set; }
+		public P2d Origin { get; set; }
 
-		public Size2D Size { get; private set; }
+		public S2d Size { get; private set; }
 
 		//public Bitmap CurrentSprite { get; set; }
-		public Unit(string name, Point2D origin, int attack, int defence, int health)
+		public Unit(string name, P2d origin, int attack, int defence, int health)
 		{
 			this.Name = name;
 			this.Attack = attack;

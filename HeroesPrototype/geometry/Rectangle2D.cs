@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace HeroesPrototype.Geometry
 {
-	public class Rectangle2D
+	public struct Rectangle2D
 	{
 		public int Left { get; set; }
 
@@ -13,19 +13,16 @@ namespace HeroesPrototype.Geometry
 
 		public int Bottom { get; set; }
 
-		public Rectangle2D(Point2D topLeft, Size2D widthHeight)
+		public Rectangle2D(P2d topLeft, S2d widthHeight) : this()
 		{
 			this.Left = topLeft.X;
-			this.Right = topLeft.X + widthHeight.Width;
+			this.Right = topLeft.X + widthHeight.W;
 			this.Top = topLeft.Y;
-			this.Bottom = topLeft.Y + widthHeight.Height;
+			this.Bottom = topLeft.Y + widthHeight.H;
 		}
 
-		public Rectangle2D()
-		{
-		}
 
-		public static Rectangle2D operator+(Rectangle2D rectangle, Point2D point)
+		public static Rectangle2D operator+(Rectangle2D rectangle, P2d point)
 		{
 			return new Rectangle2D
 			{
@@ -36,7 +33,7 @@ namespace HeroesPrototype.Geometry
 			};
 		}
 
-		public static Rectangle2D operator-(Rectangle2D a, Point2D p)
+		public static Rectangle2D operator-(Rectangle2D a, P2d p)
 		{
 			return new Rectangle2D
 			{

@@ -14,11 +14,11 @@ namespace HeroesPrototype
 		private List<Item> currentContent;
 		private bool haveContent;
 
-		public CharacterMenu(Point2D p, Size2D d) : base(p,d)
+		public CharacterMenu(P2d p, S2d d) : base(p,d)
 		{
-			this.sidebar = new Menu(new Point2D(50, 50), new Size2D(100, this.Size.Height - 100));
-			this.mainMenu = new Menu(new Point2D(this.sidebar.Origin.X + this.sidebar.Size.Width + 50, 50),
-				new Size2D(base.Size.Width - this.sidebar.Size.Width - 150, this.Size.Height - 100));
+			this.sidebar = new Menu(new P2d(50, 50), new S2d(100, this.Size.H - 100));
+			this.mainMenu = new Menu(new P2d(this.sidebar.Origin.X + this.sidebar.Size.W + 50, 50),
+				new S2d(base.Size.W - this.sidebar.Size.W - 150, this.Size.H - 100));
 			this.haveContent = false;
 		}
 

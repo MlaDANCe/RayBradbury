@@ -8,7 +8,7 @@ namespace HeroesPrototype.Items
 	{
 		public int Defense { get; set; }
 
-		public Armor(string name, Point2D origin, int defense) : base(name, origin)
+		public Armor(string name, P2d origin, int defense) : base(name, origin)
 		{
 			this.Defense = defense;
 		}

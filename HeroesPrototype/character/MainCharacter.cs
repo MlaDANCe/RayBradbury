@@ -13,11 +13,11 @@ namespace HeroesPrototype.CharacterAssets
 		private int currentCharacterStage;
 		private Position position;
 
-		public Point2D WorldPosition { get; set; }
+		public P2d WorldPosition { get; set; }
 
-		public Point2D ScreenCoordinates { get; set; }
+		public P2d ScreenCoordinates { get; set; }
 
-		public override Size2D Size
+		public override S2d Size
 		{
 			get
 			{
@@ -27,7 +27,7 @@ namespace HeroesPrototype.CharacterAssets
 
 		public List<Item> Items { get; set; }
 
-		public MainCharacter(Point2D worldPosition, Point2D screenCoordinates)
+		public MainCharacter(P2d worldPosition, P2d screenCoordinates)
 		{
 			this.WorldPosition = worldPosition;
 			this.ScreenCoordinates = screenCoordinates;
@@ -36,7 +36,7 @@ namespace HeroesPrototype.CharacterAssets
 			this.position = Position.Right;
 		}
 
-		public void MoveTo(Point2D point)
+		public void MoveTo(P2d point)
 		{
 			int dx = point.X - this.WorldPosition.X;
 			int dy = point.Y - this.WorldPosition.Y;

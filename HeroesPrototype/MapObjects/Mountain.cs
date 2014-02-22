@@ -6,7 +6,7 @@ namespace HeroesPrototype.MapObjects
 {
 	public class Mountain : MapObjectBase
 	{
-		public Mountain(Point2D origin) : base(origin, Objects.Mountain)
+		public Mountain(P2d origin) : base(origin, Objects.Mountain)
 		{
 		}
 	}

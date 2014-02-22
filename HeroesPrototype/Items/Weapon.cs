@@ -12,7 +12,7 @@ namespace HeroesPrototype.Items
 
 		public int Speed { get; set; }
 
-		protected Weapon(string name, Point2D origin, int attack, int damage, int speed) : base(name, origin)
+		protected Weapon(string name, P2d origin, int attack, int damage, int speed) : base(name, origin)
 		{
 			this.Attack = attack;
 			this.Damage = damage;

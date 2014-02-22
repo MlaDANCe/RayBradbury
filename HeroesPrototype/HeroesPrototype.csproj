@@ -68,8 +68,8 @@
     <Compile Include="HeroesPrototype.Designer.cs">
       <DependentUpon>HeroesPrototype.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geometry\Size2D.cs" />
-    <Compile Include="Geometry\Point2D.cs" />
+    <Compile Include="Geometry\S2d.cs" />
+    <Compile Include="Geometry\P2d.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MainScene.cs" />
     <Compile Include="MapConsts\Consts.cs" />

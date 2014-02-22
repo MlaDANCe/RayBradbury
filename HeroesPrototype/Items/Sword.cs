@@ -6,7 +6,7 @@ namespace HeroesPrototype.Items
 {
 	public class Sword : Weapon
 	{
-		public Sword(Point2D origin) : base("sword", origin, 5, 8, 3)
+		public Sword(P2d origin) : base("sword", origin, 5, 8, 3)
 		{
 		}
 	}

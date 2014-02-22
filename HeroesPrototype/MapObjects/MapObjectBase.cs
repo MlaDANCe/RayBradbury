@@ -9,11 +9,11 @@ namespace HeroesPrototype.MapObjects
 	{
 		private readonly Bitmap sprite;
 
-		public Point2D Origin { get; set; }
+		public P2d Origin { get; set; }
 
-		public Size2D Size { get; private set; }
+		public S2d Size { get; private set; }
 
-		public MapObjectBase(Point2D origin, Bitmap sprite)
+		public MapObjectBase(P2d origin, Bitmap sprite)
 		{
 			this.Origin = origin;
 			this.sprite = sprite;

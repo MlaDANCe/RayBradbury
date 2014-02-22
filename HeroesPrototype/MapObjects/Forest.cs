@@ -5,7 +5,7 @@ namespace HeroesPrototype.MapObjects
 {
 	public class Forest : MapObjectBase
 	{
-		public Forest(Point2D origin) : base(origin, Objects.Forest)
+		public Forest(P2d origin) : base(origin, Objects.Forest)
 		{
 		}
 	}
