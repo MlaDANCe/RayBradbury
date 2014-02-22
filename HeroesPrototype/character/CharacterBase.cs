@@ -17,9 +17,9 @@ namespace HeroesPrototype.CharacterAssets
 
 		public int Knowledge { get; set; }
 
-		public P2d Origin { get; set; }
+		public Point2D Origin { get; set; }
 
-		public abstract S2d Size { get; }
+		public abstract Size2D Size { get; }
 
 		public List<Item> Items { get; set; }
 

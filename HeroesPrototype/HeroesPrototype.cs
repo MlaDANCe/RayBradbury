@@ -12,7 +12,7 @@ namespace HeroesPrototype
 		public HeroesPrototype()
 		{
 			this.InitializeComponent();
-			this.scene = new MainScene(this.Scene.CreateGraphics(), new Geometry.S2d(this.Scene.Width, this.Scene.Height));
+			this.scene = new MainScene(this.Scene.CreateGraphics(), new Geometry.Size2D(this.Scene.Width, this.Scene.Height));
 			this.MainLoop.RunWorkerAsync();
 		}
 

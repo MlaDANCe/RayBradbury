@@ -13,40 +13,40 @@ namespace HeroesPrototype
 	{
 		private readonly IDrawable[,] map;
 
-		private readonly P2d currentContainable;
+		private readonly Point2D currentContainable;
 
 		private readonly Bitmap scene;
 		private readonly Graphics graphics;
 
 		private bool isUpToDate;// I add this check because if the map is up to date the scene have not to be redrawn it safes 50% processing time 
 
-		public P2d Origin { get; set; }
+		public Point2D Origin { get; set; }
 
-		public S2d Size { get; private set; }
+		public Size2D Size { get; private set; }
 
 		public Rectangle2D VisibleSpace { get; set; }
 
-		public S2d MapSize { get; private set; }
+		public Size2D MapSize { get; private set; }
 
-		public Level(S2d sceneSize)
+		public Level(Size2D sceneSize)
 		{
-			this.Origin = new P2d(0, 0);
+			this.Origin = new Point2D(0, 0);
 			this.Size = sceneSize;
 			this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
 
-			this.MapSize = new S2d(this.map.GetLength(1), this.map.GetLength(0));
+			this.MapSize = new Size2D(this.map.GetLength(1), this.map.GetLength(0));
 
 			int c_x_t = this.map.GetLength(1) / 2;
 			int c_y_t = this.map.GetLength(0) / 2;
 
-			int left = c_x_t - (this.Size.W / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-			int right = c_x_t + (this.Size.W / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-			int top = c_y_t - (this.Size.H / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
-			int bottom = c_y_t + (this.Size.H / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int left = c_x_t - (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int right = c_x_t + (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int top = c_y_t - (this.Size.Height / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+			int bottom = c_y_t + (this.Size.Height / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
 
-            this.VisibleSpace = new Rectangle2D(new P2d(left, top), new S2d(right - left, bottom - top));
+            this.VisibleSpace = new Rectangle2D(new Point2D(left, top), new Size2D(right - left, bottom - top));
 
-			this.scene = new Bitmap(this.Size.W, this.Size.H);
+			this.scene = new Bitmap(this.Size.Width, this.Size.Height);
 			this.graphics = Graphics.FromImage(this.scene);
 
 			this.isUpToDate = false;
@@ -61,7 +61,7 @@ namespace HeroesPrototype
 			return this.scene;
 		}
 
-		public bool IsPositionOccupied(P2d pos)
+		public bool IsPositionOccupied(Point2D pos)
 		{
 			var tile = this.map[pos.Y, pos.X];
 			return !(tile == null || tile is TerrainCastle || tile is TerrainInferno);
@@ -74,7 +74,7 @@ namespace HeroesPrototype
 
 		private void RenderScene()
 		{
-			TerrainInferno tInferno = new TerrainInferno(new P2d(0, 0));
+			TerrainInferno tInferno = new TerrainInferno(new Point2D(0, 0));
 			for (int i = this.VisibleSpace.Left; i < this.VisibleSpace.Right; i++)
 			{
 				for (int j = this.VisibleSpace.Top; j < this.VisibleSpace.Bottom; j++)

@@ -6,7 +6,7 @@ namespace HeroesPrototype.Items
 {
 	public class Shield : Armor
 	{
-		public Shield(P2d origin) : base("shield", origin, 4)
+		public Shield(Point2D origin) : base("shield", origin, 4)
 		{
 		}
 	}

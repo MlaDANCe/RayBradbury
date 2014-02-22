@@ -7,7 +7,7 @@ namespace HeroesPrototype
 {
 	internal class Gold : Item
 	{
-		public Gold(P2d origin) : base("gold", origin)
+		public Gold(Point2D origin) : base("gold", origin)
 		{
 			base.Quantity = (new Random()).Next(1, 50);
 		}

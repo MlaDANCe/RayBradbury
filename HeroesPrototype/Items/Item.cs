@@ -24,12 +24,12 @@ namespace HeroesPrototype.Items
 			}
 		}
        
-		public P2d Origin { get; set; }
+		public Point2D Origin { get; set; }
 
-		public S2d Size { get; private set; }
+		public Size2D Size { get; private set; }
 
 		//public Bitmap CurrentSprite { get; set; }
-		protected Item(string name, P2d origin)
+		protected Item(string name, Point2D origin)
 		{
 			this.Name = name;
 			this.Origin = origin;

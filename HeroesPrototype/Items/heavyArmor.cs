@@ -6,7 +6,7 @@ namespace HeroesPrototype.Items
 {
 	public class HeavyArmor : Armor
 	{
-		public HeavyArmor(P2d origin) : base("heavyArmour", origin, 5)
+		public HeavyArmor(Point2D origin) : base("heavyArmour", origin, 5)
 		{
 		}
 	}

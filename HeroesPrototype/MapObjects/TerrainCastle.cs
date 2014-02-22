@@ -5,7 +5,7 @@ namespace HeroesPrototype.MapObjects
 {
 	public class TerrainCastle : MapObjectBase
 	{
-		public TerrainCastle(P2d origin) : base(origin, Objects.TerrainCastle)
+		public TerrainCastle(Point2D origin) : base(origin, Objects.TerrainCastle)
 		{
 		}
 	}

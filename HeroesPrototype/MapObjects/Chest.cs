@@ -10,7 +10,7 @@ namespace HeroesPrototype.MapObjects
 	{
 		public List<Item> Items { get; set; }
 
-		public Chest(P2d origin) : base(origin, Objects.Chest)
+		public Chest(Point2D origin) : base(origin, Objects.Chest)
 		{
 			this.Items = new List<Item>();
 			this.Items.Add(new Gold(origin));

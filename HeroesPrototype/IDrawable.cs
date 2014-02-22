@@ -6,9 +6,9 @@ namespace HeroesPrototype
 	// This interface ensures that every object that will be drawn on the screen will have position, dimesion and image
 	public interface IDrawable
 	{
-		P2d Origin { get; set; }
+		Point2D Origin { get; set; }
 
-		S2d Size { get; }
+		Size2D Size { get; }
 
 		Bitmap GetSprite();
 	}

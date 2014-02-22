@@ -13,16 +13,16 @@ namespace HeroesPrototype.Geometry
 
 		public int Bottom { get; set; }
 
-		public Rectangle2D(P2d topLeft, S2d widthHeight) : this()
+		public Rectangle2D(Point2D topLeft, Size2D widthHeight) : this()
 		{
 			this.Left = topLeft.X;
-			this.Right = topLeft.X + widthHeight.W;
+			this.Right = topLeft.X + widthHeight.Width;
 			this.Top = topLeft.Y;
-			this.Bottom = topLeft.Y + widthHeight.H;
+			this.Bottom = topLeft.Y + widthHeight.Height;
 		}
 
 
-		public static Rectangle2D operator+(Rectangle2D rectangle, P2d point)
+		public static Rectangle2D operator+(Rectangle2D rectangle, Point2D point)
 		{
 			return new Rectangle2D
 			{
@@ -33,7 +33,7 @@ namespace HeroesPrototype.Geometry
 			};
 		}
 
-		public static Rectangle2D operator-(Rectangle2D a, P2d p)
+		public static Rectangle2D operator-(Rectangle2D a, Point2D p)
 		{
 			return new Rectangle2D
 			{

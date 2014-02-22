@@ -17,7 +17,7 @@ namespace HeroesPrototype
 
 		private readonly Graphics scene;
 
-		private readonly S2d sceneDimension;
+		private readonly Size2D sceneDimension;
 
 		private readonly Level currentLevel;
 		private readonly MainCharacter mainCharacter;
@@ -25,7 +25,7 @@ namespace HeroesPrototype
 		private readonly Bitmap buff;
 		private readonly Graphics buffG;
 
-		public MainScene(Graphics panelGraphics, S2d sceneSize)
+		public MainScene(Graphics panelGraphics, Size2D sceneSize)
 		{
 			this.scene = panelGraphics;
 
@@ -33,10 +33,10 @@ namespace HeroesPrototype
 
 			this.currentLevel = new Level(this.sceneDimension);
 
-			this.mainCharacter = new MainCharacter(new P2d(this.currentLevel.MapSize.W / 2, this.currentLevel.MapSize.W / 2),
-				new P2d(this.sceneDimension.W / 2, this.sceneDimension.H / 2));
+			this.mainCharacter = new MainCharacter(new Point2D(this.currentLevel.MapSize.Width / 2, this.currentLevel.MapSize.Width / 2),
+				new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
 
-			this.buff = new Bitmap(this.sceneDimension.W, this.sceneDimension.H);
+			this.buff = new Bitmap(this.sceneDimension.Width, this.sceneDimension.Height);
 			this.buffG = Graphics.FromImage(this.buff);
 		}
 
@@ -57,7 +57,7 @@ namespace HeroesPrototype
 
 		internal void KeyboardAction(Keys keys)
 		{
-			P2d dxdy = new P2d(0, 0);
+			Point2D dxdy = new Point2D(0, 0);
 			if (keys == Keys.Up)
 			{
 				dxdy.Y -= 1;
@@ -77,17 +77,17 @@ namespace HeroesPrototype
 			this.MovePosition(dxdy);
 		}
 
-		private void MovePosition(P2d dxdy)
+		private void MovePosition(Point2D dxdy)
 		{
-			P2d newPlPos = this.mainCharacter.WorldPosition + dxdy;
-			if (newPlPos.X >= 0 && newPlPos.X < this.currentLevel.MapSize.W &&
-				newPlPos.Y >= 0 && newPlPos.Y < this.currentLevel.MapSize.H)
+			Point2D newPlPos = this.mainCharacter.WorldPosition + dxdy;
+			if (newPlPos.X >= 0 && newPlPos.X < this.currentLevel.MapSize.Width &&
+				newPlPos.Y >= 0 && newPlPos.Y < this.currentLevel.MapSize.Height)
 			{
 				Rectangle2D newVis = this.currentLevel.VisibleSpace + dxdy;
 				if (newVis.Left >= 0 && 
-					newVis.Right <= this.currentLevel.MapSize.W &&
+					newVis.Right <= this.currentLevel.MapSize.Width &&
 					newVis.Top >= 0 && 
-					newVis.Bottom < this.currentLevel.MapSize.H && 
+					newVis.Bottom < this.currentLevel.MapSize.Height && 
 					!this.currentLevel.IsPositionOccupied(newPlPos))
 				{
 					this.mainCharacter.MoveTo(newPlPos);

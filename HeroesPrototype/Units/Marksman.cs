@@ -6,7 +6,7 @@ namespace HeroesPrototype.Units
 {
 	public class Marksman : UnitLevel2
 	{
-		public Marksman(P2d origin) : base("Marksman", origin, 10, 10, 10)
+		public Marksman(Point2D origin) : base("Marksman", origin, 10, 10, 10)
 		{
 		}
 	}
