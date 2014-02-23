@@ -26,7 +26,9 @@ namespace HeroesPrototype.MapConsts
         public static readonly Bitmap InfernoBotRight = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Inferno\INF_BR.png"));
         public static readonly Bitmap Forest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\Forest.png"));
         public static readonly Bitmap Mountain = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\Mountain.png"));
-        public static readonly Bitmap Chest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Chest.png"));
+        // resources
+        public static readonly Bitmap Chest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\Chest.png"));
+        public static readonly Bitmap GoldPile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\Gold.png"));
         // Items
         public static readonly Bitmap Staff = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\staff.png"));
         public static readonly Bitmap Sword = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\sword.png"));

@@ -81,6 +81,10 @@ namespace HeroesPrototype
 					{
 						map[i, j] = new Chest(new Point2D(j, i));
 					}
+                    else if (val == Consts.GoldPile)
+                    {
+                        map[i, j] = new Gold(new Point2D(j, i), Objects.GoldPile);
+                    }
                     else if (val == Consts.TerrainBlack)
                     {
                         map[i, j] = new TerrainBlack(new Point2D(j, i));

@@ -25,7 +25,9 @@ namespace HeroesPrototype.MapConsts
         public const int InfernoBotRight = 0xff00f6 & 0xff;
         public const int Forest = 0x6a6a6a & 0xff;
         public const int Mountain = 0x272726 & 0xff;
+        //resources
         public const int Chest = 0x5f5f5f & 0xff;
+        public const int GoldPile = 0xfff262 & 0xff;
         // Items
         public const int Axe = 0x5a5a51 & 0xff;
         public const int HeavyArmor = 0x5a5a52 & 0xff;
