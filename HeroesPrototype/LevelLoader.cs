@@ -25,10 +25,54 @@ namespace HeroesPrototype
 					{
 						map[i, j] = new Mountain(new Point2D(j, i));
 					}
-					else if (val == Consts.Castle)
+					else if (val == Consts.CastleTopLeft)
 					{
-						map[i, j] = new Castle(new Point2D(j, i));
+						map[i, j] = new Castle(new Point2D(j, i), Objects.CastleTopLeft);
 					}
+                    else if (val == Consts.CastleTopCenter)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.CastleTopCenter);
+                    }
+                    else if (val == Consts.CastleTopRight)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.CastleTopRight);
+                    }
+                    else if (val == Consts.CastleBotLeft)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.CastleBotLeft);
+                    }
+                    else if (val == Consts.CastleBotCenter)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.CastleBotCenter);
+                    }
+                    else if (val == Consts.CastleBotRight)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.CastleBotRight);
+                    }
+                    else if (val == Consts.InfernoTopLeft)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.InfernoTopLeft);
+                    }
+                    else if (val == Consts.InfernoTopCenter)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.InfernoTopCenter);
+                    }
+                    else if (val == Consts.InfernoTopRight)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.InfernoTopRight);
+                    }
+                    else if (val == Consts.InfernoBotLeft)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.InfernoBotLeft);
+                    }
+                    else if (val == Consts.InfernoBotCenter)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.InfernoBotCenter);
+                    }
+                    else if (val == Consts.InfernoBotRight)
+                    {
+                        map[i, j] = new Castle(new Point2D(j, i), Objects.InfernoBotRight);
+                    }
 					else if (val == Consts.Forest)
 					{
 						map[i, j] = new Forest(new Point2D(j, i));
@@ -37,6 +81,10 @@ namespace HeroesPrototype
 					{
 						map[i, j] = new Chest(new Point2D(j, i));
 					}
+                    else if (val == Consts.TerrainBlack)
+                    {
+                        map[i, j] = new TerrainBlack(new Point2D(j, i));
+                    }
 					else if (val == Consts.TerrainCastle)
 					{
 						map[i, j] = new TerrainCastle(new Point2D(j, i));
@@ -45,6 +93,14 @@ namespace HeroesPrototype
 					{
 						map[i, j] = new TerrainInferno(new Point2D(j, i));
 					}
+                    else if (val == Consts.TerrainMixed1)
+                    {
+                        map[i, j] = new TerrainMixed1(new Point2D(j, i));
+                    }
+                    else if (val == Consts.TerrainMixed2)
+                    {
+                        map[i, j] = new TerrainMixed2(new Point2D(j, i));
+                    }
                     else if(val == Consts.Axe)
                     {
                         map[i, j] = new Axe(new Point2D(j, i));

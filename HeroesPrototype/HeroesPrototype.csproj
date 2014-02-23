@@ -77,12 +77,16 @@
     <Compile Include="MapConsts\Consts.cs" />
     <Compile Include="MapConsts\Objects.cs" />
     <Compile Include="MapObjects\MapObjectBase.cs" />
+    <Compile Include="MapObjects\TerrainBlack.cs" />
     <Compile Include="MapObjects\TerrainCastle.cs" />
     <Compile Include="MapObjects\Mountain.cs" />
     <Compile Include="MapObjects\Castle.cs" />
     <Compile Include="MapObjects\Chest.cs" />
     <Compile Include="MapObjects\Forest.cs" />
+    <Compile Include="MapObjects\TerrainDefault.cs" />
     <Compile Include="MapObjects\TerrainInferno.cs" />
+    <Compile Include="MapObjects\TerrainMixed1.cs" />
+    <Compile Include="MapObjects\TerrainMixed2.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuObjects\MenuObjects.cs" />
     <Compile Include="Program.cs" />

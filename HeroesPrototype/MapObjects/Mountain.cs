@@ -4,10 +4,11 @@ using HeroesPrototype.MapConsts;
 
 namespace HeroesPrototype.MapObjects
 {
-	public class Mountain : MapObjectBase
-	{
-		public Mountain(Point2D origin) : base(origin, Objects.Mountain)
-		{
-		}
-	}
+    public class Mountain : MapObjectBase
+    {
+        public Mountain(Point2D origin)
+            : base(origin, Objects.Mountain)
+        {
+        }
+    }
 }

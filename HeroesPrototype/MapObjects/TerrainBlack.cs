@@ -3,10 +3,10 @@ using HeroesPrototype.MapConsts;
 
 namespace HeroesPrototype.MapObjects
 {
-    public class Forest : MapObjectBase
+    public class TerrainBlack : MapObjectBase
     {
-        public Forest(Point2D origin)
-            : base(origin, Objects.Forest)
+        public TerrainBlack(Point2D origin)
+            : base(origin, Objects.TerrainBlack)
         {
         }
     }
