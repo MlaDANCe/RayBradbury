@@ -55,5 +55,10 @@ namespace HeroesPrototype
                 MessageBox.Show("Nothing to buy");
             }
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
