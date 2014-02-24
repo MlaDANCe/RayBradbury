@@ -37,6 +37,8 @@ namespace HeroesPrototype
             Ore.Text = "Ore: " + scene.MainCharacter.Ore;
             Wood.Text = "Wood: " + scene.MainCharacter.Wood;
 
+            MovesLbl.Text = "Moves: " + scene.MainCharacter.Moves + "/" + scene.MainCharacter.MaxMoves;
+
             Thread.Sleep(50);
 
         }
@@ -67,6 +69,7 @@ namespace HeroesPrototype
         {
             this.scene.Calend.Day++;
             this.scene.MainCharacter.Moves = scene.MainCharacter.MaxMoves;
+            MessageBox.Show("The sun rises and a new day begins!");
         }
     }
 }

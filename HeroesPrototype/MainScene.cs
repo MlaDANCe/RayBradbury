@@ -130,6 +130,7 @@ namespace HeroesPrototype
                         if (itm is Gold)
                         {
                             this.MainCharacter.Gold += (uint)itm.Quantity;
+                            MessageBox.Show("You received " + itm.Quantity+" Gold!");
                         }
                         this.mainCharacter.AddItem(itm);
                     }

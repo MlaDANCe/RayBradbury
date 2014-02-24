@@ -17,7 +17,7 @@ namespace HeroesPrototype.CharacterAssets
         public uint Ore { get; set; }
         public uint Wood { get; set; }
 
-        private int maxMoves = 10;
+        private int maxMoves = 20;
         private int moves;
 
 		public Point2D WorldPosition { get; set; }
