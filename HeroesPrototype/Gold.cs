@@ -19,7 +19,7 @@ namespace HeroesPrototype
         public Gold(Point2D origin, Bitmap sprite)
             : base("gold", origin)
         {
-            base.Quantity = goldPileValue[new Random().Next(0, 5)];
+            base.Quantity = goldPileValue[Rnd.Next(0, 5)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -31,7 +31,7 @@ namespace HeroesPrototype
 
 		public Gold(Point2D origin) : base("gold", origin)
 		{
-           base.Quantity = goldPileValue[new Random().Next(0, 5)];
+            base.Quantity = goldPileValue[Rnd.Next(0, 5)];
 		}
 	}
 }

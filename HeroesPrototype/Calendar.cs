@@ -33,8 +33,8 @@ namespace HeroesPrototype
         }
 
         public int Month 
-        { 
-            get { return this.Day / 28+1; } 
+        {
+            get { return this.Day / 28 + 1; } 
         }
     }
 }

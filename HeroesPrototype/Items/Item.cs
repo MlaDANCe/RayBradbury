@@ -9,11 +9,12 @@ namespace HeroesPrototype.Items
 	public abstract class Item : IDrawable//,IDisappearing//can create a list of items in hero to store all the items
 	{
 		private int quantity = 1;
+        public Random Rnd = new Random();
 
 		public string Name { get; set; }
 
-		public int Quantity
-		{
+        public int Quantity
+        {
 			get
 			{
 				return this.quantity;

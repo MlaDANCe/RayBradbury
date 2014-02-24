@@ -1,6 +1,6 @@
 ﻿namespace HeroesPrototype
 {
-
+    
     partial class HeroesPrototype
     {
         /// <summary>

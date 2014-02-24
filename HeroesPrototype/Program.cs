@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace HeroesPrototype
 {
+   
 	static class Program
 	{
 		/// <summary>

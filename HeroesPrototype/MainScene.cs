@@ -113,8 +113,21 @@ namespace HeroesPrototype
             if (keys == Keys.End)
             {
                 this.Calend.Day++;
-                this.MainCharacter.Moves = this.MainCharacter.MaxMoves;
-                MessageBox.Show("The sun rises and a new day begins!");
+                this.MainCharacter.Moves = MainCharacter.MaxMoves;
+                if (Calend.Day % 28 == 0)
+                {
+                    MessageBox.Show("The sun rises and a new month begins! You receive +25% of your gold! ");
+                    MainCharacter.Gold += MainCharacter.Gold * 25 / 100;
+                }
+                else if (Calend.Day % 7 == 0)
+                {
+                    MessageBox.Show("The sun rises and a new week begins! You receive +15% of your gold! ");
+                    MainCharacter.Gold += MainCharacter.Gold * 15 / 100;
+                }
+                else
+                {
+                    MessageBox.Show("The sun rises and a new day begins!");
+                }
             }
 
         }
