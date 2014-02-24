@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HeroesPrototype
+{
+    public class Calendar
+    {
+        private int day = 0;
+        
+        public int Day
+        {
+            get
+            {
+                return this.day;
+            }
+            set
+            {
+                this.day = value;
+            }
+        }
+
+        public int WeekDay
+        {
+            get { return this.Day % 7+1; }
+        }
+
+        public int Week
+        {
+            get { return this.Day / 7+1; }
+        }
+
+        public int Month 
+        { 
+            get { return this.Day / 30+1; } 
+        }
+    }
+}
