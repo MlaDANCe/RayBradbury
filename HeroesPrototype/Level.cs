@@ -69,7 +69,7 @@ namespace HeroesPrototype
         public bool IsPositionOccupied(Point2D pos)
         {
             var tile = this.map[pos.Y, pos.X];
-            return !(tile == null || tile is TerrainCastle || tile is TerrainInferno);
+            return !(tile == null || tile is TerrainCastle || tile is TerrainInferno || tile is TerrainMixed1 || tile is TerrainMixed2);
         }
 
         public void SetNotUpToDate()
