@@ -121,6 +121,19 @@ namespace HeroesPrototype
                     {
                         map[i, j] = new TerrainMixed2(new Point2D(j, i));
                     }
+                    else if (val == Consts.Imp)
+                    {
+                        map[i, j] = new Imp(new Point2D(j, i), Objects.Imp);
+                    }
+                    else if (val == Consts.Magog)
+                    {
+                        map[i, j] = new Magog(new Point2D(j, i), Objects.Magog);
+
+                    }
+                    else if (val == Consts.Devil)
+                    {
+                        map[i, j] = new Devil(new Point2D(j, i), Objects.Devil);
+                    }
                     else if(val == Consts.Axe)
                     {
                         map[i, j] = new Axe(new Point2D(j, i));

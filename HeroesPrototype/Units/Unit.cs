@@ -4,7 +4,7 @@ using System.Linq;
 using HeroesPrototype.Geometry;
 using HeroesPrototype.MapConsts;
 
-namespace HeroesPrototype.Units
+namespace HeroesPrototype
 {
 	public abstract class Unit : IDrawable //,IDisappearing //can create a list of items in hero to store all the items
 	{

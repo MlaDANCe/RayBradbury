@@ -2,7 +2,7 @@
 using System.Linq;
 using HeroesPrototype.Geometry;
 
-namespace HeroesPrototype.Units
+namespace HeroesPrototype
 {
 	public class Marksman : UnitLevel2
 	{
