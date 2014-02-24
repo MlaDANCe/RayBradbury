@@ -28,6 +28,9 @@ namespace HeroesPrototype.MapConsts
         //resources
         public const int Chest = 0x5f5f5f & 0xff;
         public const int GoldPile = 0xfff262 & 0xff;
+        public const int WoodPile = 0x5a5a57 & 0xff;// currently sword
+        public const int OrePile = 0x5a5a54 & 0xff;// currently shield
+
         // Items
         public const int Axe = 0x5a5a51 & 0xff;
         public const int HeavyArmor = 0x5a5a52 & 0xff;

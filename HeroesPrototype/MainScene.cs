@@ -152,6 +152,16 @@ namespace HeroesPrototype
                             this.MainCharacter.Gold += (uint)itm.Quantity;
                             MessageBox.Show("You received " + itm.Quantity + " Gold!");
                         }
+                        else if (itm is Ore)
+                        {
+                            this.MainCharacter.Ore += (uint)itm.Quantity;
+                            MessageBox.Show("You received " + itm.Quantity + " Ore!");
+                        }
+                        else if (itm is Wood)
+                        {
+                            this.MainCharacter.Wood += (uint)itm.Quantity;
+                            MessageBox.Show("You received " + itm.Quantity + " Wood!");
+                        }
                         this.mainCharacter.AddItem(itm);
                     }
                     if (!this.currentLevel.IsPositionOccupied(newPlPos))

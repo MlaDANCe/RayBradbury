@@ -64,6 +64,14 @@ namespace HeroesPrototype
 				{
 					name = "Gold";
 				}
+                else if (this.currentContent[i] is Ore)
+                {
+                    name = "Ore";
+                }
+                else if (this.currentContent[i] is Wood)
+                {
+                    name = "Wood";
+                }
 				string quantity = this.currentContent[i].Quantity.ToString();
 				g.DrawString(name + " " + quantity, f, b, new Point(this.sidebar.Origin.X - 50, this.sidebar.Origin.Y - 50));
 			}

@@ -90,6 +90,7 @@
     <Compile Include="MapObjects\TerrainMixed2.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuObjects\MenuObjects.cs" />
+    <Compile Include="Ore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LevelLoader.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Units\UnitLevel1.cs" />
     <Compile Include="Units\UnitLevel2.cs" />
     <Compile Include="Units\UnitLevel3.cs" />
+    <Compile Include="Wood.cs" />
     <EmbeddedResource Include="HeroesPrototype.resx">
       <DependentUpon>HeroesPrototype.cs</DependentUpon>
     </EmbeddedResource>

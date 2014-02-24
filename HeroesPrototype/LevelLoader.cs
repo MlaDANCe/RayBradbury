@@ -85,6 +85,14 @@ namespace HeroesPrototype
                     {
                         map[i, j] = new Gold(new Point2D(j, i), Objects.GoldPile);
                     }
+                    else if (val == Consts.WoodPile)
+                    {
+                        map[i, j] = new Wood(new Point2D(j, i), Objects.WoodPile);
+                    }
+                    else if (val == Consts.OrePile)
+                    {
+                        map[i, j] = new Ore(new Point2D(j, i), Objects.OrePile);
+                    }
                     else if (val == Consts.TerrainBlack)
                     {
                         map[i, j] = new TerrainBlack(new Point2D(j, i));

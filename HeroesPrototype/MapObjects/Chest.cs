@@ -16,6 +16,8 @@ namespace HeroesPrototype.MapObjects
         {
             this.Items = new List<Item>();
             this.Items.Add(new Gold(origin));
+            this.Items.Add(new Ore(origin));
+            this.Items.Add(new Wood(origin));
         }
     }
 }
