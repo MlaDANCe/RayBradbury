@@ -34,6 +34,6 @@ namespace HeroesPrototype.CharacterAssets
 
         protected Armor currentA;
 
-        public List<Units.Unit> Units { get; set; }
+        public List<Unit> Units { get; set; }
 	}
 }

@@ -2,7 +2,7 @@
 using System.Linq;
 using HeroesPrototype.Geometry;
 
-namespace HeroesPrototype.Units
+namespace HeroesPrototype
 {
 	public abstract class UnitLevel2 : Unit
 	{

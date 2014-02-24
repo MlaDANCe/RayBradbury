@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using HeroesPrototype.Items;
 using HeroesPrototype.Geometry;
-using HeroesPrototype.Units;
 
 namespace HeroesPrototype.CharacterAssets
 {
