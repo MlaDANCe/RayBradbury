@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 namespace HeroesPrototype
 {
-    internal class Gold : Item, IDrawable
+    public class Gold : Item, IDrawable
 	{
         private readonly List<int> goldPileValue = new List<int> { 500, 600, 700, 800, 900, 1000 };
         private static Random randomGoldPileValue = new Random();

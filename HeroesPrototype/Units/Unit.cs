@@ -15,6 +15,8 @@ namespace HeroesPrototype.Units
 		public int Defence { get; set; }
 
 		public int Health { get; set; }
+
+        public int Price { get; set; }
         
 		public Point2D Origin { get; set; }
 
@@ -28,6 +30,7 @@ namespace HeroesPrototype.Units
 			this.Defence = defence;
 			this.Health = health;
 			this.Origin = origin;
+            this.Price = 250;
 		}
 
 		Bitmap IDrawable.GetSprite()

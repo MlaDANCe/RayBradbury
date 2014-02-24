@@ -44,7 +44,10 @@ namespace HeroesPrototype
                     }
                     else if (val == Consts.CastleBotCenter)
                     {
-                        map[i, j] = new Castle(new Point2D(j, i), Objects.CastleBotCenter);
+                        var castle = new Castle(new Point2D(j, i), Objects.CastleBotCenter);
+                        castle.IsSpawnable = true;
+                        map[i, j] = castle;
+
                     }
                     else if (val == Consts.CastleBotRight)
                     {

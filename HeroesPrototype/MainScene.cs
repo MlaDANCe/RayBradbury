@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using HeroesPrototype.CharacterAssets;
 using HeroesPrototype.Geometry;
 using HeroesPrototype.Items;
+using HeroesPrototype.MapObjects;
+using System.ComponentModel;
 
 namespace HeroesPrototype
 {
@@ -144,26 +146,19 @@ namespace HeroesPrototype
                     newVis.Top >= 0 &&
                     newVis.Bottom < this.currentLevel.MapSize.Height)
                 {
-                    Item itm = currentLevel.GetItem(newPlPos);
-                    if (itm != null)
+                    IDrawable obj = currentLevel.GetObject(newPlPos);
+                    if (obj != null)
                     {
-                        if (itm is Gold)
+                        if (obj is Spawnable)
                         {
-                            this.MainCharacter.Gold += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity + " Gold!");
+                            OpenSpawnMenu(obj);
                         }
-                        else if (itm is Ore)
+                        else if (obj is Item)
                         {
-                            this.MainCharacter.Ore += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity + " Ore!");
+                            AddToHero(obj);
                         }
-                        else if (itm is Wood)
-                        {
-                            this.MainCharacter.Wood += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity + " Wood!");
-                        }
-                        this.mainCharacter.AddItem(itm);
                     }
+
                     if (!this.currentLevel.IsPositionOccupied(newPlPos))
                     {
                         this.mainCharacter.MoveTo(newPlPos);
@@ -173,6 +168,41 @@ namespace HeroesPrototype
                     }
                 }
             }
+        }
+
+        private void OpenSpawnMenu(IDrawable obj)
+        {
+            var spwn = obj as Spawnable;
+            if (spwn.IsSpawnable)
+            {
+                var units = spwn.BuyUnits((int)this.mainCharacter.Gold);
+                BuyMenu m = new BuyMenu();
+                m.AddItems(units);
+                m.Visible = true;
+                m.Activate();
+                
+            }
+        }
+
+        private void AddToHero(IDrawable obj)
+        {
+            Item itm = obj as Item;
+            if (itm is Gold)
+            {
+                this.MainCharacter.Gold += (uint)itm.Quantity;
+                MessageBox.Show("You received " + itm.Quantity + " Gold!");
+            }
+            else if (itm is Ore)
+            {
+                this.MainCharacter.Ore += (uint)itm.Quantity;
+                MessageBox.Show("You received " + itm.Quantity + " Ore!");
+            }
+            else if (itm is Wood)
+            {
+                this.MainCharacter.Wood += (uint)itm.Quantity;
+                MessageBox.Show("You received " + itm.Quantity + " Wood!");
+            }
+            this.mainCharacter.AddItem(itm);
         }
     }
 }

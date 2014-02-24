@@ -45,6 +45,7 @@ namespace HeroesPrototype
 
         private void HandleMouse(object sender, MouseEventArgs e)
         {
+            
         }
 
         private void HandleKeyboard(object sender, KeyEventArgs e)

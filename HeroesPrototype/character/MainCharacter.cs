@@ -4,13 +4,16 @@ using System.Drawing;
 using System.Linq;
 using HeroesPrototype.Items;
 using HeroesPrototype.Geometry;
+using HeroesPrototype.Units;
 
 namespace HeroesPrototype.CharacterAssets
 {
 	public class MainCharacter : CharacterBase
 	{
 		Bitmap currentSprite;
+
 		private int currentCharacterStage;
+
 		private Position position;
 
         public uint Gold { get; set; }
@@ -24,29 +27,9 @@ namespace HeroesPrototype.CharacterAssets
 
 		public Point2D ScreenCoordinates { get; set; }
 
-        public int MaxMoves
-        {
-            get
-            {
-                return this.maxMoves;
-            }
-            set
-            {
-                this.maxMoves = value;
-            }
-        }
+        public int MaxMoves { get; set; }
 
-        public int Moves
-        {
-            get
-            {
-                return this.moves;
-            }
-            set
-            {
-                this.moves = value;
-            }
-        }
+        public int Moves { get; set; }
 
         public override Size2D Size
         {
@@ -76,7 +59,7 @@ namespace HeroesPrototype.CharacterAssets
 
             this.Items = new List<Item>();
 
-
+            this.MaxMoves = this.maxMoves;
 		}
 
 		public void MoveTo(Point2D point)

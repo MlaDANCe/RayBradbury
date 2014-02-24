@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.components = new System.ComponentModel.Container();
             this.Scene = new System.Windows.Forms.Panel();
             this.ResoursesStats = new System.Windows.Forms.StatusStrip();
@@ -43,13 +42,13 @@
             this.Month = new System.Windows.Forms.ToolStripStatusLabel();
             this.Week = new System.Windows.Forms.ToolStripStatusLabel();
             this.Day = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MovesLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainLoop = new System.ComponentModel.BackgroundWorker();
             this.MainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.MenuButton = new System.Windows.Forms.MenuItem();
             this.ExitButton = new System.Windows.Forms.MenuItem();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.EndDay = new System.Windows.Forms.MenuItem();
-            this.MovesLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.Scene.SuspendLayout();
             this.ResoursesStats.SuspendLayout();
             this.SuspendLayout();
@@ -128,7 +127,7 @@
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(172, 19);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(187, 19);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // Attack
@@ -159,7 +158,7 @@
             // 
             this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(172, 19);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(187, 19);
             this.toolStripStatusLabel2.Spring = true;
             // 
             // Month
@@ -200,6 +199,15 @@
             this.Day.Text = "Day: ";
             this.Day.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // MovesLbl
+            // 
+            this.MovesLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MovesLbl.Enabled = false;
+            this.MovesLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MovesLbl.Name = "MovesLbl";
+            this.MovesLbl.Size = new System.Drawing.Size(42, 19);
+            this.MovesLbl.Text = "Moves";
+            // 
             // MainLoop
             // 
             this.MainLoop.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Update);
@@ -237,15 +245,6 @@
             this.EndDay.Text = "End Day";
             this.EndDay.Click += new System.EventHandler(this.EndDay_Click);
             // 
-            // MovesLbl
-            // 
-            this.MovesLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.MovesLbl.Enabled = false;
-            this.MovesLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MovesLbl.Name = "MovesLbl";
-            this.MovesLbl.Size = new System.Drawing.Size(42, 19);
-            this.MovesLbl.Text = "Moves";
-            // 
             // HeroesPrototype
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +254,7 @@
             this.Controls.Add(this.Scene);
             this.Menu = this.MainMenu;
             this.Name = "HeroesPrototype";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HeroesPrototype";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleKeyboard);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouse);

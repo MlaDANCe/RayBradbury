@@ -104,13 +104,17 @@ namespace HeroesPrototype
             this.isUpToDate = true;
         }
 
-        internal Item GetItem(Point2D newPlPos)
+        internal IDrawable GetObject(Point2D xy)
         {
-            if (this.map[newPlPos.Y, newPlPos.X] is Item)
+            if (this.map[xy.Y, xy.X] is Item)
             {
-                Item i = this.map[newPlPos.Y, newPlPos.X] as Item;
-                this.map[newPlPos.Y, newPlPos.X] = this.GetSurrounding(newPlPos);
+                Item i = this.map[xy.Y, xy.X] as Item;
+                this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
                 return i;
+            }
+            else if (this.map[xy.Y, xy.X] is Spawnable)
+            {
+                return this.map[xy.Y, xy.X];
             }
             return null;
         }
