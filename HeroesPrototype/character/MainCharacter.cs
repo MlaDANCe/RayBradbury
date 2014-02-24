@@ -17,11 +17,24 @@ namespace HeroesPrototype.CharacterAssets
         public uint Ore { get; set; }
         public uint Wood { get; set; }
 
-        private int moves = 10;
+        private int maxMoves = 10;
+        private int moves;
 
 		public Point2D WorldPosition { get; set; }
 
 		public Point2D ScreenCoordinates { get; set; }
+
+        public int MaxMoves
+        {
+            get
+            {
+                return this.maxMoves;
+            }
+            set
+            {
+                this.maxMoves = value;
+            }
+        }
 
         public int Moves
         {

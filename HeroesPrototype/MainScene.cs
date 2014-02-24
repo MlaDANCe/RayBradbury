@@ -42,6 +42,7 @@ namespace HeroesPrototype
             this.buff = new Bitmap(this.sceneDimension.Width, this.sceneDimension.Height);
             this.buffG = Graphics.FromImage(this.buff);
             this.calend = new Calendar();
+            this.MainCharacter.Moves = MainCharacter.MaxMoves;
 
         }
 
@@ -107,7 +108,6 @@ namespace HeroesPrototype
                     dxdy.X += 1;
                 }
                 this.MovePosition(dxdy);
-                
             }
 
         }

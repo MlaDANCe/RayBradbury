@@ -66,7 +66,7 @@ namespace HeroesPrototype
         private void EndDay_Click(object sender, EventArgs e)
         {
             this.scene.Calend.Day++;
-            this.scene.MainCharacter.Moves = 10;
+            this.scene.MainCharacter.Moves = scene.MainCharacter.MaxMoves;
         }
     }
 }
