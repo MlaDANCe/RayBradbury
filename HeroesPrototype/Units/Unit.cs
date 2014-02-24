@@ -39,5 +39,10 @@ namespace HeroesPrototype.Units
 										   .GetField(this.Name)
 										   .GetValue(null)); //method that shoud be inherited
 		}
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", this.Name, this.Price);
+        }
 	}
 }

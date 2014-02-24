@@ -27,10 +27,11 @@ namespace HeroesPrototype.MapConsts
         public static readonly Bitmap Forest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\Forest.png"));
         public static readonly Bitmap Mountain = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\Mountain.png"));
         // resources
-        public static readonly Bitmap Chest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\Chest.png"));
+        public static readonly Bitmap TreasureChest = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\TreasureChest.png"));
         public static readonly Bitmap GoldPile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\Gold.png"));
-        public static readonly Bitmap WoodPile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\sword.png"));//wood
-        public static readonly Bitmap OrePile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\shield.png"));//Ore
+        public static readonly Bitmap CampFire = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\CampFire.png"));
+        public static readonly Bitmap WoodPile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\WoodPile.png"));
+        public static readonly Bitmap OrePile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\OrePile.png"));
         // Items
         public static readonly Bitmap Staff = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\staff.png"));
         public static readonly Bitmap Sword = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\sword.png"));
@@ -38,6 +39,6 @@ namespace HeroesPrototype.MapConsts
         public static readonly Bitmap Shield = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\shield.png"));
         public static readonly Bitmap Helm = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\helm.png"));
         public static readonly Bitmap Axe = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\axe.bmp"));
-        ////needs sprite for Gold
+        
     }
 }

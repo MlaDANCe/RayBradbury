@@ -25,11 +25,12 @@ namespace HeroesPrototype.MapConsts
         public const int InfernoBotRight = 0xff00f6 & 0xff;
         public const int Forest = 0x6a6a6a & 0xff;
         public const int Mountain = 0x272726 & 0xff;
-        //resources
-        public const int Chest = 0x5f5f5f & 0xff;
+        // Resources
+        public const int TreasureChest = 0x5f5f5f & 0xff;
         public const int GoldPile = 0xfff262 & 0xff;
-        public const int WoodPile = 0x5a5a57 & 0xff;// currently sword
-        public const int OrePile = 0x5a5a54 & 0xff;// currently shield
+        public const int CampFire = 0xfff259 & 0xff;
+        public const int WoodPile = 0x606060 & 0xff;
+        public const int OrePile = 0x616161 & 0xff;
 
         // Items
         public const int Axe = 0x5a5a51 & 0xff;
@@ -38,6 +39,11 @@ namespace HeroesPrototype.MapConsts
         public const int Shield = 0x5a5a54 & 0xff;
         public const int Staff = 0x5a5a55 & 0xff;
         public const int Sword = 0x5a5a57 & 0xff;
+
+        // Units
+        public const int Imp = 0x000065 & 0xff;
+        public const int Magog = 0x000066 & 0xff;
+        public const int Devil = 0x000067 & 0xff;
 
         //Player start position
         public const int PlayerStartPosition = 0x5a1818 & 0xff;

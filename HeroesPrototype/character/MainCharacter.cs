@@ -16,9 +16,6 @@ namespace HeroesPrototype.CharacterAssets
 
 		private Position position;
 
-        public uint Gold { get; set; }
-        public uint Ore { get; set; }
-        public uint Wood { get; set; }
 
         private int maxMoves = int.MaxValue;
         private int moves;
@@ -60,6 +57,8 @@ namespace HeroesPrototype.CharacterAssets
             this.Items = new List<Item>();
 
             this.MaxMoves = this.maxMoves;
+
+            this.Units = new List<Unit>();
 		}
 
 		public void MoveTo(Point2D point)

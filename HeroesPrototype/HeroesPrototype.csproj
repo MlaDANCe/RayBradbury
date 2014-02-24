@@ -76,7 +76,8 @@
     <Compile Include="IContaining.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="Geometry\Rectangle2D.cs" />
-    <Compile Include="Gold.cs" />
+    <Compile Include="Resources\CampFire.cs" />
+    <Compile Include="Resources\Gold.cs" />
     <Compile Include="HeroesPrototype.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,7 +96,6 @@
     <Compile Include="MapObjects\TerrainCastle.cs" />
     <Compile Include="MapObjects\Mountain.cs" />
     <Compile Include="MapObjects\Castle.cs" />
-    <Compile Include="MapObjects\Chest.cs" />
     <Compile Include="MapObjects\Forest.cs" />
     <Compile Include="MapObjects\TerrainDefault.cs" />
     <Compile Include="MapObjects\TerrainInferno.cs" />
@@ -103,10 +103,12 @@
     <Compile Include="MapObjects\TerrainMixed2.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuObjects\MenuObjects.cs" />
-    <Compile Include="Ore.cs" />
+    <Compile Include="Resources\Ore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LevelLoader.cs" />
+    <Compile Include="Resources\TreasureChest.cs" />
+    <Compile Include="Resources\Wood.cs" />
     <Compile Include="Units\Angel.cs" />
     <Compile Include="Units\Devil.cs" />
     <Compile Include="Units\Imp.cs" />
@@ -117,7 +119,6 @@
     <Compile Include="Units\UnitLevel1.cs" />
     <Compile Include="Units\UnitLevel2.cs" />
     <Compile Include="Units\UnitLevel3.cs" />
-    <Compile Include="Wood.cs" />
     <EmbeddedResource Include="BuyMenu.resx">
       <DependentUpon>BuyMenu.cs</DependentUpon>
     </EmbeddedResource>

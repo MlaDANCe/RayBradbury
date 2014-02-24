@@ -176,7 +176,7 @@ namespace HeroesPrototype
             if (spwn.IsSpawnable)
             {
                 var units = spwn.BuyUnits((int)this.mainCharacter.Gold);
-                BuyMenu m = new BuyMenu();
+                BuyMenu m = new BuyMenu(this.mainCharacter);
                 m.AddItems(units);
                 m.Visible = true;
                 m.Activate();

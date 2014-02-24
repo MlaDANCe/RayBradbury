@@ -23,10 +23,17 @@ namespace HeroesPrototype.CharacterAssets
 
 		public List<Item> Items { get; set; }
 
+        public uint Gold { get; set; }
+        public uint Ore { get; set; }
+        public uint Wood { get; set; }
+
+
 		public abstract Bitmap GetSprite();
 
         protected Weapon currentW;
 
         protected Armor currentA;
+
+        public List<Units.Unit> Units { get; set; }
 	}
 }

@@ -1,4 +1,5 @@
-﻿using HeroesPrototype.Units;
+﻿using HeroesPrototype.CharacterAssets;
+using HeroesPrototype.Units;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,46 @@ namespace HeroesPrototype
 {
     public partial class BuyMenu : Form
     {
-        public BuyMenu()
+        CharacterBase charac;
+        public BuyMenu(CharacterBase charac)
         {
             InitializeComponent();
+            this.charac = charac;
         }
 
         public void AddItems(List<Unit> units)
         {
-            this.listBox1.Items.Add(units[0].Name);
+            foreach (var unit in units)
+            {
+                this.listBox1.Items.Add(unit);
+            }
+            this.listBox1.SelectedItem = this.listBox1.Items[0];
+        }
+
+        private void AddToHero(object sender, EventArgs e)
+        {
+            if (this.listBox1.Items.Count > 0)
+            {
+                var current = this.listBox1.SelectedItem as Unit;
+                if (this.charac.Gold < current.Price)
+                {
+                    MessageBox.Show("You don't have enough gold.");
+                }
+                else
+                {
+                    this.charac.Units.Add(current);
+                    this.charac.Gold -= (uint)current.Price;
+                    this.listBox1.Items.Remove(current);
+                    if (this.listBox1.Items.Count > 0)
+                    {
+                        this.listBox1.SelectedItem = this.listBox1.Items[0];
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nothing to buy");
+            }
         }
     }
 }

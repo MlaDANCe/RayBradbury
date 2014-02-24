@@ -9,7 +9,7 @@ namespace HeroesPrototype
 {
     internal class Ore:Item, IDrawable
 	{
-        private readonly List<int> orePileValue = new List<int> { 500, 600, 700, 800, 900, 1000 };
+        private readonly List<int> orePileValue = new List<int> { 5, 6, 7, 8, 9, 10 };
         private static Random randomOrePileValue = new Random();
         private readonly Bitmap sprite;
 
@@ -18,7 +18,7 @@ namespace HeroesPrototype
         public Size2D Size { get; private set; }
 
         public Ore(Point2D origin, Bitmap sprite)
-            : base("wood", origin)
+            : base("ore", origin)
         {
             base.Quantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
             this.Origin = origin;
