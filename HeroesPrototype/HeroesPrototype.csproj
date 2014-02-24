@@ -64,6 +64,7 @@
     <Compile Include="IContaining.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="Geometry\Rectangle2D.cs" />
+    <Compile Include="Resources\CampFire.cs" />
     <Compile Include="Resources\Gold.cs" />
     <Compile Include="HeroesPrototype.cs">
       <SubType>Form</SubType>
@@ -82,7 +83,6 @@
     <Compile Include="MapObjects\TerrainCastle.cs" />
     <Compile Include="MapObjects\Mountain.cs" />
     <Compile Include="MapObjects\Castle.cs" />
-    <Compile Include="MapObjects\Chest.cs" />
     <Compile Include="MapObjects\Forest.cs" />
     <Compile Include="MapObjects\TerrainDefault.cs" />
     <Compile Include="MapObjects\TerrainInferno.cs" />
@@ -94,6 +94,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LevelLoader.cs" />
+    <Compile Include="Resources\TreasureChest.cs" />
     <Compile Include="Units\Angel.cs" />
     <Compile Include="Units\Devil.cs" />
     <Compile Include="Units\Imp.cs" />

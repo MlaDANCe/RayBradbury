@@ -11,21 +11,21 @@
   <Class Name="HeroesPrototype.CharacterMenu" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAEAACAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAgABEAgAAAAEAAAEAACAAAAAAAAAAA=</HashCode>
       <FileName>CharacterMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HeroesPrototype.HeroesPrototype" Collapsed="true">
     <Position X="10" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAKAAAgAAgQCAgAACAAAAAAAAAAAAACAAAQA=</HashCode>
+      <HashCode>AAUAAAAMIKAgAgAAgRCQgIASAIAAAAgkAAAAFoAAAQE=</HashCode>
       <FileName>HeroesPrototype.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HeroesPrototype.Level" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="4.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAMEAAAQAAAAAAAAAAAAAEAAAAAADAAAQ=</HashCode>
+      <HashCode>AAAQEAgAEAAA0FAAAAAAAIAAEAABAAgAAgAACAkAAAA=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -33,21 +33,21 @@
   <Class Name="HeroesPrototype.LevelLoader" Collapsed="true">
     <Position X="6.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LevelLoader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HeroesPrototype.MainScene" Collapsed="true">
     <Position X="8.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEgAAAAAAAgQABQAAAICAAAAAAAAABAgAAAAAAAA=</HashCode>
+      <HashCode>AAAAGgiAAAgAAgAAAQAAAICIAAAAGAAABAAAAAAAAAA=</HashCode>
       <FileName>MainScene.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HeroesPrototype.Menu" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAADAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -119,26 +119,16 @@
   <Class Name="HeroesPrototype.MapObjects.Castle" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAADAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MapObjects\Castle.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="HeroesPrototype.MapObjects.Chest" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAgAAAAAAAAAAgAAAAAAAADAAAA=</HashCode>
-      <FileName>MapObjects\Chest.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="HeroesPrototype.MapObjects.Forest" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="8.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAADAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MapObjects\Forest.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="HeroesPrototype.MapObjects.Item" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="3" Y="2.5" Width="1.5" />
@@ -151,7 +141,7 @@
   <Class Name="HeroesPrototype.MenuObjects.MenuObjects" Collapsed="true">
     <Position X="10" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>MenuObjects\MenuObjects.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -78,9 +78,13 @@ namespace HeroesPrototype
 					{
 						map[i, j] = new Forest(new Point2D(j, i));
 					}
-					else if (val == Consts.Chest)
+                    else if (val == Consts.CampFire)
+                    {
+                        map[i, j] = new CampFire(new Point2D(j, i), Objects.CampFire);
+                    }
+					else if (val == Consts.TreasureChest)
 					{
-						map[i, j] = new Chest(new Point2D(j, i));
+                        map[i, j] = new TreasureChest(new Point2D(j, i), Objects.TreasureChest);
 					}
                     else if (val == Consts.GoldPile)
                     {

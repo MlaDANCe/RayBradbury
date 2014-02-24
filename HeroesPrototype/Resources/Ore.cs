@@ -18,7 +18,7 @@ namespace HeroesPrototype
         public Size2D Size { get; private set; }
 
         public Ore(Point2D origin, Bitmap sprite)
-            : base("wood", origin)
+            : base("ore", origin)
         {
             base.Quantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
             this.Origin = origin;
