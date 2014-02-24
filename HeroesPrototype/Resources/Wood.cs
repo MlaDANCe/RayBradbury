@@ -7,20 +7,20 @@ using System.Drawing;
 
 namespace HeroesPrototype
 {
-    internal class Ore:Item, IDrawable
+    internal class Wood :Item, IDrawable
 	{
-        private readonly List<int> orePileValue = new List<int> { 500, 600, 700, 800, 900, 1000 };
-        private static Random randomOrePileValue = new Random();
+        private readonly List<int> woodPileValue = new List<int> { 5, 6, 7, 8, 9, 10 };
+        private static Random randomWoodPileValue = new Random();
         private readonly Bitmap sprite;
 
         public Point2D Origin { get; set; }
 
         public Size2D Size { get; private set; }
 
-        public Ore(Point2D origin, Bitmap sprite)
+        public Wood(Point2D origin, Bitmap sprite)
             : base("wood", origin)
         {
-            base.Quantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
+            base.Quantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -30,9 +30,9 @@ namespace HeroesPrototype
             return this.sprite;
         }
 
-		public Ore(Point2D origin) : base("ore", origin)
+		public Wood(Point2D origin) : base("wood", origin)
 		{
-            base.Quantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
+            base.Quantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
 		}
 	}
 }
