@@ -8,33 +8,46 @@ namespace HeroesPrototype.Items
 {
 	public abstract class Item : IDrawable//,IDisappearing//can create a list of items in hero to store all the items
 	{
-		private int quantity = 1;
-        private int secondQuantity = 1;
+		private int goldQuantity = 1;
+        private int woodQuantity = 0;
+        private int oreQuantity = 0;
         public Random Rnd = new Random();
 
 		public string Name { get; set; }
 
-        public int Quantity
+        public int GoldQuantity
         {
 			get
 			{
-				return this.quantity;
+                return this.goldQuantity;
 			}
 			set
 			{
-				this.quantity = value;
+                this.goldQuantity = value;
 			}
 		}
 
-        public int SecondQuantity
+        public int WoodQuantity
         {
             get
             {
-                return this.secondQuantity;
+                return this.woodQuantity;
             }
             set
             {
-                this.secondQuantity = value;
+                this.woodQuantity = value;
+            }
+        }
+
+        public int OreQuantity
+        {
+            get
+            {
+                return this.oreQuantity;
+            }
+            set
+            {
+                this.oreQuantity = value;
             }
         }
 

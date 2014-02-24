@@ -20,7 +20,7 @@ namespace HeroesPrototype
         public Wood(Point2D origin, Bitmap sprite)
             : base("wood", origin)
         {
-            base.Quantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
+            base.GoldQuantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -32,7 +32,7 @@ namespace HeroesPrototype
 
 		public Wood(Point2D origin) : base("wood", origin)
 		{
-            base.Quantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
+            base.GoldQuantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
 		}
 	}
 }

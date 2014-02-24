@@ -149,18 +149,39 @@ namespace HeroesPrototype
                     {
                         if (itm is Gold)
                         {
-                            this.MainCharacter.Gold += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity + " Gold!");
+                            this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
                         }
                         else if (itm is Ore)
                         {
-                            this.MainCharacter.Ore += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity + " Ore!");
+                            this.MainCharacter.Ore += (uint)itm.GoldQuantity;
+                            MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
                         }
                         else if (itm is Wood)
                         {
-                            this.MainCharacter.Wood += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity + " Wood!");
+                            this.MainCharacter.Wood += (uint)itm.GoldQuantity;
+                            MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
+                        }
+                        else if (itm is CampFire)
+                        {
+                            string woodOrOre;
+                            if ((uint)itm.WoodQuantity > (uint)itm.OreQuantity)
+                            {
+                                woodOrOre = "Wood";
+                            }
+                            else
+                            {
+                                woodOrOre = "Ore";
+                            }
+                            this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                            this.MainCharacter.Wood += (uint)itm.WoodQuantity;
+                            this.MainCharacter.Ore += (uint)itm.OreQuantity;
+                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
+                        }
+                        else if (itm is TreasureChest)
+                        {
+                            this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
                         }
                         this.mainCharacter.AddItem(itm);
                     }
