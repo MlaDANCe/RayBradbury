@@ -38,5 +38,8 @@ namespace HeroesPrototype.MapConsts
         public const int Shield = 0x5a5a54 & 0xff;
         public const int Staff = 0x5a5a55 & 0xff;
         public const int Sword = 0x5a5a57 & 0xff;
+
+        //Player start position
+        public const int PlayerStartPosition = 0x5a1818 & 0xff;
     }
 }

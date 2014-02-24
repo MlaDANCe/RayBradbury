@@ -9,6 +9,7 @@ namespace HeroesPrototype
 {
 	public static class LevelLoader
 	{
+        public static Point2D playerStartPosition; // This shoud not be here but i dont want to make player start position drawable :)
 		public static IDrawable[,] Load(string path)
 		{
 			Bitmap bmp = new Bitmap(Bitmap.FromFile(path));
@@ -132,6 +133,10 @@ namespace HeroesPrototype
                     else if (val == Consts.Staff)
                     {
                         map[i, j] = new Staff(new Point2D(j, i));
+                    }
+                    else if(val == Consts.PlayerStartPosition)
+                    {
+                        playerStartPosition = new Point2D(j, i);
                     }
 					else
 					{

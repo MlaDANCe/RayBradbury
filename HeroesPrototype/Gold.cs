@@ -9,7 +9,7 @@ namespace HeroesPrototype
     internal class Gold : Item, IDrawable
 	{
         private readonly List<int> goldPileValue = new List<int> { 500, 600, 700, 800, 900, 1000 };
-        private Random randomGoldPileValue = new Random();
+        private static Random randomGoldPileValue = new Random();
         private readonly Bitmap sprite;
 
         public Point2D Origin { get; set; }

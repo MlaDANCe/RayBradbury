@@ -32,17 +32,21 @@ namespace HeroesPrototype
 
         public Size2D MapSize { get; private set; }
 
+        public Point2D StartPosition { get; private set; }
+
         public Level(Size2D sceneSize)
         {
             this.Origin = new Point2D(0, 0);
             this.Size = sceneSize;
             this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
+
             this.defaultTerrain = LevelLoader.Load(@"..\..\sprites\mapobj\Default_Terrain.bmp");
 
             this.MapSize = new Size2D(this.map.GetLength(1), this.map.GetLength(0));
 
-            int c_x_t = this.map.GetLength(1) / 2;
-            int c_y_t = this.map.GetLength(0) / 2;
+            int c_x_t = LevelLoader.playerStartPosition.X;
+            int c_y_t = LevelLoader.playerStartPosition.Y;
+            this.StartPosition = new Point2D(c_x_t, c_y_t);
 
             int left = c_x_t - (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
             int right = c_x_t + (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units

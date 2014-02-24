@@ -10,7 +10,7 @@ namespace HeroesPrototype
     internal class Ore:Item, IDrawable
 	{
         private readonly List<int> orePileValue = new List<int> { 500, 600, 700, 800, 900, 1000 };
-        private Random randomOrePileValue = new Random();
+        private static Random randomOrePileValue = new Random();
         private readonly Bitmap sprite;
 
         public Point2D Origin { get; set; }

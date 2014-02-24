@@ -36,7 +36,7 @@ namespace HeroesPrototype
 
             this.currentLevel = new Level(this.sceneDimension);
 
-            this.mainCharacter = new MainCharacter(new Point2D(this.currentLevel.MapSize.Width / 2, this.currentLevel.MapSize.Width / 2),
+            this.mainCharacter = new MainCharacter(currentLevel.StartPosition,
                 new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
 
             this.buff = new Bitmap(this.sceneDimension.Width, this.sceneDimension.Height);
