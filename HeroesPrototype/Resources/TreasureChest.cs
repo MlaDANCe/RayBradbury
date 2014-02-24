@@ -4,12 +4,14 @@ using HeroesPrototype.Geometry;
 using HeroesPrototype.Items;
 using System.Collections.Generic;
 using System.Drawing;
+
 namespace HeroesPrototype
 {
     internal class TreasureChest : Item, IDrawable
     {
         private readonly List<int> goldValue = new List<int> { 1000, 1500, 2000 };
-        private static Random randomGoldValue = new Random();
+        private readonly List<int> experienceValue = new List<int> { 500, 1000, 1500 };
+        private static Random randomValue = new Random();
         private readonly Bitmap sprite;
 
         public Point2D Origin { get; set; }
@@ -19,7 +21,8 @@ namespace HeroesPrototype
         public TreasureChest(Point2D origin, Bitmap sprite)
             : base("TreasureChest", origin)
         {
-            base.GoldQuantity = goldValue[randomGoldValue.Next(goldValue.Count)];
+            base.GoldQuantity = goldValue[randomValue.Next(goldValue.Count)];
+            base.ExperienceQuantity = experienceValue[randomValue.Next(experienceValue.Count)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -32,7 +35,8 @@ namespace HeroesPrototype
         public TreasureChest(Point2D origin)
             : base("TreasureChest", origin)
         {
-            base.GoldQuantity = base.GoldQuantity = goldValue[randomGoldValue.Next(goldValue.Count)];
+            base.GoldQuantity = goldValue[randomValue.Next(goldValue.Count)];
+            base.ExperienceQuantity = experienceValue[randomValue.Next(experienceValue.Count)];
         }
     }
 }

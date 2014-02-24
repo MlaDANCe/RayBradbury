@@ -26,7 +26,7 @@ namespace HeroesPrototype.CharacterAssets
         public uint Gold { get; set; }
         public uint Ore { get; set; }
         public uint Wood { get; set; }
-
+        public uint Experience { get; set; }
 
 		public abstract Bitmap GetSprite();
 

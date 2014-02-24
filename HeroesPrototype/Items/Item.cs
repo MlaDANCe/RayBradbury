@@ -11,6 +11,8 @@ namespace HeroesPrototype.Items
 		private int goldQuantity = 1;
         private int woodQuantity = 0;
         private int oreQuantity = 0;
+        private int experienceQuantity = 0;
+
         public Random Rnd = new Random();
 
 		public string Name { get; set; }
@@ -48,6 +50,18 @@ namespace HeroesPrototype.Items
             set
             {
                 this.oreQuantity = value;
+            }
+        }
+
+        public int ExperienceQuantity
+        {
+            get
+            {
+                return this.experienceQuantity;
+            }
+            set
+            {
+                this.experienceQuantity = value;
             }
         }
 

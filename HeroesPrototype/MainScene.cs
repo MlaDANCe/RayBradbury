@@ -221,7 +221,8 @@ namespace HeroesPrototype
                         else if (itm is TreasureChest)
                         {
                             this.MainCharacter.Gold += (uint)itm.GoldQuantity;
-                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
+                            this.MainCharacter.Experience += (uint)itm.ExperienceQuantity;
+                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
                         }
                         this.mainCharacter.AddItem(itm);
                     }
