@@ -64,8 +64,9 @@
             this.Controls.Add(this.buy);
             this.Controls.Add(this.listBox1);
             this.Name = "BuyMenu";
-            this.Text = "Form1";
+            this.Text = "Buy Menu";
             this.ResumeLayout(false);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
         }
 
@@ -73,6 +74,7 @@
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button buy;
+        
 
     }
 }
