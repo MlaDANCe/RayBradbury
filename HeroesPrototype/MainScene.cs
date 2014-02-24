@@ -21,10 +21,13 @@ namespace HeroesPrototype
         private readonly Size2D sceneDimension;
 
         private readonly Level currentLevel;
-        private readonly MainCharacter mainCharacter;
+        private MainCharacter mainCharacter;
 
         private readonly Bitmap buff;
         private readonly Graphics buffG;
+
+        private Calendar calend;
+
 
         public MainScene(Graphics panelGraphics, Size2D sceneSize)
         {
@@ -39,6 +42,33 @@ namespace HeroesPrototype
 
             this.buff = new Bitmap(this.sceneDimension.Width, this.sceneDimension.Height);
             this.buffG = Graphics.FromImage(this.buff);
+            this.calend = new Calendar();
+            
+        }
+
+       
+        public MainCharacter MainCharacter
+        {
+            get
+            {
+                return this.mainCharacter;
+            }
+            set
+            {
+                this.mainCharacter = value;
+            }
+        }
+
+        public Calendar Calend
+        {
+            get
+            {
+                return this.calend;
+            }
+            set
+            {
+                this.calend = value;
+            }
         }
 
         internal void Draw()
@@ -93,6 +123,10 @@ namespace HeroesPrototype
                     Item itm = currentLevel.GetItem(newPlPos);
                     if (itm != null)
                     {
+                        if (itm is Gold)
+                        {
+                            this.MainCharacter.Gold += (uint)itm.Quantity;
+                        }
                         this.mainCharacter.AddItem(itm);
                     }
                     if (!this.currentLevel.IsPositionOccupied(newPlPos))

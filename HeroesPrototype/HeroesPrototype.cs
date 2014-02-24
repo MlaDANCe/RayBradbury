@@ -26,7 +26,19 @@ namespace HeroesPrototype
 		{
 			this.scene.GameLoop();
 
+            Day.Text = "Day: " + scene.Calend.WeekDay;
+            Week.Text = "Week: " + scene.Calend.Week;
+            Month.Text = "Month: " + scene.Calend.Month;
+
+            Attack.Text = "Attack: " + scene.MainCharacter.Attack;
+            Defence.Text = "Defence: " + scene.MainCharacter.Defense;
+
+            Gold.Text = "Gold: " + scene.MainCharacter.Gold;
+            Ore.Text = "Ore: " + scene.MainCharacter.Ore;
+            Wood.Text = "Wood: " + scene.MainCharacter.Wood;
+
 			Thread.Sleep(50);
+           
 		}
 
 		private void HandleMouse(object sender, MouseEventArgs e)
