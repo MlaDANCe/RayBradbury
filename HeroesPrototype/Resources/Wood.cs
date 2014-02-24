@@ -7,8 +7,8 @@ using System.Drawing;
 
 namespace HeroesPrototype
 {
-    internal class Wood : Item, IDrawable
-    {
+    internal class Wood :Item, IDrawable
+	{
         private readonly List<int> woodPileValue = new List<int> { 5, 6, 7, 8, 9, 10 };
         private static Random randomWoodPileValue = new Random();
         private readonly Bitmap sprite;
@@ -20,7 +20,7 @@ namespace HeroesPrototype
         public Wood(Point2D origin, Bitmap sprite)
             : base("wood", origin)
         {
-            base.Quantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
+            base.GoldQuantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -30,10 +30,9 @@ namespace HeroesPrototype
             return this.sprite;
         }
 
-        public Wood(Point2D origin)
-            : base("wood", origin)
-        {
-            base.Quantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
-        }
-    }
+		public Wood(Point2D origin) : base("wood", origin)
+		{
+            base.GoldQuantity = woodPileValue[randomWoodPileValue.Next(woodPileValue.Count)];
+		}
+	}
 }

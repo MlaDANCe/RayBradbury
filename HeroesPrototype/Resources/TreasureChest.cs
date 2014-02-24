@@ -19,7 +19,7 @@ namespace HeroesPrototype
         public TreasureChest(Point2D origin, Bitmap sprite)
             : base("TreasureChest", origin)
         {
-            base.Quantity = goldValue[randomGoldValue.Next(goldValue.Count)];
+            base.GoldQuantity = goldValue[randomGoldValue.Next(goldValue.Count)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -32,7 +32,7 @@ namespace HeroesPrototype
         public TreasureChest(Point2D origin)
             : base("TreasureChest", origin)
         {
-            base.Quantity = base.Quantity = goldValue[randomGoldValue.Next(goldValue.Count)];
+            base.GoldQuantity = base.GoldQuantity = goldValue[randomGoldValue.Next(goldValue.Count)];
         }
     }
 }

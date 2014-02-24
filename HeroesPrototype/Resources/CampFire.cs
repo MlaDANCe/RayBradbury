@@ -8,8 +8,7 @@ namespace HeroesPrototype
     internal class CampFire : Item, IDrawable
     {
         private const int goldValue = 500;
-        private const int woodValue = 5;
-        private const int oreValue = 5;
+        private const int resourceValue = 5;
         private static Random woodOrOre = new Random();
         private readonly Bitmap sprite;
 
@@ -21,14 +20,14 @@ namespace HeroesPrototype
             : base("CampFire", origin)
         {
             int resourceType = woodOrOre.Next(100);
-            base.Quantity =goldValue;
+            base.GoldQuantity = goldValue;
             if (resourceType % 2 == 0)
             {
-                base.SecondQuantity = woodValue;
+                base.WoodQuantity = resourceValue;
             }
             else
             {
-                base.SecondQuantity = oreValue;
+                base.OreQuantity = resourceValue;
             }
             this.Origin = origin;
             this.sprite = sprite;
@@ -43,14 +42,14 @@ namespace HeroesPrototype
             : base("CampFire", origin)
         {
             int resourceType = woodOrOre.Next(100);
-            base.Quantity = goldValue;
+            base.GoldQuantity = goldValue;
             if (resourceType % 2 == 0)
             {
-                base.SecondQuantity = woodValue;
+                base.WoodQuantity = resourceValue;
             }
             else
             {
-                base.SecondQuantity = oreValue;
+                base.OreQuantity = resourceValue;
             }
         }
     }

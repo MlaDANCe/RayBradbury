@@ -20,7 +20,7 @@ namespace HeroesPrototype
         public Ore(Point2D origin, Bitmap sprite)
             : base("ore", origin)
         {
-            base.Quantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
+            base.GoldQuantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -32,7 +32,7 @@ namespace HeroesPrototype
 
 		public Ore(Point2D origin) : base("ore", origin)
 		{
-            base.Quantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
+            base.GoldQuantity = orePileValue[randomOrePileValue.Next(orePileValue.Count)];
 		}
 	}
 }

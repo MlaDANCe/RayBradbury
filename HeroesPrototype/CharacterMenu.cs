@@ -72,7 +72,7 @@ namespace HeroesPrototype
                 {
                     name = "Wood";
                 }
-				string quantity = this.currentContent[i].Quantity.ToString();
+                string quantity = this.currentContent[i].GoldQuantity.ToString();
 				g.DrawString(name + " " + quantity, f, b, new Point(this.sidebar.Origin.X - 50, this.sidebar.Origin.Y - 50));
 			}
 			return cont;
