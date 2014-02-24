@@ -5,7 +5,6 @@ using HeroesPrototype.CharacterAssets;
 using HeroesPrototype.Geometry;
 using HeroesPrototype.Items;
 using HeroesPrototype.MapObjects;
-using System.ComponentModel;
 
 namespace HeroesPrototype
 {
