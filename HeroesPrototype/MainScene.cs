@@ -108,6 +108,13 @@ namespace HeroesPrototype
                     dxdy.X += 1;
                 }
                 this.MovePosition(dxdy);
+
+            }
+            if (keys == Keys.End)
+            {
+                this.Calend.Day++;
+                this.MainCharacter.Moves = this.MainCharacter.MaxMoves;
+                MessageBox.Show("The sun rises and a new day begins!");
             }
 
         }
@@ -130,7 +137,7 @@ namespace HeroesPrototype
                         if (itm is Gold)
                         {
                             this.MainCharacter.Gold += (uint)itm.Quantity;
-                            MessageBox.Show("You received " + itm.Quantity+" Gold!");
+                            MessageBox.Show("You received " + itm.Quantity + " Gold!");
                         }
                         this.mainCharacter.AddItem(itm);
                     }

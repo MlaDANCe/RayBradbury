@@ -65,7 +65,7 @@ namespace HeroesPrototype
             this.Close();
         }
 
-        private void EndDay_Click(object sender, EventArgs e)
+        public void EndDay_Click(object sender, EventArgs e)
         {
             this.scene.Calend.Day++;
             this.scene.MainCharacter.Moves = scene.MainCharacter.MaxMoves;
