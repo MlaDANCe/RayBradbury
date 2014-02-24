@@ -1,5 +1,6 @@
 ﻿namespace HeroesPrototype
 {
+
     partial class HeroesPrototype
     {
         /// <summary>
@@ -34,8 +35,10 @@
             this.Gold = new System.Windows.Forms.ToolStripStatusLabel();
             this.Wood = new System.Windows.Forms.ToolStripStatusLabel();
             this.Ore = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Attack = new System.Windows.Forms.ToolStripStatusLabel();
             this.Defence = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Month = new System.Windows.Forms.ToolStripStatusLabel();
             this.Week = new System.Windows.Forms.ToolStripStatusLabel();
             this.Day = new System.Windows.Forms.ToolStripStatusLabel();
@@ -43,8 +46,8 @@
             this.MainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.MenuButton = new System.Windows.Forms.MenuItem();
             this.ExitButton = new System.Windows.Forms.MenuItem();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.EndDay = new System.Windows.Forms.MenuItem();
             this.Scene.SuspendLayout();
             this.ResoursesStats.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +106,7 @@
             this.Wood.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
             this.Wood.Enabled = false;
             this.Wood.Name = "Wood";
-            this.Wood.Size = new System.Drawing.Size(43, 19);
+            this.Wood.Size = new System.Drawing.Size(49, 19);
             this.Wood.Text = "Wood: ";
             // 
             // Ore
@@ -115,8 +118,15 @@
             this.Ore.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
             this.Ore.Enabled = false;
             this.Ore.Name = "Ore";
-            this.Ore.Size = new System.Drawing.Size(30, 19);
+            this.Ore.Size = new System.Drawing.Size(36, 19);
             this.Ore.Text = "Ore: ";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(208, 19);
+            this.toolStripStatusLabel1.Spring = true;
             // 
             // Attack
             // 
@@ -127,7 +137,7 @@
             this.Attack.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
             this.Attack.Enabled = false;
             this.Attack.Name = "Attack";
-            this.Attack.Size = new System.Drawing.Size(45, 19);
+            this.Attack.Size = new System.Drawing.Size(51, 19);
             this.Attack.Text = "Attack: ";
             // 
             // Defence
@@ -139,8 +149,15 @@
             this.Defence.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
             this.Defence.Enabled = false;
             this.Defence.Name = "Defence";
-            this.Defence.Size = new System.Drawing.Size(54, 19);
+            this.Defence.Size = new System.Drawing.Size(60, 19);
             this.Defence.Text = "Defence: ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(208, 19);
+            this.toolStripStatusLabel2.Spring = true;
             // 
             // Month
             // 
@@ -151,7 +168,7 @@
             this.Month.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
             this.Month.Enabled = false;
             this.Month.Name = "Month";
-            this.Month.Size = new System.Drawing.Size(47, 19);
+            this.Month.Size = new System.Drawing.Size(53, 19);
             this.Month.Text = "Month: ";
             // 
             // Week
@@ -162,7 +179,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.Week.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
             this.Week.Enabled = false;
-            this.Week.Name = "Week: ";
+            this.Week.Name = "Week";
             this.Week.Size = new System.Drawing.Size(40, 19);
             this.Week.Text = "Week";
             // 
@@ -176,7 +193,7 @@
             this.Day.Enabled = false;
             this.Day.Name = "Day";
             this.Day.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Day.Size = new System.Drawing.Size(31, 19);
+            this.Day.Size = new System.Drawing.Size(37, 19);
             this.Day.Text = "Day: ";
             this.Day.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -188,7 +205,8 @@
             // MainMenu
             // 
             this.MainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuButton});
+            this.MenuButton,
+            this.menuItem1});
             // 
             // MenuButton
             // 
@@ -203,19 +221,18 @@
             this.ExitButton.Text = "Exit";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // toolStripStatusLabel1
+            // menuItem1
             // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(453, 19);
-            this.toolStripStatusLabel1.Spring = true;
+            this.menuItem1.Index = 1;
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.EndDay});
+            this.menuItem1.Text = "End Day";
             // 
-            // toolStripStatusLabel2
+            // EndDay
             // 
-            this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(211, 19);
-            this.toolStripStatusLabel2.Spring = true;
+            this.EndDay.Index = 0;
+            this.EndDay.Text = "End Day";
+            this.EndDay.Click += new System.EventHandler(this.EndDay_Click);
             // 
             // HeroesPrototype
             // 
@@ -255,6 +272,8 @@
         private System.Windows.Forms.ToolStripStatusLabel Day;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.MenuItem EndDay;
     }
 }
 

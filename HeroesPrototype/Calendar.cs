@@ -24,17 +24,17 @@ namespace HeroesPrototype
 
         public int WeekDay
         {
-            get { return this.Day % 7+1; }
+            get { return this.Day % 7 + 1; }
         }
 
         public int Week
         {
-            get { return this.Day / 7+1; }
+            get { return this.Day / 7 % 4 + 1; }
         }
 
         public int Month 
         { 
-            get { return this.Day / 30+1; } 
+            get { return this.Day / 28+1; } 
         }
     }
 }

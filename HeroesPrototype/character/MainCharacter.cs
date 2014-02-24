@@ -13,13 +13,30 @@ namespace HeroesPrototype.CharacterAssets
 		private int currentCharacterStage;
 		private Position position;
 
+        public uint Gold { get; set; }
+        public uint Ore { get; set; }
+        public uint Wood { get; set; }
+
+        private int moves = 10;
 
 		public Point2D WorldPosition { get; set; }
 
 		public Point2D ScreenCoordinates { get; set; }
 
-		public override Size2D Size
-		{
+        public int Moves
+        {
+            get
+            {
+                return this.moves;
+            }
+            set
+            {
+                this.moves = value;
+            }
+        }
+
+        public override Size2D Size
+        {
 			get
 			{
 				throw new NotImplementedException();

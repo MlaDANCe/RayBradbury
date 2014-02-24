@@ -28,7 +28,6 @@ namespace HeroesPrototype
 
         private Calendar calend;
 
-
         public MainScene(Graphics panelGraphics, Size2D sceneSize)
         {
             this.scene = panelGraphics;
@@ -43,10 +42,10 @@ namespace HeroesPrototype
             this.buff = new Bitmap(this.sceneDimension.Width, this.sceneDimension.Height);
             this.buffG = Graphics.FromImage(this.buff);
             this.calend = new Calendar();
-            
+
         }
 
-       
+
         public MainCharacter MainCharacter
         {
             get
@@ -88,24 +87,29 @@ namespace HeroesPrototype
 
         internal void KeyboardAction(Keys keys)
         {
-            Point2D dxdy = new Point2D(0, 0);
-            if (keys == Keys.Up)
+            if (this.MainCharacter.Moves > 0)
             {
-                dxdy.Y -= 1;
+                Point2D dxdy = new Point2D(0, 0);
+                if (keys == Keys.Up)
+                {
+                    dxdy.Y -= 1;
+                }
+                else if (keys == Keys.Down)
+                {
+                    dxdy.Y += 1;
+                }
+                else if (keys == Keys.Left)
+                {
+                    dxdy.X -= 1;
+                }
+                else if (keys == Keys.Right)
+                {
+                    dxdy.X += 1;
+                }
+                this.MovePosition(dxdy);
+                
             }
-            else if (keys == Keys.Down)
-            {
-                dxdy.Y += 1;
-            }
-            else if (keys == Keys.Left)
-            {
-                dxdy.X -= 1;
-            }
-            else if (keys == Keys.Right)
-            {
-                dxdy.X += 1;
-            }
-            this.MovePosition(dxdy);
+
         }
 
         private void MovePosition(Point2D dxdy)
@@ -134,6 +138,7 @@ namespace HeroesPrototype
                         this.mainCharacter.MoveTo(newPlPos);
                         this.currentLevel.VisibleSpace = newVis;
                         this.currentLevel.SetNotUpToDate();
+                        this.MainCharacter.Moves--;
                     }
                 }
             }
