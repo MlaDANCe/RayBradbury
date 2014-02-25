@@ -170,6 +170,7 @@ namespace HeroesPrototype
                                     if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
                                     {
                                         MessageBox.Show("You have won the battle!");
+                                        
                                     }
                                     else
                                     {

@@ -4,18 +4,18 @@ using System.Windows.Forms;
 
 namespace HeroesPrototype
 {
-   
-	static class Program
+    public static class Program
 	{
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main()
+		public static void Main()
 		{ // Test
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new HeroesPrototype());
+			
+            Application.Run(new HeroesPrototype());
 		}
 	}
 }
