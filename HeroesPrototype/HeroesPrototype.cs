@@ -8,10 +8,14 @@ namespace HeroesPrototype
     public partial class HeroesPrototype : Form
     {
         private MainScene scene;
+        public System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAV\06-stronghold-towns.wav");
+        // Sounds.PlayLooping();
+            //Sounds.Play();
 
         public HeroesPrototype()
         {
             this.InitializeComponent();
+            Sounds.PlayLooping();
             this.scene = new MainScene(this.Scene.CreateGraphics(), new Geometry.Size2D(this.Scene.Width, this.Scene.Height));
             this.MainLoop.RunWorkerAsync();
         }
@@ -85,6 +89,28 @@ namespace HeroesPrototype
             {
                 MessageBox.Show("The sun rises and a new day begins!");
             }
+        }
+
+        private void BackgroundMusicSwitch_Click(object sender, EventArgs e)
+        {
+            if (BackgroundMusicSwitch.Text == "Background music Off")
+            {
+                Sounds.Stop();
+                BackgroundMusicSwitch.Text = "Background music On";
+            }
+            else
+            {
+                Sounds.PlayLooping();
+                BackgroundMusicSwitch.Text = "Background music Off";
+            }
+            
+        }
+
+        private void menuItemRunTrainer_Click(object sender, EventArgs e)
+        {
+            Trainer trainer = new Trainer(this.scene);
+            trainer.Visible = true;
+            trainer.Activate();
         }
 
         

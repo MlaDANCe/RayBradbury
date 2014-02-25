@@ -39,9 +39,9 @@ namespace HeroesPrototype
         {
             this.Origin = new Point2D(0, 0);
             this.Size = sceneSize;
-            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\map.bmp");
+            this.map = LevelLoader.Load(@"..\..\sprites\mapobj\Map\map.bmp");
 
-            this.defaultTerrain = LevelLoader.Load(@"..\..\sprites\mapobj\Default_Terrain.bmp");
+            this.defaultTerrain = LevelLoader.Load(@"..\..\sprites\mapobj\Map\Default_Terrain.bmp");
 
             this.MapSize = new Size2D(this.map.GetLength(1), this.map.GetLength(0));
 
