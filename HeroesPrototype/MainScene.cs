@@ -151,26 +151,35 @@ namespace HeroesPrototype
                         if (obj is IBattle)//battle here
                         {
                             var unit = obj as Unit;
-                            if(unit !=null)
+                            if (unit != null)
                             {
                                 //to be moved inside object, enemy
-                                int battlePowerEnemy = unit.Attack*unit.Quantity;
-                                MessageBox.Show("Enemy Attack " + battlePowerEnemy);
-                                int defPowerEnemy = unit.Defence*unit.Health*unit.Quantity;
-                                MessageBox.Show("Enemy Defense " + defPowerEnemy);
+                                int battlePowerEnemy = unit.Attack * unit.Quantity;
+                                int defPowerEnemy = unit.Defence * unit.Health * unit.Quantity;
                                 int heroPower = mainCharacter.AttackPower();
-                                MessageBox.Show("Hero Attack " + mainCharacter.AttackPower().ToString());
                                 int heroDefense = mainCharacter.DefensePower();
-                                MessageBox.Show("Hero Defense "+mainCharacter.DefensePower().ToString());
-                                if (heroDefense/battlePowerEnemy >= defPowerEnemy/heroPower)
-                                {
-                                    MessageBox.Show("You have won the battle!");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("You have lost the battle!");
-                                }
 
+                                DialogResult dialogResult = MessageBox.Show(
+                                    "Enemy Attack " + battlePowerEnemy + ";  Enemy Defense " + defPowerEnemy + "!" +
+                                    "\nHero Attack " + mainCharacter.AttackPower().ToString() + ";  Hero Defense " + mainCharacter.DefensePower().ToString() + "!"
+                                     + "\n Are you sure you want to battle?",
+                                     "Battle stats", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
+                                    {
+                                        MessageBox.Show("You have won the battle!");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("You have lost the battle!");
+                                    }
+                                }
+                                else if (dialogResult == DialogResult.No)
+                                {
+                                    return;
+                                }
                             }
                             if (obj as Castle == null)
                             {
@@ -209,51 +218,51 @@ namespace HeroesPrototype
                 m.AddItems(units);
                 m.Visible = true;
                 m.Activate();
-                
+
             }
         }
 
         private void AddToHero(IDrawable obj)
-                    {
+        {
             Item itm = obj as Item;
-                        if (itm is Gold)
-                        {
-                            this.MainCharacter.Gold += (uint)itm.GoldQuantity;
-                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
-                        }
-                        else if (itm is Ore)
-                        {
-                            this.MainCharacter.Ore += (uint)itm.GoldQuantity;
-                            MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
-                        }
-                        else if (itm is Wood)
-                        {
-                            this.MainCharacter.Wood += (uint)itm.GoldQuantity;
-                            MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
-                        }
-                        else if (itm is CampFire)
-                        {
-                            string woodOrOre;
-                            if ((uint)itm.WoodQuantity > (uint)itm.OreQuantity)
-                            {
-                                woodOrOre = "Wood";
-                            }
-                            else
-                            {
-                                woodOrOre = "Ore";
-                            }
-                            this.MainCharacter.Gold += (uint)itm.GoldQuantity;
-                            this.MainCharacter.Wood += (uint)itm.WoodQuantity;
-                            this.MainCharacter.Ore += (uint)itm.OreQuantity;
-                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
-                        }
-                        else if (itm is TreasureChest)
-                        {
-                            this.MainCharacter.Gold += (uint)itm.GoldQuantity;
-                            this.MainCharacter.Experience += (uint)itm.ExperienceQuantity;
-                            MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
-                        }
-                        this.mainCharacter.AddItem(itm);
-                    }
+            if (itm is Gold)
+            {
+                this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
+            }
+            else if (itm is Ore)
+            {
+                this.MainCharacter.Ore += (uint)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
+            }
+            else if (itm is Wood)
+            {
+                this.MainCharacter.Wood += (uint)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
+            }
+            else if (itm is CampFire)
+            {
+                string woodOrOre;
+                if ((uint)itm.WoodQuantity > (uint)itm.OreQuantity)
+                {
+                    woodOrOre = "Wood";
+                }
+                else
+                {
+                    woodOrOre = "Ore";
+                }
+                this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                this.MainCharacter.Wood += (uint)itm.WoodQuantity;
+                this.MainCharacter.Ore += (uint)itm.OreQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
+            }
+            else if (itm is TreasureChest)
+            {
+                this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                this.MainCharacter.Experience += (uint)itm.ExperienceQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
+            }
+            this.mainCharacter.AddItem(itm);
+        }
     }
 }
