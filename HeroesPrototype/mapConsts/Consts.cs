@@ -44,6 +44,10 @@ namespace HeroesPrototype.MapConsts
         public const int Imp = 0x000065 & 0xff;
         public const int Magog = 0x000066 & 0xff;
         public const int Devil = 0x000067 & 0xff;
+        public const int Angel = 0x000068 & 0xff;
+        public const int Marksman = 0x000069 & 0xff;
+        public const int Pikeman = 0x000070 & 0xff;
+
 
         //Player start position
         public const int PlayerStartPosition = 0x5a1818 & 0xff;
