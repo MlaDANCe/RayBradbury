@@ -110,6 +110,7 @@
     <Compile Include="LevelLoader.cs" />
     <Compile Include="Resources\TreasureChest.cs" />
     <Compile Include="Resources\Wood.cs" />
+    <Compile Include="TO_DO_List.cs" />
     <Compile Include="Units\Angel.cs" />
     <Compile Include="Units\Devil.cs" />
     <Compile Include="Units\Imp.cs" />
