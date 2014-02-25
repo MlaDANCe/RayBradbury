@@ -106,6 +106,13 @@ namespace HeroesPrototype
             
         }
 
+        private void menuItemRunTrainer_Click(object sender, EventArgs e)
+        {
+            Trainer trainer = new Trainer(this.scene);
+            trainer.Visible = true;
+            trainer.Activate();
+        }
+
         
     }
 }

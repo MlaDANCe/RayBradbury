@@ -265,5 +265,10 @@ namespace HeroesPrototype
             }
             this.mainCharacter.AddItem(itm);
         }
+
+        public Graphics TrainerMethod() 
+        {
+            return this.scene;
+        }
     }
 }
