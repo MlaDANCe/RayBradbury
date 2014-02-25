@@ -6,8 +6,16 @@ using HeroesPrototype.MapConsts;
 
 namespace HeroesPrototype
 {
-	public abstract class Unit : IDrawable //,IDisappearing //can create a list of items in hero to store all the items
+	public abstract class Unit : IDrawable, IBattle //,IDisappearing //can create a list of items in hero to store all the items
 	{
+	    private int _quantity=1;
+
+	    public int Quantity
+	    {
+	        get { return _quantity; }
+	        set { _quantity = value; }
+	    }
+	
 		public string Name { get; set; }
 
 		public int Attack { get; set; }

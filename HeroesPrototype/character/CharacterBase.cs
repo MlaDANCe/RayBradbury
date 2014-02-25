@@ -35,5 +35,12 @@ namespace HeroesPrototype.CharacterAssets
         protected Armor currentA;
 
         public List<Unit> Units { get; set; }
+
+	    protected CharacterBase(int attack, int defense, int spellPower)
+	    {
+	        Attack = attack;
+	        Defense = defense;
+	        SpellPower = spellPower;
+	    }
 	}
 }

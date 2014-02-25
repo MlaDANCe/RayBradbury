@@ -98,6 +98,7 @@
             this.Gold.Name = "Gold";
             this.Gold.Size = new System.Drawing.Size(42, 19);
             this.Gold.Text = "Gold: ";
+           
             // 
             // Wood
             // 
@@ -127,7 +128,7 @@
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(187, 19);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(172, 19);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // Attack
@@ -158,7 +159,7 @@
             // 
             this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(187, 19);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(172, 19);
             this.toolStripStatusLabel2.Spring = true;
             // 
             // Month

@@ -34,7 +34,7 @@ namespace HeroesPrototype
 				}
 			}
 			graphics.DrawLine(pen, new Point(1, 1), new Point(menu.Width - 1, 1));
-			graphics.DrawLine(pen, new Point(1, menu.Height - 1), new Point(menu.Width - 1, menu.Height - 1));
+			graphics.DrawLine(pen, new Point(1, menu.Height -1), new Point(menu.Width - 1, menu.Height - 1));
 			graphics.DrawLine(pen, new Point(1, 1), new Point(1, menu.Height - 1));
 			graphics.DrawLine(pen, new Point(menu.Width - 1, 1), new Point(menu.Width - 1, menu.Height - 1));
 
