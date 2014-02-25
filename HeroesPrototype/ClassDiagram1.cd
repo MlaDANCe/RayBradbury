@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HeroesPrototype.BuyMenu" Collapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAECAGAAAAAAABCAAAACAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>BuyMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Calendar" Collapsed="true">
+    <Position X="33" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAIAAAAA=</HashCode>
+      <FileName>Calendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.CharacterMenu" Collapsed="true">
+    <Position X="3.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAgABEAgAAAAEAAAEAACAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.HeroesPrototype" Collapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAMIKAgAgAAgRCQgIASAIAAAAgkAAAAFoAAAQE=</HashCode>
+      <FileName>HeroesPrototype.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Level" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQEAgAEAAA8BAAAAAAAIAAEAABAAgAAgAACAkAAAA=</HashCode>
+      <FileName>Level.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HeroesPrototype.LevelLoader" Collapsed="true">
+    <Position X="34.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LevelLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MainScene" Collapsed="true">
+    <Position X="36.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAGgiAAAgAAgAAAQAAAICIAAAAGAAABAAAgAAAAAA=</HashCode>
+      <FileName>MainScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Menu" Collapsed="true">
+    <Position X="3.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Program" Collapsed="true">
+    <Position X="34.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.CampFire" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAAAAAAAAAkAAAAAAAAAAAABAAAAAAAAAgAAgAAAA=</HashCode>
+      <FileName>Resources\CampFire.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.Gold" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAkAAAAAAAAAAAABAAAAAAAAIAAAgAAAA=</HashCode>
+      <FileName>Resources\Gold.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.Ore" Collapsed="true">
+    <Position X="24.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAQkAAAAAAAAAAAABAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Resources\Ore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.TreasureChest" Collapsed="true">
+    <Position X="26.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAACkAAAAAAAAAAAABAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Resources\TreasureChest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.Wood" Collapsed="true">
+    <Position X="28.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAACAkAAAAAAAAAAAABAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Resources\Wood.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.Angel" Collapsed="true">
+    <Position X="5.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\Angel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Devil" Collapsed="true">
+    <Position X="7.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\Devil.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.Imp" Collapsed="true">
+    <Position X="10" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\Imp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Magog" Collapsed="true">
+    <Position X="1" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\Magog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Marksman" Collapsed="true">
+    <Position X="3.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\Marksman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Pikeman" Collapsed="true">
+    <Position X="12.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\Pikeman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Unit" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAAgAAEAAAAAAQAAIAAAAAAIAAAAggAAAA=</HashCode>
+      <FileName>Units\Unit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.UnitLevel1" Collapsed="true">
+    <Position X="11" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\UnitLevel1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.UnitLevel2" Collapsed="true">
+    <Position X="2" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\UnitLevel2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.UnitLevel3" Collapsed="true">
+    <Position X="6.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\UnitLevel3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.CharacterAssets.CharacterBase" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAgAQAAAmAAAAAAAAAAAAIAAAAAgEAAIAhgAAAE=</HashCode>
+      <FileName>Character\CharacterBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.CharacterAssets.CharacterSprites" Collapsed="true">
+    <Position X="34.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAgAAAAAAAAAAAAAAQAABAAAAAAAAA=</HashCode>
+      <FileName>Character\CharacterSprites.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.CharacterAssets.MainCharacter" Collapsed="true">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAIAAAAmAAAAAAAIAAAwAAIAEAAIAAAAAQBAAA=</HashCode>
+      <FileName>Character\MainCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Armor" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Items\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Axe" Collapsed="true">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Axe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.DefArmor" Collapsed="true">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\DefArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.DefWeapon" Collapsed="true">
+    <Position X="19.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\DefWeapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.HeavyArmor">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\HeavyArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Helm" Collapsed="true">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Helm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Item" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAkAAAAAAAAAQACAAIAAgAKAAAAAgABAA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.Items.Shield" Collapsed="true">
+    <Position X="1.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Shield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Staff" Collapsed="true">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Sword" Collapsed="true">
+    <Position X="17.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Items.Weapon" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAABAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapConsts.Consts" Collapsed="true">
+    <Position X="36.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUgIAQQAIWCEFYAEQAgAAAAgCCAEBAUCABAAAAAFgA=</HashCode>
+      <FileName>MapConsts\Consts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapConsts.Objects" Collapsed="true">
+    <Position X="33" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUgIAQQAIGCENYAEQAgAAAAgCCAEBAUCABAAAAAFgA=</HashCode>
+      <FileName>MapConsts\Objects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.Castle" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\Castle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.Forest" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\Forest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.MapObjectBase" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAkAAAAAAAAAAAABAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>MapObjects\MapObjectBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.Mountain" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\Mountain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.TerrainBlack" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\TerrainBlack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.TerrainCastle" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\TerrainCastle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.TerrainDefault" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\TerrainDefault.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.TerrainInferno" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\TerrainInferno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.TerrainMixed1" Collapsed="true">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\TerrainMixed1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MapObjects.TerrainMixed2" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\TerrainMixed2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.MenuObjects.MenuObjects" Collapsed="true">
+    <Position X="31.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>MenuObjects\MenuObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Properties.Resources" Collapsed="true">
+    <Position X="36.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesPrototype.Properties.Settings" Collapsed="true">
+    <Position X="31.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="HeroesPrototype.Geometry.Point2D" Collapsed="true">
+    <Position X="31.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Geometry\Point2D.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="HeroesPrototype.Geometry.Rectangle2D" Collapsed="true">
+    <Position X="33" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAEQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Geometry\Rectangle2D.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="HeroesPrototype.Geometry.Size2D" Collapsed="true">
+    <Position X="34.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Size2D.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="HeroesPrototype.IContaining" Collapsed="true">
+    <Position X="31.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IContaining.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesPrototype.IDrawable" Collapsed="true">
+    <Position X="33" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>IDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HeroesPrototype.MapObjects.Spawnable" Collapsed="true">
+    <Position X="34.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>MapObjects\Spawnable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="HeroesPrototype.CharacterAssets.Position" Collapsed="true">
+    <Position X="31.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Character\Position.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

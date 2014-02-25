@@ -86,5 +86,7 @@ namespace HeroesPrototype
                 MessageBox.Show("The sun rises and a new day begins!");
             }
         }
+
+        
     }
 }

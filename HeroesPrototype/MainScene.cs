@@ -148,7 +148,37 @@ namespace HeroesPrototype
                     IDrawable obj = currentLevel.GetObject(newPlPos);
                     if (obj != null)
                     {
-                        if (obj is Spawnable)
+                        if (obj is IBattle)//battle here
+                        {
+                            var unit = obj as Unit;
+                            if(unit !=null)
+                            {
+                                //to be moved inside object, enemy
+                                int battlePowerEnemy = unit.Attack*unit.Quantity;
+                                MessageBox.Show("Enemy Attack " + battlePowerEnemy);
+                                int defPowerEnemy = unit.Defence*unit.Health*unit.Quantity;
+                                MessageBox.Show("Enemy Defense " + defPowerEnemy);
+                                int heroPower = mainCharacter.AttackPower();
+                                MessageBox.Show("Hero Attack " + mainCharacter.AttackPower().ToString());
+                                int heroDefense = mainCharacter.DefensePower();
+                                MessageBox.Show("Hero Defense "+mainCharacter.DefensePower().ToString());
+                                if (heroDefense/battlePowerEnemy >= defPowerEnemy/heroPower)
+                                {
+                                    MessageBox.Show("You have won the battle!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("You have lost the battle!");
+                                }
+
+                            }
+                            if (obj as Castle == null)
+                            {
+                                currentLevel.SetReplacedTerrain(newPlPos);
+                            }
+                        }
+
+                        else if (obj is Spawnable)
                         {
                             OpenSpawnMenu(obj);
                         }
