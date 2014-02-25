@@ -43,5 +43,8 @@ namespace HeroesPrototype.MapConsts
         public static readonly Bitmap Imp = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Imp.png"));
         public static readonly Bitmap Magog = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Magog.png"));
         public static readonly Bitmap Devil = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Devil.png"));
+        public static readonly Bitmap Angel = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Angel.png"));
+        public static readonly Bitmap Marksman = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Marksman.png"));
+        public static readonly Bitmap Pikeman = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Pikeman.png"));
     }
 }

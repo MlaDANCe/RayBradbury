@@ -49,6 +49,7 @@
             this.ExitButton = new System.Windows.Forms.MenuItem();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.EndDay = new System.Windows.Forms.MenuItem();
+            this.ExperienceLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.Scene.SuspendLayout();
             this.ResoursesStats.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             this.toolStripStatusLabel1,
             this.Attack,
             this.Defence,
+            this.ExperienceLbl,
             this.toolStripStatusLabel2,
             this.Month,
             this.Week,
@@ -98,7 +100,6 @@
             this.Gold.Name = "Gold";
             this.Gold.Size = new System.Drawing.Size(42, 19);
             this.Gold.Text = "Gold: ";
-           
             // 
             // Wood
             // 
@@ -128,7 +129,7 @@
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(172, 19);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(156, 19);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // Attack
@@ -159,7 +160,7 @@
             // 
             this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(172, 19);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(156, 19);
             this.toolStripStatusLabel2.Spring = true;
             // 
             // Month
@@ -246,6 +247,19 @@
             this.EndDay.Text = "End Day";
             this.EndDay.Click += new System.EventHandler(this.EndDay_Click);
             // 
+            // ExperienceLbl
+            // 
+            this.ExperienceLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ExperienceLbl.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.ExperienceLbl.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
+            this.ExperienceLbl.Enabled = false;
+            this.ExperienceLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ExperienceLbl.Name = "ExperienceLbl";
+            this.ExperienceLbl.Size = new System.Drawing.Size(31, 19);
+            this.ExperienceLbl.Text = "XP: ";
+            // 
             // HeroesPrototype
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,6 +302,7 @@
         private System.Windows.Forms.MenuItem menuItem1;
         private System.Windows.Forms.MenuItem EndDay;
         private System.Windows.Forms.ToolStripStatusLabel MovesLbl;
+        private System.Windows.Forms.ToolStripStatusLabel ExperienceLbl;
     }
 }
 

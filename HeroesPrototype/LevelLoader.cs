@@ -128,7 +128,18 @@ namespace HeroesPrototype
                     else if (val == Consts.Magog)
                     {
                         map[i, j] = new Magog(new Point2D(j, i), Objects.Magog);
-
+                    }
+                    else if (val == Consts.Angel)
+                    {
+                        map[i, j] = new Angel(new Point2D(j, i), Objects.Angel);
+                    }
+                    else if (val == Consts.Marksman)
+                    {
+                        map[i, j] = new Marksman(new Point2D(j, i), Objects.Marksman);
+                    }
+                    else if (val == Consts.Pikeman)
+                    {
+                        map[i, j] = new Pikeman(new Point2D(j, i), Objects.Pikeman);
                     }
                     else if (val == Consts.Devil)
                     {
