@@ -6,17 +6,17 @@ namespace HeroesPrototype.Items
 { 
 	public abstract class Weapon : Item
 	{
-		public int Damage { get; set; }
-
 		public int Attack { get; set; }
 
-		public int Speed { get; set; }
+        public int Defense { get; set; }
 
-		protected Weapon(string name, Point2D origin, int attack, int damage, int speed) : base(name, origin)
+        public int MovementPoints { get; set; }
+		
+		protected Weapon(string name, Point2D origin, int attack, int defense, int movementPoints) : base(name, origin)
 		{
 			this.Attack = attack;
-			this.Damage = damage;
-			this.Speed = speed;
+            this.Defense = defense;
+            this.MovementPoints = movementPoints;
 		}
 	}
 }
