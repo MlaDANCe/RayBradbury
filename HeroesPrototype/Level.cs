@@ -117,7 +117,7 @@ namespace HeroesPrototype
             {
                 Item i = this.map[xy.Y, xy.X] as Item;
                 this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
-                SettReplacedTerrain(xy);
+                SetReplacedTerrain(xy);
                 return i;
             }
             else if (this.map[xy.Y, xy.X] is Spawnable)
@@ -126,61 +126,11 @@ namespace HeroesPrototype
             }
             return null;
         }
-        public void SettReplacedTerrain(Point2D xy)
+        public void SetReplacedTerrain(Point2D xy)
         {
             this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
         }
 
-//        private IDrawable GetSurrounding(Point2D newPlPos)
-//        {
-//            int terrainInfernoCount = 0;
-//            int terrainCastleCount = 0;
-//            int terrainMixed1 = 0;
-//            int terrMixed2 = 0;
-//            for (int i = newPlPos.Y - 1; i >= newPlPos.Y + 1; i++)
-//            {
-//                for (int j = newPlPos.X - 1; j < newPlPos.X + 1; j++)
-//                {
-//                    if (this.map[i, j] is TerrainInferno)
-//                    {
-//                        terrainInfernoCount++;
-//                    }
-//                    else if (this.map[i, j] is TerrainCastle)
-//                    {
-//                        terrainCastleCount++;
-//                    }
-//                    else if (this.map[i, j] is TerrainMixed1)
-//                    {
-//                        terrainMixed1++;
-//                    }
-//                    else if (this.map[i, j] is TerrainMixed2)
-//                    {
-//                        terrMixed2++;
-//                    }
-//                }
-//            }
-//            if (terrainCastleCount >= terrainInfernoCount || terrainCastleCount >= terrainMixed1 ||
-//                terrainCastleCount >= terrMixed2)
-//            {
-//                return new TerrainCastle(newPlPos);
-//            }
-//            else if (terrainInfernoCount >= terrainCastleCount || terrainInfernoCount >= terrainMixed1 ||
-//                     terrainInfernoCount >= terrMixed2)
-//            {
-//                return new TerrainInferno(newPlPos);
-//            }
-//            else if (terrainMixed1 >= terrainCastleCount || terrainMixed1 >= terrainInfernoCount ||
-//                     terrainMixed1 >= terrMixed2)
-//            {
-//                return new TerrainMixed1(newPlPos);
-//            }
-//            else
-//            {
-//                return new TerrainMixed2(newPlPos);
-//            }
-//        }
-
-    
     }
 }
 

@@ -174,7 +174,7 @@ namespace HeroesPrototype
                             }
                             if (obj as Castle == null)
                             {
-                                currentLevel.SettReplacedTerrain(newPlPos);
+                                currentLevel.SetReplacedTerrain(newPlPos);
                             }
                         }
 
