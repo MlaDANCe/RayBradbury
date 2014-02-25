@@ -116,8 +116,8 @@ namespace HeroesPrototype
             if (this.map[xy.Y, xy.X] is Item)
             {
                 Item i = this.map[xy.Y, xy.X] as Item;
-               // this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
-              //  SettReplacedTerrain(xy);
+                this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
+                SettReplacedTerrain(xy);
                 return i;
             }
             else if (this.map[xy.Y, xy.X] is Spawnable)
