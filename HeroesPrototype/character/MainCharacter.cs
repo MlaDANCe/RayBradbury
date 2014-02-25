@@ -169,10 +169,16 @@ namespace HeroesPrototype.CharacterAssets
 	    {
 	        int heroPower=Attack+SpellPower;
             heroPower += Items.OfType<Weapon>().Sum(weapon => weapon.Attack + weapon.Damage);
-	        int power= units.Sum(entry => entry.Value.Quantity*entry.Value.Attack);
-	        Console.WriteLine(power);
-	        Console.WriteLine(heroPower);
-	        Console.ReadLine();
+	        int power=0;
+            //= units.Sum(entry => entry.Value.Quantity*entry.Value.Attack);
+
+            foreach (var unit in Units)
+            {
+                power += unit.Attack; 
+            }
+            //Console.WriteLine(power);
+            //Console.WriteLine(heroPower);
+            //Console.ReadLine();
 	        return (int) (power + heroPower + 0.01*heroPower*power);
 
 	    }
@@ -181,8 +187,14 @@ namespace HeroesPrototype.CharacterAssets
             int heroPower = Defense;
            
             heroPower += Items.OfType<Armor>().Sum(armor => armor.Defense);
-            
-            int power = units.Sum(entry => entry.Value.Quantity * entry.Value.Defence*entry.Value.Health);
+
+            int power = 0;
+            foreach (var unit in Units)
+            {
+                power += unit.Defence;
+            }
+
+                //units.Sum(entry => entry.Value.Quantity * entry.Value.Defence*entry.Value.Health);
           //  MessageBox.Show("Defense" + power.ToString());
             return (int)(power + heroPower + 0.01 * heroPower * power);
             
