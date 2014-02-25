@@ -45,16 +45,7 @@ namespace HeroesPrototype
 
             this.MapSize = new Size2D(this.map.GetLength(1), this.map.GetLength(0));
 
-            int c_x_t = LevelLoader.playerStartPosition.X;
-            int c_y_t = LevelLoader.playerStartPosition.Y;
-            this.StartPosition = new Point2D(c_x_t, c_y_t);
-
-            int left = c_x_t - (this.Size.Width/MainScene.ScreenToMapUnits/2); // Convert from screen to map units
-            int right = c_x_t + (this.Size.Width/MainScene.ScreenToMapUnits/2); // Convert from screen to map units
-            int top = c_y_t - (this.Size.Height/MainScene.ScreenToMapUnits/2); // Convert from screen to map units
-            int bottom = c_y_t + (this.Size.Height/MainScene.ScreenToMapUnits/2); // Convert from screen to map units
-
-            this.VisibleSpace = new Rectangle2D(new Point2D(left, top), new Size2D(right - left, bottom - top));
+            InitialiseMap();
 
             this.scene = new Bitmap(this.Size.Width, this.Size.Height);
             this.graphics = Graphics.FromImage(this.scene);
@@ -62,6 +53,19 @@ namespace HeroesPrototype
             this.isUpToDate = false;
         }
 
+        public void InitialiseMap()
+        {
+            int c_x_t = LevelLoader.playerStartPosition.X;
+            int c_y_t = LevelLoader.playerStartPosition.Y;
+            this.StartPosition = new Point2D(c_x_t, c_y_t);
+
+            int left = c_x_t - (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+            int right = c_x_t + (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+            int top = c_y_t - (this.Size.Height / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+            int bottom = c_y_t + (this.Size.Height / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units
+
+            this.VisibleSpace = new Rectangle2D(new Point2D(left, top), new Size2D(right - left, bottom - top));
+        }
         public Bitmap GetSprite()
         {
             if (!this.isUpToDate)
@@ -116,7 +120,6 @@ namespace HeroesPrototype
             if (this.map[xy.Y, xy.X] is Item)
             {
                 Item i = this.map[xy.Y, xy.X] as Item;
-                this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
                 SetReplacedTerrain(xy);
                 return i;
             }

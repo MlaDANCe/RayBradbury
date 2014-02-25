@@ -37,9 +37,6 @@ namespace HeroesPrototype.CharacterAssets
 			}
 		}
 
-	    private Dictionary<Type, Unit> units = new Dictionary<Type, Unit>();
-
-
 		public MainCharacter(Point2D worldPosition, Point2D screenCoordinates):base(100,100,30)
 		{
 			this.WorldPosition = worldPosition;
@@ -53,15 +50,12 @@ namespace HeroesPrototype.CharacterAssets
             this.currentA = new DefArmor();
             this.currentW = new DefWeapon();
 
-            this.Attack = this.currentW.Attack;
-            this.Defense = this.currentA.Defense;
+            //this.Attack = this.currentW.Attack;
+            //this.Defense = this.currentA.Defense;
 
             this.Items = new List<Item>();
 
             this.MaxMoves = this.maxMoves;
-
-            this.units = new Dictionary<Type, Unit>();
-
             this.Units = new List<Unit>();
 		}
 
@@ -141,10 +135,11 @@ namespace HeroesPrototype.CharacterAssets
 		}
         public void AddItem(Item item)
         {
+            Items.Add(item);
             if (item is Weapon)
             {
                 var itm = item as Weapon;
-                if(itm.Attack > this.currentW.Attack)
+                if (itm.Attack > this.currentW.Attack)
                 {
                     this.Items.Add(this.currentW);
                     this.currentW = itm;
@@ -153,7 +148,7 @@ namespace HeroesPrototype.CharacterAssets
             else if (item is Armor)
             {
                 var itm = item as Armor;
-                if(itm.Defense > this.currentA.Defense)
+                if (itm.Defense > this.currentA.Defense)
                 {
                     this.Items.Add(this.currentA);
                     this.currentA = itm;
@@ -169,35 +164,21 @@ namespace HeroesPrototype.CharacterAssets
 	    {
 	        int heroPower=Attack+SpellPower;
             heroPower += Items.OfType<Weapon>().Sum(weapon => weapon.Attack + weapon.Damage);
-	        int power=0;
-            //= units.Sum(entry => entry.Value.Quantity*entry.Value.Attack);
+	        int power=Units.Sum(entry => entry.Quantity*entry.Attack);
 
             foreach (var unit in Units)
             {
                 power += unit.Attack; 
             }
-            //Console.WriteLine(power);
-            //Console.WriteLine(heroPower);
-            //Console.ReadLine();
 	        return (int) (power + heroPower + 0.01*heroPower*power);
-
 	    }
         public int DefensePower()
         {
             int heroPower = Defense;
-           
             heroPower += Items.OfType<Armor>().Sum(armor => armor.Defense);
-
             int power = 0;
-            foreach (var unit in Units)
-            {
-                power += unit.Defence;
-            }
-
-                //units.Sum(entry => entry.Value.Quantity * entry.Value.Defence*entry.Value.Health);
-          //  MessageBox.Show("Defense" + power.ToString());
-            return (int)(power + heroPower + 0.01 * heroPower * power);
-            
+            power=Units.Sum(entry => entry.Quantity * entry.Defence*entry.Health);
+            return (int)(power + heroPower + 0.001 * heroPower * power);
         }
 		public override Bitmap GetSprite()
 		{
