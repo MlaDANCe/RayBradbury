@@ -31,14 +31,14 @@ namespace HeroesPrototype
 		public Size2D Size { get; private set; }
 
 		//public Bitmap CurrentSprite { get; set; }
-		public Unit(string name, Point2D origin, int attack, int defence, int health)
+		public Unit(string name, Point2D origin, int attack, int defence, int health, int price)
 		{
 			this.Name = name;
 			this.Attack = attack;
 			this.Defence = defence;
 			this.Health = health;
 			this.Origin = origin;
-            this.Price = 250;
+            this.Price = price;
 		}
 
 		Bitmap IDrawable.GetSprite()

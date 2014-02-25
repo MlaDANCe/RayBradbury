@@ -9,12 +9,13 @@ namespace HeroesPrototype
 	{
         private readonly Bitmap sprite;
 
-		public Angel(Point2D origin) : base("Angel", origin, 10, 10, 10)
+        public Angel(Point2D origin)
+            : base("Angel", origin, 12, 12, 40, 300)
 		{
 		}        
 
         public Angel(Point2D origin, Bitmap sprite)
-            : base("Angel", origin, 10, 10, 10)
+            : base("Angel", origin, 12, 12, 40, 300)
         {
             this.Origin = origin;
             this.sprite = sprite;

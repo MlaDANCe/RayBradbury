@@ -9,12 +9,12 @@ namespace HeroesPrototype
 	{
         private readonly Bitmap sprite;
 
-		public Pikeman(Point2D origin) : base("Pikeman", origin, 10, 10, 10)
+		public Pikeman(Point2D origin) : base("Pikeman", origin, 6, 5, 10, 75)
 		{
 		}
 
         public Pikeman(Point2D origin, Bitmap sprite)
-            : base("Pikeman", origin, 10, 10, 10)
+            : base("Pikeman", origin, 6, 5, 10, 75)
         {
             this.Origin = origin;
             this.sprite = sprite;

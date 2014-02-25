@@ -9,12 +9,12 @@ namespace HeroesPrototype
 	{
         private readonly Bitmap sprite;
 
-		public Imp(Point2D origin) : base("Imp", origin, 10, 10, 10)
+		public Imp(Point2D origin) : base("Imp", origin, 4, 4, 4, 50)
 		{
 		}
 
         public Imp(Point2D origin, Bitmap sprite)
-            : base("Imp", origin, 10, 10, 10)
+            : base("Imp", origin, 4, 4, 4, 50)
         {
             this.Origin = origin;
             this.sprite = sprite;

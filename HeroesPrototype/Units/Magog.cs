@@ -9,12 +9,12 @@ namespace HeroesPrototype
 	{
         private readonly Bitmap sprite;
 	
-        public Magog(Point2D origin) : base("Magog", origin, 10, 10, 10)
+        public Magog(Point2D origin) : base("Magog", origin, 9, 6, 15, 180)
 		{
 		}
 
         public Magog(Point2D origin, Bitmap sprite)
-            : base("Magog", origin, 10, 10, 10)
+            : base("Magog", origin, 9, 6, 15, 180)
         {
             this.Origin = origin;
             this.sprite = sprite;
