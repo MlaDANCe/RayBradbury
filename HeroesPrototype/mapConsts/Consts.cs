@@ -34,12 +34,17 @@ namespace HeroesPrototype.MapConsts
         public const int OrePile = 0x616161 & 0xff;
 
         // Items
-        public const int Axe = 0x5a5a51 & 0xff;
-        public const int HeavyArmor = 0x5a5a52 & 0xff;
-        public const int Helm = 0x5a5a53 & 0xff;
-        public const int Shield = 0x5a5a54 & 0xff;
-        public const int Staff = 0x5a5a55 & 0xff;
-        public const int Sword = 0x5a5a57 & 0xff;
+        public const int BootsOfSpeed = 0xff0049 & 0xff;
+        public const int Tier1Weapon =  0xff0050 & 0xff;
+        public const int Tier2Weapon =  0xff0051 & 0xff;
+        public const int Tier1Armor =   0xff0052 & 0xff;
+        public const int Tier2Armor =   0xff0053 & 0xff;
+        public const int Tier1Helm =    0xff0054 & 0xff;
+        public const int Tier2Helm =    0xff0055 & 0xff;
+        public const int Tier1Shield =  0xff0056 & 0xff;
+        public const int Tier2Shield = 0xff0057 & 0xff;
+        public const int VialOfBlood =  0xff0058 & 0xff;
+        
 
         // Units
         public const int Imp = 0x000065 & 0xff;

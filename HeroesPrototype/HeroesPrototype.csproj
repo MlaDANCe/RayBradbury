@@ -61,15 +61,19 @@
     </Compile>
     <Compile Include="IBattle.cs" />
     <Compile Include="Items\Armor.cs" />
-    <Compile Include="Items\Axe.cs" />
+    <Compile Include="Items\BootsOfSpeed.cs" />
+    <Compile Include="Items\Tier1Armor.cs" />
+    <Compile Include="Items\Tier1Weapon.cs" />
     <Compile Include="Items\DefArmor.cs" />
     <Compile Include="Items\DefWeapon.cs" />
-    <Compile Include="Items\HeavyArmor.cs" />
-    <Compile Include="Items\Helm.cs" />
+    <Compile Include="Items\Tier2Armor.cs" />
+    <Compile Include="Items\Tier1Helm.cs" />
     <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\Shield.cs" />
-    <Compile Include="Items\Staff.cs" />
-    <Compile Include="Items\Sword.cs" />
+    <Compile Include="Items\Tier1Shield.cs" />
+    <Compile Include="Items\Tier2Helm.cs" />
+    <Compile Include="Items\Tier2Shield.cs" />
+    <Compile Include="Items\Tier2Weapon.cs" />
+    <Compile Include="Items\VialOfBlood.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Character\MainCharacter.cs" />
     <Compile Include="CharacterMenu.cs" />
@@ -145,7 +149,9 @@
     <EmbeddedResource Include="Trainer.resx">
       <DependentUpon>Trainer.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram1.cd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="HeroesPrototype.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

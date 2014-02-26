@@ -8,6 +8,8 @@ namespace HeroesPrototype.Items
 {
     class DefWeapon : Weapon
     {
-        public DefWeapon() : base("", new Geometry.Point2D(0, 0), 0, 0, 0) { }
+        public DefWeapon() : base("", new Geometry.Point2D(0, 0), 0, 0, 0)
+        {
+        }
     }
 }

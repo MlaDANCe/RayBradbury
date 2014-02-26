@@ -145,25 +145,45 @@ namespace HeroesPrototype
                     {
                         map[i, j] = new Devil(new Point2D(j, i), Objects.Devil);
                     }
-                    else if(val == Consts.Axe)
+                    else if(val == Consts.BootsOfSpeed)
                     {
-                        map[i, j] = new Axe(new Point2D(j, i));
+                        map[i, j] = new BootsOfSpeed(new Point2D(j, i));
                     }
-                    else if (val == Consts.HeavyArmor)
+                    else if (val == Consts.VialOfBlood)
                     {
-                        map[i, j] = new HeavyArmor(new Point2D(j, i));
+                        map[i, j] = new VialOfBlood(new Point2D(j, i));
                     }
-                    else if (val == Consts.Helm)
+                    else if (val == Consts.Tier1Armor)
                     {
-                        map[i, j] = new Helm(new Point2D(j, i));
+                        map[i, j] = new Tier1Armor(new Point2D(j, i));
                     }
-                    else if (val == Consts.Sword)
+                    else if (val == Consts.Tier2Armor)
                     {
-                        map[i, j] = new Sword(new Point2D(j, i));
+                        map[i, j] = new Tier2Armor(new Point2D(j, i));
                     }
-                    else if (val == Consts.Staff)
+                    else if (val == Consts.Tier1Weapon)
                     {
-                        map[i, j] = new Staff(new Point2D(j, i));
+                        map[i, j] = new Tier1Weapon(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Tier2Weapon)
+                    {
+                        map[i, j] = new Tier2Weapon(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Tier1Shield)
+                    {
+                        map[i, j] = new Tier1Shield(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Tier2Shield)
+                    {
+                        map[i, j] = new Tier2Shield(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Tier1Helm)
+                    {
+                        map[i, j] = new Tier1Helm(new Point2D(j, i));
+                    }
+                    else if (val == Consts.Tier2Helm)
+                    {
+                        map[i, j] = new Tier2Helm(new Point2D(j, i));
                     }
                     else if(val == Consts.PlayerStartPosition)
                     {

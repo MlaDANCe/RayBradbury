@@ -33,12 +33,16 @@ namespace HeroesPrototype.MapConsts
         public static readonly Bitmap WoodPile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\WoodPile.png"));
         public static readonly Bitmap OrePile = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Resources\OrePile.png"));
         // Items
-        public static readonly Bitmap Staff = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\staff.png"));
-        public static readonly Bitmap Sword = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\sword.png"));
-        public static readonly Bitmap HeavyArmor = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\heavyArmor.png"));
-        public static readonly Bitmap Shield = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\shield.png"));
-        public static readonly Bitmap Helm = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\helm.png"));
-        public static readonly Bitmap Axe = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\axe.bmp"));
+        public static readonly Bitmap BootsOfSpeed = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\BootsOfSpeed.png"));
+        public static readonly Bitmap VialOfBlood = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\VialOfBlood.png"));
+        public static readonly Bitmap Tier1Armor = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier1Armor.png"));
+        public static readonly Bitmap Tier2Armor = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier2Armor.png"));
+        public static readonly Bitmap Tier1Shield = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier1Shield.png"));
+        public static readonly Bitmap Tier2Shield = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier2Shield.png"));
+        public static readonly Bitmap Tier1Helm = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier1Helm.png"));
+        public static readonly Bitmap Tier2Helm = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier2Helm.png"));
+        public static readonly Bitmap Tier1Weapon = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier1Weapon.png"));
+        public static readonly Bitmap Tier2Weapon = new Bitmap(Bitmap.FromFile(@"..\..\sprites\items\Tier2Weapon.png"));
         //Units
         public static readonly Bitmap Imp = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Imp.png"));
         public static readonly Bitmap Magog = new Bitmap(Bitmap.FromFile(@"..\..\sprites\units\Magog.png"));
