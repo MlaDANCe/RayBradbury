@@ -9,7 +9,7 @@ namespace HeroesPrototype
 {
 	public static class LevelLoader
 	{
-        public static Point2D playerStartPosition; // This shoud not be here but i dont want to make player start position drawable :)
+        public static Point2D playerStartPosition; // This should not be here but i dont want to make player start position drawable :)
 		public static IDrawable[,] Load(string path)
 		{
 			Bitmap bmp = new Bitmap(Bitmap.FromFile(path));
@@ -47,7 +47,6 @@ namespace HeroesPrototype
                         var castle = new Castle(new Point2D(j, i), Objects.CastleBotCenter);
                         castle.IsSpawnable = true;
                         map[i, j] = castle;
-
                     }
                     else if (val == Consts.CastleBotRight)
                     {
