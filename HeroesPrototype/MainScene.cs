@@ -155,73 +155,8 @@ namespace HeroesPrototype
                     {
                         if (obj is IBattle)//battle here
                         {
-                            Unit unit = obj as Unit;
-                            if (unit != null)
-                            {
-                                //to be moved inside object?
-                                int battlePowerEnemy = unit.Attack * unit.Quantity;
-                                int defPowerEnemy = unit.Defence * unit.Health * unit.Quantity;
-                                int heroPower = mainCharacter.AttackPower();
-                                int heroDefense = mainCharacter.DefensePower();
-                                string unitType = unit.GetType().ToString();
-                                unitType = unitType.Substring(unitType.LastIndexOf(".")+1);
-                                DialogResult dialogResult = MessageBox.Show("Danger! "+ unit.Quantity+" "+unitType +" !"+
-                                    "\nEnemy Attack: " + battlePowerEnemy + ";  Enemy Defense: " + defPowerEnemy + "!" +
-                                    "\nHero Attack: " + mainCharacter.AttackPower().ToString() + ";  Hero Defense: " + 
-                                    mainCharacter.DefensePower().ToString() + "!" + "\n Are you sure you want to battle?",
-                                     "Battle stats", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                                if (dialogResult == DialogResult.Yes)
-                                {
-                                    if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
-                                    {
-                                        this.BattleSounds.SoundLocation = WonBattleSoundAddres;
-                                        BattleSounds.Play();
-                                        int pillage = (int)battlePowerEnemy/7*10;
-                                        mainCharacter.Gold += pillage;
-                                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold!",pillage));
-                                        if (obj as Castle == null)
-                                        {
-                                            currentLevel.SetReplacedTerrain(newPlPos);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        this.BattleSounds.SoundLocation = LostBattleSoundAddres;
-                                        BattleSounds.Play();
-                                        MessageBox.Show("You have lost the battle!");
-                                        int pillage = (int)battlePowerEnemy / 7 * 10;
-                                        mainCharacter.Gold -= pillage;
-                                        int lossUnits = 100 - 100*(heroDefense/battlePowerEnemy)/(defPowerEnemy/heroPower);
-                                        int c = mainCharacter.Units.Sum(item => item.Quantity)*lossUnits/100;
-                                        int count = 0;
-                                        while (count < c && count< mainCharacter.Units.Count)
-                                        {
-                                         mainCharacter.Units.RemoveAt(count);
-                                            c++;
-                                        }
-                                        MessageBox.Show(String.Format("You have lost the battle!\n You have lost {0} goooold and {1}% of your units", pillage,lossUnits));
-                                       // currentLevel.SetReplacedTerrain(newPlPos);
-                                        //code for player returns to initial position
-                                       //newPlPos = mainCharacter.WorldPosition;
-                                       // currentLevel.InitialiseMap();
-                                       //mainCharacter = new MainCharacter(currentLevel.StartPosition,
-                                    //new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
-                                       // newPlPos = LevelLoader.playerStartPosition;
-                                       // this.mainCharacter.MoveTo(newPlPos);
-                                       // this.currentLevel.VisibleSpace = newVis;
-                                       // this.currentLevel.SetNotUpToDate();
-                                       // this.MainCharacter.Moves--;
-                                       ////currentLevel.InitialiseMap();
-                                        //  currentLevel.InitialiseMap();
-                                    }
-                                }
-                                else if (dialogResult == DialogResult.No)
-                                {
-                                    return;
-                                }
-                            }
-                            
+                            BattleMethod(ref newPlPos, obj);
+                           // return;
                         }
 
                         else if (obj is Spawnable)
@@ -244,6 +179,82 @@ namespace HeroesPrototype
                     }
                 }
             }
+        }
+
+        private void BattleMethod(ref Point2D newPlPos, IDrawable obj)
+        {
+            Unit unit = obj as Unit;
+            if (unit != null)
+            {
+                //to be moved inside object?
+                int battlePowerEnemy = unit.Attack * unit.Quantity;
+                int defPowerEnemy = unit.Defence * unit.Health * unit.Quantity;
+                int heroPower = mainCharacter.AttackPower();
+                int heroDefense = mainCharacter.DefensePower();
+
+                string unitType = unit.GetType().ToString();
+                unitType = unitType.Substring(unitType.LastIndexOf(".") + 1);
+
+                DialogResult dialogResult = MessageBox.Show(
+                    "Danger! " + unit.Quantity + " " + unitType + " !" +
+                    "\nEnemy Attack: " + battlePowerEnemy + ";  Enemy Defense: " + defPowerEnemy + "!" +
+                    "\nHero Attack: " + mainCharacter.AttackPower().ToString() + ";  Hero Defense: " +
+                    mainCharacter.DefensePower().ToString() + "!" + "\n Are you sure you want to battle?",
+                     "Battle stats", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
+                    {
+                        this.BattleSounds.SoundLocation = WonBattleSoundAddres;
+                        BattleSounds.Play();
+                        int pillage = (int)battlePowerEnemy / 7 * 10;
+                        mainCharacter.Gold += pillage;
+                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold!", pillage));
+                        if (obj as Castle == null)
+                        {
+                            currentLevel.SetReplacedTerrain(newPlPos);
+                        }
+                    }
+                    else
+                    {
+                        this.BattleSounds.SoundLocation = LostBattleSoundAddres;
+                        BattleSounds.Play();
+                        MessageBox.Show("You have lost the battle!");
+                        int pillage = (int)battlePowerEnemy / 7 * 10;
+                        mainCharacter.Gold -= pillage;
+                        int lossUnits = 100 - 100 * (heroDefense / battlePowerEnemy) / (defPowerEnemy / heroPower);
+                        int c = mainCharacter.Units.Sum(item => item.Quantity) * lossUnits / 100;
+                        int count = 0;
+                        while (count < c && count < mainCharacter.Units.Count)
+                        {
+                            mainCharacter.Units.RemoveAt(count);
+                            c++;
+                        }
+                        MessageBox.Show(String.Format("You have lost the battle!\n You have lost {0} goooold and {1}% of your units", pillage, lossUnits));
+
+                        // currentLevel.SetReplacedTerrain(newPlPos);
+                        ////code for player returns to initial position
+                        //newPlPos = mainCharacter.WorldPosition;
+                        // currentLevel.InitialiseMap();
+                        //mainCharacter = new MainCharacter(currentLevel.StartPosition,
+                        //new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
+                        // newPlPos = LevelLoader.playerStartPosition;
+                        // this.mainCharacter.MoveTo(newPlPos);
+                        // //this.currentLevel.VisibleSpace = newVis;
+                        // this.currentLevel.SetNotUpToDate();
+                        // this.MainCharacter.Moves--;
+                        //  currentLevel.InitialiseMap();
+                        
+                    return;
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
         }
 
         private void OpenSpawnMenu(IDrawable obj)
@@ -302,5 +313,7 @@ namespace HeroesPrototype
             }
             this.mainCharacter.AddItem(itm);
         }
+
+        
     }
 }
