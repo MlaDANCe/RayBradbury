@@ -7,6 +7,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        public bool TrainerVisibility { get; set; }
 
         /// <summary>
         /// Clean up any resources being used.
@@ -52,7 +53,7 @@
             this.EndDay = new System.Windows.Forms.MenuItem();
             this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.BackgroundMusicSwitch = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.menuItemTrainer = new System.Windows.Forms.MenuItem();
             this.menuItemRunTrainer = new System.Windows.Forms.MenuItem();
             this.Scene.SuspendLayout();
             this.ResoursesStats.SuspendLayout();
@@ -238,7 +239,7 @@
             this.MenuButton,
             this.menuItem1,
             this.menuItem2,
-            this.menuItem3});
+            this.menuItemTrainer});
             // 
             // MenuButton
             // 
@@ -279,16 +280,17 @@
             this.BackgroundMusicSwitch.Text = "Background music Off";
             this.BackgroundMusicSwitch.Click += new System.EventHandler(this.BackgroundMusicSwitch_Click);
             // 
-            // menuItem3
+            // menuItemTrainer
             // 
-            this.menuItem3.Index = 3;
-            this.menuItem3.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemTrainer.Index = 3;
+            this.menuItemTrainer.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemRunTrainer});
-            this.menuItem3.Text = "Trainer";
+            this.menuItemTrainer.Text = "Trainer";
             // 
             // menuItemRunTrainer
             // 
             this.menuItemRunTrainer.Index = 0;
+            this.menuItemRunTrainer.Shortcut = System.Windows.Forms.Shortcut.CtrlT;
             this.menuItemRunTrainer.Text = "Run Trainer";
             this.menuItemRunTrainer.Click += new System.EventHandler(this.menuItemRunTrainer_Click);
             // 
@@ -337,8 +339,8 @@
         private System.Windows.Forms.ToolStripStatusLabel ExperienceLbl;
         private System.Windows.Forms.MenuItem menuItem2;
         private System.Windows.Forms.MenuItem BackgroundMusicSwitch;
-        private System.Windows.Forms.MenuItem menuItem3;
         private System.Windows.Forms.MenuItem menuItemRunTrainer;
+        public System.Windows.Forms.MenuItem menuItemTrainer;
     }
 }
 

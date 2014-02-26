@@ -11,7 +11,7 @@ namespace HeroesPrototype
         public System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAV\06-stronghold-towns.wav");
         // Sounds.PlayLooping();
             //Sounds.Play();
-
+        
         public HeroesPrototype()
         {
             this.InitializeComponent();
@@ -106,7 +106,7 @@ namespace HeroesPrototype
             
         }
 
-        private void menuItemRunTrainer_Click(object sender, EventArgs e)
+        public void menuItemRunTrainer_Click(object sender, EventArgs e)
         {
             Trainer trainer = new Trainer(this.scene);
             trainer.Visible = true;

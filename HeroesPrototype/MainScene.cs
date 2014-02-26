@@ -130,7 +130,6 @@ namespace HeroesPrototype
                     MessageBox.Show("The sun rises and a new day begins!");
                 }
             }
-
         }
 
         private void MovePosition(Point2D dxdy)
@@ -170,7 +169,7 @@ namespace HeroesPrototype
                                     if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
                                     {
                                         MessageBox.Show("You have won the battle!");
-                                        
+
                                     }
                                     else
                                     {
@@ -266,7 +265,7 @@ namespace HeroesPrototype
             this.mainCharacter.AddItem(itm);
         }
 
-        public Graphics TrainerMethod() 
+        public Graphics TrainerMethod()
         {
             return this.scene;
         }

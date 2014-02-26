@@ -14,7 +14,7 @@ namespace HeroesPrototype
 		{ // Test
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			
+
             Application.Run(new HeroesPrototype());
 		}
 	}
