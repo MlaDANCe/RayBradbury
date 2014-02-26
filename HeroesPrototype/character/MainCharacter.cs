@@ -165,7 +165,7 @@ namespace HeroesPrototype.CharacterAssets
 	        int heroPower=Attack+SpellPower;
             heroPower += Items.OfType<Weapon>().Sum(weapon => weapon.Attack);
 	        int power=0;
-            //= units.Sum(entry => entry.Value.Quantity*entry.Value.Attack);
+            power= Units.Sum(entry => entry.Quantity*entry.Attack);
 
             foreach (var unit in Units)
             {
