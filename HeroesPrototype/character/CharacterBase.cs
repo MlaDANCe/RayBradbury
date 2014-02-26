@@ -8,86 +8,89 @@ using HeroesPrototype.Items;
 
 namespace HeroesPrototype.CharacterAssets
 {
-	public abstract class CharacterBase : IDrawable, IContaining
-	{
-		private readonly Random random = new Random();
-		private int experience;
+    public abstract class CharacterBase : IDrawable, IContaining
+    {
+        public readonly Random random = new Random();
+        private int experience;
+        public bool IsTrainerOn = false;
 
-		protected CharacterBase(int attack, int defense, int spellPower)
-		{
-			this.Attack = attack;
-			this.Defense = defense;
-			this.SpellPower = spellPower;
-			this.Level = 1;
-		}
+        protected CharacterBase(int attack, int defense, int spellPower)
+        {
+            this.Attack = attack;
+            this.Defense = defense;
+            this.SpellPower = spellPower;
+            this.Level = 1;
+        }
 
-		public int Attack { get; set; }
+        public int Attack { get; set; }
 
-		public int Defense { get; set; }
+        public int Defense { get; set; }
 
-		public int SpellPower { get; set; }
+        public int SpellPower { get; set; }
 
-		public int Knowledge { get; set; }
+        public int Knowledge { get; set; }
 
-		public Point2D Origin { get; set; }
+        public Point2D Origin { get; set; }
 
-		public abstract Size2D Size { get; }
+        public abstract Size2D Size { get; }
 
-		public List<Item> Items { get; set; }
+        public List<Item> Items { get; set; }
 
-		public int Level { get; private set; }
+        public int Level { get; set; }
 
-		public int Gold { get; set; }
+        public int Gold { get; set; }
 
-		public int Ore { get; set; }
+        public int Ore { get; set; }
 
-		public int Wood { get; set; }
+        public int Wood { get; set; }
 
-		public int Experience
-		{
-			get
-			{
-				return this.experience;
-			}
-			set
-			{
-				if (this.experience != value)
-				{
-					this.experience = value;
-					this.UpdateLevel();
-				}
-			}
-		}
+        public int Experience
+        {
+            get
+            {
+                return this.experience;
+            }
+            set
+            {
+                if (this.experience != value)
+                {
+                    this.experience = value;
+                    this.UpdateLevel(this.IsTrainerOn);
+                }
+            }
+        }
 
-		private void UpdateLevel()
-		{
-			if (this.experience >= this.Level * 1000)
-			{
-				this.experience = this.experience - this.Level * 1000;
-				this.Level++;
-				string attributeMessage = string.Empty;
-				switch(this.random.Next(2))
-				{
-					case 0:
-						this.Attack++;
-						attributeMessage = "You have gained 1 Attack";
-						break;
-					case 1:
-						this.Defense++;
-						attributeMessage = "You have gained 1 Defense";
-						break;
-				}
+        public void UpdateLevel(bool trainerOn)
+        {
+            if (!trainerOn)
+            {
+                if (this.experience >= this.Level * 1000)
+                {
+                    this.experience = this.experience - this.Level * 1000;
+                    this.Level++;
+                    string attributeMessage = string.Empty;
+                    switch (this.random.Next(2))
+                    {
+                        case 0:
+                            this.Attack++;
+                            attributeMessage = "You have gained 1 Attack";
+                            break;
+                        case 1:
+                            this.Defense++;
+                            attributeMessage = "You have gained 1 Defense";
+                            break;
+                    }
+                    MessageBox.Show(string.Format("You have gained level!\nYou are now level {0}.\n{1}", this.Level, attributeMessage));
+                }
+            }
+        }
 
-				MessageBox.Show(string.Format("You have gained level!\nYou are now level {0}.\n{1}", this.Level, attributeMessage));
-			}
-		}
+        public Weapon currentW { get; set; }
 
-		public Weapon currentW { get; set; }
+        public Armor currentA { get; set; }
 
-		public Armor currentA { get; set; }
+        public List<Unit> Units { get; set; }
 
-		public List<Unit> Units { get; set; }
-
-		public abstract Bitmap GetSprite();
-	}
+        public abstract Bitmap GetSprite();
+    }
 }

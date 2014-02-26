@@ -34,21 +34,22 @@
             this.LblGold = new System.Windows.Forms.Label();
             this.LblAttack = new System.Windows.Forms.Label();
             this.GrbResources = new System.Windows.Forms.GroupBox();
-            this.GrbAttributes = new System.Windows.Forms.GroupBox();
-            this.txtOre = new System.Windows.Forms.TextBox();
-            this.txtWood = new System.Windows.Forms.TextBox();
-            this.txtDefence = new System.Windows.Forms.TextBox();
-            this.txtXp = new System.Windows.Forms.TextBox();
-            this.LblDefence = new System.Windows.Forms.Label();
-            this.LblXp = new System.Windows.Forms.Label();
-            this.LblOre = new System.Windows.Forms.Label();
             this.LblWood = new System.Windows.Forms.Label();
-            this.LblMaxMoves = new System.Windows.Forms.Label();
-            this.txtMaxMoves = new System.Windows.Forms.TextBox();
-            this.btnChangeTo = new System.Windows.Forms.Button();
+            this.LblOre = new System.Windows.Forms.Label();
+            this.txtWood = new System.Windows.Forms.TextBox();
+            this.txtOre = new System.Windows.Forms.TextBox();
+            this.GrbAttributes = new System.Windows.Forms.GroupBox();
             this.LblMoves = new System.Windows.Forms.Label();
             this.txtMoves = new System.Windows.Forms.TextBox();
+            this.LblMaxMoves = new System.Windows.Forms.Label();
+            this.txtMaxMoves = new System.Windows.Forms.TextBox();
+            this.LblXp = new System.Windows.Forms.Label();
+            this.LblDefence = new System.Windows.Forms.Label();
+            this.txtXp = new System.Windows.Forms.TextBox();
+            this.txtDefence = new System.Windows.Forms.TextBox();
+            this.btnChangeTo = new System.Windows.Forms.Button();
             this.btnClearTxt = new System.Windows.Forms.Button();
+            this.btnUpdateLvl = new System.Windows.Forms.Button();
             this.GrbResources.SuspendLayout();
             this.GrbAttributes.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +111,38 @@
             this.GrbResources.TabStop = false;
             this.GrbResources.Text = "Resources";
             // 
+            // LblWood
+            // 
+            this.LblWood.AutoSize = true;
+            this.LblWood.Location = new System.Drawing.Point(35, 92);
+            this.LblWood.Name = "LblWood";
+            this.LblWood.Size = new System.Drawing.Size(42, 13);
+            this.LblWood.TabIndex = 12;
+            this.LblWood.Text = "Wood: ";
+            // 
+            // LblOre
+            // 
+            this.LblOre.AutoSize = true;
+            this.LblOre.Location = new System.Drawing.Point(35, 66);
+            this.LblOre.Name = "LblOre";
+            this.LblOre.Size = new System.Drawing.Size(30, 13);
+            this.LblOre.TabIndex = 11;
+            this.LblOre.Text = "Ore: ";
+            // 
+            // txtWood
+            // 
+            this.txtWood.Location = new System.Drawing.Point(115, 92);
+            this.txtWood.Name = "txtWood";
+            this.txtWood.Size = new System.Drawing.Size(101, 20);
+            this.txtWood.TabIndex = 7;
+            // 
+            // txtOre
+            // 
+            this.txtOre.Location = new System.Drawing.Point(115, 66);
+            this.txtOre.Name = "txtOre";
+            this.txtOre.Size = new System.Drawing.Size(101, 20);
+            this.txtOre.TabIndex = 6;
+            // 
             // GrbAttributes
             // 
             this.GrbAttributes.Controls.Add(this.LblMoves);
@@ -129,69 +162,21 @@
             this.GrbAttributes.TabStop = false;
             this.GrbAttributes.Text = "Attributes";
             // 
-            // txtOre
+            // LblMoves
             // 
-            this.txtOre.Location = new System.Drawing.Point(115, 66);
-            this.txtOre.Name = "txtOre";
-            this.txtOre.Size = new System.Drawing.Size(101, 20);
-            this.txtOre.TabIndex = 6;
+            this.LblMoves.AutoSize = true;
+            this.LblMoves.Location = new System.Drawing.Point(27, 121);
+            this.LblMoves.Name = "LblMoves";
+            this.LblMoves.Size = new System.Drawing.Size(45, 13);
+            this.LblMoves.TabIndex = 16;
+            this.LblMoves.Text = "Moves: ";
             // 
-            // txtWood
+            // txtMoves
             // 
-            this.txtWood.Location = new System.Drawing.Point(115, 92);
-            this.txtWood.Name = "txtWood";
-            this.txtWood.Size = new System.Drawing.Size(101, 20);
-            this.txtWood.TabIndex = 7;
-            // 
-            // txtDefence
-            // 
-            this.txtDefence.Location = new System.Drawing.Point(104, 66);
-            this.txtDefence.Name = "txtDefence";
-            this.txtDefence.Size = new System.Drawing.Size(126, 20);
-            this.txtDefence.TabIndex = 7;
-            // 
-            // txtXp
-            // 
-            this.txtXp.Location = new System.Drawing.Point(104, 92);
-            this.txtXp.Name = "txtXp";
-            this.txtXp.Size = new System.Drawing.Size(126, 20);
-            this.txtXp.TabIndex = 8;
-            // 
-            // LblDefence
-            // 
-            this.LblDefence.AutoSize = true;
-            this.LblDefence.Location = new System.Drawing.Point(27, 69);
-            this.LblDefence.Name = "LblDefence";
-            this.LblDefence.Size = new System.Drawing.Size(54, 13);
-            this.LblDefence.TabIndex = 9;
-            this.LblDefence.Text = "Defence: ";
-            // 
-            // LblXp
-            // 
-            this.LblXp.AutoSize = true;
-            this.LblXp.Location = new System.Drawing.Point(27, 95);
-            this.LblXp.Name = "LblXp";
-            this.LblXp.Size = new System.Drawing.Size(26, 13);
-            this.LblXp.TabIndex = 10;
-            this.LblXp.Text = "Xp: ";
-            // 
-            // LblOre
-            // 
-            this.LblOre.AutoSize = true;
-            this.LblOre.Location = new System.Drawing.Point(35, 66);
-            this.LblOre.Name = "LblOre";
-            this.LblOre.Size = new System.Drawing.Size(30, 13);
-            this.LblOre.TabIndex = 11;
-            this.LblOre.Text = "Ore: ";
-            // 
-            // LblWood
-            // 
-            this.LblWood.AutoSize = true;
-            this.LblWood.Location = new System.Drawing.Point(35, 92);
-            this.LblWood.Name = "LblWood";
-            this.LblWood.Size = new System.Drawing.Size(42, 13);
-            this.LblWood.TabIndex = 12;
-            this.LblWood.Text = "Wood: ";
+            this.txtMoves.Location = new System.Drawing.Point(104, 118);
+            this.txtMoves.Name = "txtMoves";
+            this.txtMoves.Size = new System.Drawing.Size(126, 20);
+            this.txtMoves.TabIndex = 17;
             // 
             // LblMaxMoves
             // 
@@ -209,6 +194,38 @@
             this.txtMaxMoves.Size = new System.Drawing.Size(126, 20);
             this.txtMaxMoves.TabIndex = 15;
             // 
+            // LblXp
+            // 
+            this.LblXp.AutoSize = true;
+            this.LblXp.Location = new System.Drawing.Point(27, 95);
+            this.LblXp.Name = "LblXp";
+            this.LblXp.Size = new System.Drawing.Size(26, 13);
+            this.LblXp.TabIndex = 10;
+            this.LblXp.Text = "Xp: ";
+            // 
+            // LblDefence
+            // 
+            this.LblDefence.AutoSize = true;
+            this.LblDefence.Location = new System.Drawing.Point(27, 69);
+            this.LblDefence.Name = "LblDefence";
+            this.LblDefence.Size = new System.Drawing.Size(54, 13);
+            this.LblDefence.TabIndex = 9;
+            this.LblDefence.Text = "Defence: ";
+            // 
+            // txtXp
+            // 
+            this.txtXp.Location = new System.Drawing.Point(104, 92);
+            this.txtXp.Name = "txtXp";
+            this.txtXp.Size = new System.Drawing.Size(126, 20);
+            this.txtXp.TabIndex = 8;
+            // 
+            // txtDefence
+            // 
+            this.txtDefence.Location = new System.Drawing.Point(104, 66);
+            this.txtDefence.Name = "txtDefence";
+            this.txtDefence.Size = new System.Drawing.Size(126, 20);
+            this.txtDefence.TabIndex = 7;
+            // 
             // btnChangeTo
             // 
             this.btnChangeTo.Location = new System.Drawing.Point(237, 309);
@@ -218,22 +235,6 @@
             this.btnChangeTo.Text = "Change To";
             this.btnChangeTo.UseVisualStyleBackColor = true;
             this.btnChangeTo.Click += new System.EventHandler(this.btnChangeTo_Click);
-            // 
-            // LblMoves
-            // 
-            this.LblMoves.AutoSize = true;
-            this.LblMoves.Location = new System.Drawing.Point(27, 121);
-            this.LblMoves.Name = "LblMoves";
-            this.LblMoves.Size = new System.Drawing.Size(45, 13);
-            this.LblMoves.TabIndex = 16;
-            this.LblMoves.Text = "Moves: ";
-            // 
-            // txtMoves
-            // 
-            this.txtMoves.Location = new System.Drawing.Point(104, 118);
-            this.txtMoves.Name = "txtMoves";
-            this.txtMoves.Size = new System.Drawing.Size(126, 20);
-            this.txtMoves.TabIndex = 17;
             // 
             // btnClearTxt
             // 
@@ -245,11 +246,22 @@
             this.btnClearTxt.UseVisualStyleBackColor = true;
             this.btnClearTxt.Click += new System.EventHandler(this.btnClearTxt_Click);
             // 
+            // btnUpdateLvl
+            // 
+            this.btnUpdateLvl.Location = new System.Drawing.Point(411, 279);
+            this.btnUpdateLvl.Name = "btnUpdateLvl";
+            this.btnUpdateLvl.Size = new System.Drawing.Size(94, 24);
+            this.btnUpdateLvl.TabIndex = 11;
+            this.btnUpdateLvl.Text = "UpdateLvl";
+            this.btnUpdateLvl.UseVisualStyleBackColor = true;
+            this.btnUpdateLvl.Click += new System.EventHandler(this.btnUpdateLvl_Click);
+            // 
             // Trainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 399);
+            this.Controls.Add(this.btnUpdateLvl);
             this.Controls.Add(this.btnClearTxt);
             this.Controls.Add(this.btnChangeTo);
             this.Controls.Add(this.GrbAttributes);
@@ -290,5 +302,6 @@
         private System.Windows.Forms.Label LblMoves;
         private System.Windows.Forms.TextBox txtMoves;
         private System.Windows.Forms.Button btnClearTxt;
+        private System.Windows.Forms.Button btnUpdateLvl;
     }
 }

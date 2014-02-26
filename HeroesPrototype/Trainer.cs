@@ -52,5 +52,38 @@
             txtMaxMoves.Clear();
             txtXp.Clear();
         }
+
+        private void btnUpdateLvl_Click(object sender, EventArgs e)
+        {
+            mainScene.MainCharacter.IsTrainerOn = true;
+            int counterAtt = 0;
+            int counterDef = 0;
+            int counterLvl = 0;
+
+            while (this.mainScene.MainCharacter.Experience >= this.mainScene.MainCharacter.Level * 1000)
+            {
+                this.mainScene.MainCharacter.Experience = this.mainScene.MainCharacter.Experience - this.mainScene.MainCharacter.Level * 1000;
+                this.mainScene.MainCharacter.Level++;
+                counterLvl++;
+                
+                // string attributeMessage = string.Empty;
+                switch (this.mainScene.MainCharacter.random.Next(2))
+                {
+                    case 0:
+                        this.mainScene.MainCharacter.Attack++;
+                        counterAtt++;
+                        // attributeMessage = "You have gained 1 Attack";
+                        break;
+                    case 1:
+                        this.mainScene.MainCharacter.Defense++;
+                        counterDef++;
+                        // attributeMessage = "You have gained 1 Defense";
+                        break;
+                }
+            }
+            MessageBox.Show("You gained "+counterLvl+" levels, "+counterAtt+" Attack and "+counterDef+" Defence points!");
+            //this.mainScene.MainCharacter.UpdateLevel();
+            mainScene.MainCharacter.IsTrainerOn = false;
+        }
     }
 }
