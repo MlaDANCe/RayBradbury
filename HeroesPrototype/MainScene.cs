@@ -22,7 +22,7 @@ namespace HeroesPrototype
         public const int ScreenToMapUnits = 50;
         private readonly Graphics scene;
         private readonly Size2D sceneDimension;
-        private readonly Level currentLevel;
+        private Level currentLevel;
         private MainCharacter mainCharacter;
         private readonly Bitmap buff;
         private readonly Graphics buffG;
@@ -37,7 +37,7 @@ namespace HeroesPrototype
 
             this.sceneDimension = sceneSize;
 
-            this.currentLevel = new Level(this.sceneDimension);
+            this.CurrentLevel = new Level(this.sceneDimension);
 
             this.mainCharacter = new MainCharacter(currentLevel.StartPosition,
                 new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
@@ -49,6 +49,18 @@ namespace HeroesPrototype
 
         }
 
+
+        public Level CurrentLevel
+        {
+            get
+            {
+                return this.currentLevel;
+            }
+            set
+            {
+                this.currentLevel = value;
+            }
+        }
 
         public MainCharacter MainCharacter
         {

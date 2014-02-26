@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroesPrototype.MapObjects;
+using System;
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
@@ -7,9 +8,11 @@ namespace HeroesPrototype
 {
     public partial class HeroesPrototype : Form
     {
-
+        private const string InfernoAddress = @"..\..\WAVs\16-necropolis-towns.wav";
+        private const string MainThemeAddress = @"..\..\WAVs\06-stronghold-towns.wav";
         private MainScene scene;
-        public static System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAVs\06-stronghold-towns.wav");
+        public static System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(MainThemeAddress);
+
         public HeroesPrototype()
         {
             this.InitializeComponent();
@@ -27,6 +30,23 @@ namespace HeroesPrototype
         private void Update(object sender, DoWorkEventArgs e)//updating the 
         {
             this.scene.GameLoop();
+            IDrawable terr =  this.scene.CurrentLevel.GetTerrain(this.scene.MainCharacter.WorldPosition);
+            if (terr is TerrainInferno)
+            {
+                if (Sounds.SoundLocation != InfernoAddress)
+                {
+                    Sounds.SoundLocation = InfernoAddress;
+                    Sounds.PlayLooping();
+                }
+            }
+            else
+            {
+                if (Sounds.SoundLocation != MainThemeAddress)
+                {
+                    Sounds.SoundLocation = MainThemeAddress;
+                    Sounds.PlayLooping();
+                }
+            }
 
             Day.Text = "Day: " + scene.Calend.WeekDay;
             Week.Text = "Week: " + scene.Calend.Week;

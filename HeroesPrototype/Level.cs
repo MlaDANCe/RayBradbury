@@ -132,6 +132,12 @@ namespace HeroesPrototype
             }
             return null;
         }
+
+        public IDrawable GetTerrain(Point2D currentPosition)
+        {
+            return defaultTerrain[currentPosition.X,currentPosition.Y];
+        }
+        
         public void SetReplacedTerrain(Point2D xy)
         {
             this.map[xy.Y, xy.X] = this.defaultTerrain[xy.Y, xy.X];
