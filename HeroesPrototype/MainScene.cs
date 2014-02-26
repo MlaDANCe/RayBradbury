@@ -17,6 +17,8 @@ namespace HeroesPrototype
     /// </summary>
     public class MainScene
     {
+        public const string LostBattleSoundAddres = @"..\..\WAVs\41-defeated-in-combat.wav";
+        public const string WonBattleSoundAddres = @"..\..\WAVs\40-win-combat.wav"; 
         public const int ScreenToMapUnits = 50;
 
         private readonly Graphics scene;
@@ -30,6 +32,7 @@ namespace HeroesPrototype
         private readonly Graphics buffG;
 
         private Calendar calend;
+        private System.Media.SoundPlayer BattleSounds = new System.Media.SoundPlayer();
 
         public MainScene(Graphics panelGraphics, Size2D sceneSize)
         {
@@ -172,7 +175,9 @@ namespace HeroesPrototype
                                 {
                                     if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
                                     {
-                                        uint pillage= (uint)battlePowerEnemy/7*10;
+                                        this.BattleSounds.SoundLocation = WonBattleSoundAddres;
+                                        BattleSounds.Play();
+                                        uint pillage = (uint)battlePowerEnemy/7*10;
                                         mainCharacter.Gold += pillage;
                                         MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold!",pillage));
                                         if (obj as Castle == null)
@@ -182,6 +187,8 @@ namespace HeroesPrototype
                                     }
                                     else
                                     {
+                                        this.BattleSounds.SoundLocation = LostBattleSoundAddres;
+                                        BattleSounds.Play();
                                         MessageBox.Show("You have lost the battle!");
                                         uint pillage = (uint)battlePowerEnemy / 7 * 10;
                                         mainCharacter.Gold -= pillage;
