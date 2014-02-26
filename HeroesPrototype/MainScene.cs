@@ -220,7 +220,16 @@ namespace HeroesPrototype
                         BattleSounds.Play();
                         
                         int pillage = (int)battlePowerEnemy / 7 * 10;
-                        mainCharacter.Gold -= pillage;
+
+                        if (mainCharacter.Gold <= pillage)
+                        {
+                             mainCharacter.Gold = 0;
+                        }
+                        else
+                        {
+                            mainCharacter.Gold -= pillage;
+                        }
+                       
                         int lossUnits = 100 - 100 * (heroDefense / battlePowerEnemy) / (defPowerEnemy / heroPower);
                         int c = mainCharacter.Units.Sum(item => item.Quantity) * lossUnits / 100;
                         int count = 0;
