@@ -7,13 +7,9 @@ namespace HeroesPrototype
 {
     public partial class HeroesPrototype : Form
     {
-       
+
         private MainScene scene;
-        public System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAVs\06-stronghold-towns.wav");
-        
-        // Sounds.PlayLooping();
-            //Sounds.Play();
-        
+        public static System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAVs\06-stronghold-towns.wav");
         public HeroesPrototype()
         {
             this.InitializeComponent();
@@ -28,7 +24,7 @@ namespace HeroesPrototype
             this.MainLoop.RunWorkerAsync();
         }
 
-        private void Update(object sender, DoWorkEventArgs e)
+        private void Update(object sender, DoWorkEventArgs e)//updating the 
         {
             this.scene.GameLoop();
 
@@ -36,8 +32,8 @@ namespace HeroesPrototype
             Week.Text = "Week: " + scene.Calend.Week;
             Month.Text = "Month: " + scene.Calend.Month;
 
-            Attack.Text = "Attack: " + scene.MainCharacter.Attack;
-            Defence.Text = "Defence: " + scene.MainCharacter.Defense;
+            Attack.Text = "Attack: " + (scene.MainCharacter.Attack + scene.MainCharacter.currentW.Attack);
+            Defence.Text = "Defence: " + (scene.MainCharacter.Defense + scene.MainCharacter.currentA.Defense);
             ExperienceLbl.Text = "XP: " + scene.MainCharacter.Experience;
 
             Gold.Text = "Gold: " + scene.MainCharacter.Gold;
@@ -52,7 +48,7 @@ namespace HeroesPrototype
 
         private void HandleMouse(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void HandleKeyboard(object sender, KeyEventArgs e)
@@ -105,7 +101,7 @@ namespace HeroesPrototype
                 Sounds.PlayLooping();
                 BackgroundMusicSwitch.Text = "Background music Off";
             }
-            
+
         }
 
         public void menuItemRunTrainer_Click(object sender, EventArgs e)
@@ -115,6 +111,6 @@ namespace HeroesPrototype
             trainer.Activate();
         }
 
-        
+
     }
 }

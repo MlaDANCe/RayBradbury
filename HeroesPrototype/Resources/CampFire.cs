@@ -1,10 +1,11 @@
-﻿using System;
-using System.Linq;
-using HeroesPrototype.Geometry;
+﻿using HeroesPrototype.Geometry;
 using HeroesPrototype.Items;
-using System.Drawing;
+
 namespace HeroesPrototype
 {
+    using System;
+    using System.Drawing;
+
     internal class CampFire : Item, IDrawable
     {
         private const int goldValue = 500;
@@ -29,6 +30,7 @@ namespace HeroesPrototype
             {
                 base.OreQuantity = resourceValue;
             }
+
             this.Origin = origin;
             this.sprite = sprite;
         }
@@ -38,19 +40,19 @@ namespace HeroesPrototype
             return this.sprite;
         }
 
-        public CampFire(Point2D origin)
-            : base("CampFire", origin)
-        {
-            int resourceType = woodOrOre.Next(100);
-            base.GoldQuantity = goldValue;
-            if (resourceType % 2 == 0)
-            {
-                base.WoodQuantity = resourceValue;
-            }
-            else
-            {
-                base.OreQuantity = resourceValue;
-            }
-        }
+        //public CampFire(Point2D origin)
+        //    : base("CampFire", origin)
+        //{
+        //    int resourceType = woodOrOre.Next(100);
+        //    base.GoldQuantity = goldValue;
+        //    if (resourceType % 2 == 0)
+        //    {
+        //        base.WoodQuantity = resourceValue;
+        //    }
+        //    else
+        //    {
+        //        base.OreQuantity = resourceValue;
+        //    }
+        //}
     }
 }

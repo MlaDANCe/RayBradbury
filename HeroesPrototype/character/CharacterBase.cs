@@ -30,9 +30,9 @@ namespace HeroesPrototype.CharacterAssets
 
 		public abstract Bitmap GetSprite();
 
-        protected Weapon currentW;
+        public Weapon currentW{get;set;}
 
-        protected Armor currentA;
+        public Armor currentA{get;set;}
 
         public List<Unit> Units { get; set; }
 

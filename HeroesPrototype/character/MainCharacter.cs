@@ -47,8 +47,8 @@ namespace HeroesPrototype.CharacterAssets
 			this.currentCharacterStage = 0;
 			this.position = Position.Right;
 
-            this.currentA = new DefArmor();
-            this.currentW = new DefWeapon();
+            this.currentA = new DefArmor();//current armor from Items
+            this.currentW = new DefWeapon();//current weapon from items
 
             //this.Attack = this.currentW.Attack;
             //this.Defense = this.currentA.Defense;
@@ -59,7 +59,7 @@ namespace HeroesPrototype.CharacterAssets
             this.Units = new List<Unit>();
 		}
 
-		public void MoveTo(Point2D point)
+		public void MoveTo(Point2D point)// moves the hero to the new position
 		{
 			int dx = point.X - this.WorldPosition.X;
 			int dy = point.Y - this.WorldPosition.Y;
@@ -133,7 +133,7 @@ namespace HeroesPrototype.CharacterAssets
 			}
 			this.WorldPosition = point;
 		}
-        public void AddItem(Item item)
+        public void AddItem(Item item)//adds an item and chooses whther it will be the used armor or weapon
         {
             Items.Add(item);
             if (item is Weapon)
@@ -155,12 +155,12 @@ namespace HeroesPrototype.CharacterAssets
                 }
             }
         }
-        public void AddUnit(Unit unit)
+        public void AddUnit(Unit unit)//adds a unit object to  the hero army
         {
             this.Units.Add(unit);
         }
 
-	    public int AttackPower()
+	    public int AttackPower()//damaging power of the hero and is army as an integer  number
 	    {
 	        int heroPower=Attack+SpellPower;
             heroPower += Items.OfType<Weapon>().Sum(weapon => weapon.Attack);
@@ -173,7 +173,7 @@ namespace HeroesPrototype.CharacterAssets
             }
 	        return (int) (power + heroPower + 0.01*heroPower*power);
 	    }
-        public int DefensePower()
+        public int DefensePower()//ability to whistand attacks from the enemy an integer number
         {
             int heroPower = Defense;
             heroPower += Items.OfType<Armor>().Sum(armor => armor.Defense);
@@ -181,7 +181,7 @@ namespace HeroesPrototype.CharacterAssets
             power=Units.Sum(entry => entry.Quantity * entry.Defence*entry.Health);
             return (int)(power + heroPower + 0.001 * heroPower * power);
         }
-		public override Bitmap GetSprite()
+		public override Bitmap GetSprite()//returns the updated sprite for the hero
 		{
 			return this.currentSprite;
 		}

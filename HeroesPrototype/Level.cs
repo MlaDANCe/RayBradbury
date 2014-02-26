@@ -35,6 +35,8 @@ namespace HeroesPrototype
 
         public Point2D StartPosition { get; private set; }
 
+        public Point2D PlayerInitPosit { get; private set; }
+
         public Level(Size2D sceneSize)
         {
             this.Origin = new Point2D(0, 0);
@@ -57,6 +59,7 @@ namespace HeroesPrototype
         {
             int c_x_t = LevelLoader.playerStartPosition.X;
             int c_y_t = LevelLoader.playerStartPosition.Y;
+            this.PlayerInitPosit = new Point2D(c_x_t, c_y_t);
             this.StartPosition = new Point2D(c_x_t, c_y_t);
 
             int left = c_x_t - (this.Size.Width / MainScene.ScreenToMapUnits / 2); // Convert from screen to map units

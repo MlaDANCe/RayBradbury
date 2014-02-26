@@ -5,7 +5,7 @@ namespace HeroesPrototype.MapConsts
 {
     public static class Objects
     {
-        // Terrain and map objects
+        // Terrain and map objects instantiated from files
         public static readonly Bitmap TerrainDefault = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\TerrainDefault.png"));
         public static readonly Bitmap TerrainBlack = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\TerrainBlack.png"));
         public static readonly Bitmap TerrainCastle = new Bitmap(Bitmap.FromFile(@"..\..\sprites\mapobj\Terrain\TerrainCastle.png"));

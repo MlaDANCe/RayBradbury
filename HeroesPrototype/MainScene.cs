@@ -18,16 +18,12 @@ namespace HeroesPrototype
     public class MainScene
     {
         public const string LostBattleSoundAddres = @"..\..\WAVs\41-defeated-in-combat.wav";
-        public const string WonBattleSoundAddres = @"..\..\WAVs\40-win-combat.wav"; 
+        public const string WonBattleSoundAddres = @"..\..\WAVs\40-win-combat.wav";
         public const int ScreenToMapUnits = 50;
-
         private readonly Graphics scene;
-
         private readonly Size2D sceneDimension;
-
         private readonly Level currentLevel;
         private MainCharacter mainCharacter;
-
         private readonly Bitmap buff;
         private readonly Graphics buffG;
 
@@ -36,6 +32,7 @@ namespace HeroesPrototype
 
         public MainScene(Graphics panelGraphics, Size2D sceneSize)
         {
+
             this.scene = panelGraphics;
 
             this.sceneDimension = sceneSize;
@@ -65,7 +62,7 @@ namespace HeroesPrototype
             }
         }
 
-        public Calendar Calend
+        public Calendar Calend //returns the calendar object for days passed in the gmae
         {
             get
             {
@@ -116,6 +113,13 @@ namespace HeroesPrototype
                 this.MovePosition(dxdy);
 
             }
+            else
+            {
+                if (keys == Keys.Up || keys == Keys.Down || keys == Keys.Left || keys == Keys.Right)
+                {
+                    MessageBox.Show("You don't have more moves for the day, please end the day!");
+                }
+            }
             if (keys == Keys.End)
             {
                 this.Calend.Day++;
@@ -138,7 +142,7 @@ namespace HeroesPrototype
 
         }
 
-        private void MovePosition(Point2D dxdy)
+        private void MovePosition(Point2D dxdy)//moves player to the given point
         {
             Point2D newPlPos = this.mainCharacter.WorldPosition + dxdy;
             if (newPlPos.X >= 0 && newPlPos.X < this.currentLevel.MapSize.Width &&
@@ -156,7 +160,7 @@ namespace HeroesPrototype
                         if (obj is IBattle)//battle here
                         {
                             BattleMethod(ref newPlPos, obj);
-                           // return;
+                            // return;
                         }
 
                         else if (obj is Spawnable)
@@ -171,7 +175,6 @@ namespace HeroesPrototype
 
                     if (!this.currentLevel.IsPositionOccupied(newPlPos))
                     {
-                        //MessageBox.Show("moved");
                         this.mainCharacter.MoveTo(newPlPos);
                         this.currentLevel.VisibleSpace = newVis;
                         this.currentLevel.SetNotUpToDate();
@@ -181,12 +184,12 @@ namespace HeroesPrototype
             }
         }
 
-        private void BattleMethod(ref Point2D newPlPos, IDrawable obj)
+        private void BattleMethod(ref Point2D newPlPos, IDrawable obj)//method used to engage in battle and place the hero on the apropriate position after the battle
         {
+
             Unit unit = obj as Unit;
             if (unit != null)
             {
-                //to be moved inside object?
                 int battlePowerEnemy = unit.Attack * unit.Quantity;
                 int defPowerEnemy = unit.Defence * unit.Health * unit.Quantity;
                 int heroPower = mainCharacter.AttackPower();
@@ -215,14 +218,25 @@ namespace HeroesPrototype
                         {
                             currentLevel.SetReplacedTerrain(newPlPos);
                         }
+                        HeroesPrototype.Sounds.PlayLooping();
                     }
                     else
                     {
                         this.BattleSounds.SoundLocation = LostBattleSoundAddres;
+
                         BattleSounds.Play();
-                        MessageBox.Show("You have lost the battle!");
+
                         int pillage = (int)battlePowerEnemy / 7 * 10;
-                        mainCharacter.Gold -= pillage;
+
+                        if (mainCharacter.Gold <= pillage)
+                        {
+                            mainCharacter.Gold = 0;
+                        }
+                        else
+                        {
+                            mainCharacter.Gold -= pillage;
+                        }
+
                         int lossUnits = 100 - 100 * (heroDefense / battlePowerEnemy) / (defPowerEnemy / heroPower);
                         int c = mainCharacter.Units.Sum(item => item.Quantity) * lossUnits / 100;
                         int count = 0;
@@ -232,26 +246,12 @@ namespace HeroesPrototype
                             c++;
                         }
                         MessageBox.Show(String.Format("You have lost the battle!\n You have lost {0} goooold and {1}% of your units", pillage, lossUnits));
-
-                        // currentLevel.SetReplacedTerrain(newPlPos);
-                        ////code for player returns to initial position
-                        //newPlPos = mainCharacter.WorldPosition;
-                        // currentLevel.InitialiseMap();
-                        //mainCharacter = new MainCharacter(currentLevel.StartPosition,
-                        //new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
-                        // newPlPos = LevelLoader.playerStartPosition;
-                        // this.mainCharacter.MoveTo(newPlPos);
-                        // //this.currentLevel.VisibleSpace = newVis;
-                        // this.currentLevel.SetNotUpToDate();
-                        // this.MainCharacter.Moves--;
-                        //  currentLevel.InitialiseMap();
-                        
-                    return;
+                        HeroesPrototype.Sounds.PlayLooping();
+                        this.mainCharacter.WorldPosition = currentLevel.PlayerInitPosit;
+                        this.MainCharacter.Moves = 0;
+                        currentLevel.InitialiseMap();
+                        currentLevel.SetNotUpToDate();
                     }
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    return;
                 }
             }
 
@@ -314,6 +314,6 @@ namespace HeroesPrototype
             this.mainCharacter.AddItem(itm);
         }
 
-        
+
     }
 }
