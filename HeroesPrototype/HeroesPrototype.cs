@@ -35,6 +35,7 @@ namespace HeroesPrototype
             Attack.Text = "Attack: " + (scene.MainCharacter.Attack + scene.MainCharacter.currentW.Attack);
             Defence.Text = "Defence: " + (scene.MainCharacter.Defense + scene.MainCharacter.currentA.Defense);
             ExperienceLbl.Text = "XP: " + scene.MainCharacter.Experience;
+			LevelLabel.Text = "Level: " + scene.MainCharacter.Level;
 
             Gold.Text = "Gold: " + scene.MainCharacter.Gold;
             Ore.Text = "Ore: " + scene.MainCharacter.Ore;

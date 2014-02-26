@@ -276,18 +276,18 @@ namespace HeroesPrototype
             Item itm = obj as Item;
             if (itm is Gold)
             {
-                this.MainCharacter.Gold += (int)itm.GoldQuantity;
-                MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
+				MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
+				this.MainCharacter.Gold += (int)itm.GoldQuantity;
             }
             else if (itm is Ore)
             {
-                this.MainCharacter.Ore += (int)itm.GoldQuantity;
-                MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
+				MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
+				this.MainCharacter.Ore += (int)itm.GoldQuantity;
             }
             else if (itm is Wood)
             {
-                this.MainCharacter.Wood += (int)itm.GoldQuantity;
-                MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
+				MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
+				this.MainCharacter.Wood += (int)itm.GoldQuantity;
             }
             else if (itm is CampFire)
             {
@@ -300,16 +300,16 @@ namespace HeroesPrototype
                 {
                     woodOrOre = "Ore";
                 }
-                this.MainCharacter.Gold += (int)itm.GoldQuantity;
+				MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
+				this.MainCharacter.Gold += (int)itm.GoldQuantity;
                 this.MainCharacter.Wood += (int)itm.WoodQuantity;
                 this.MainCharacter.Ore += (int)itm.OreQuantity;
-                MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
             }
             else if (itm is TreasureChest)
             {
-                this.MainCharacter.Gold += (int)itm.GoldQuantity;
-                this.MainCharacter.Experience += (int)itm.ExperienceQuantity;
-                MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
+				MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
+				this.MainCharacter.Gold += itm.GoldQuantity;
+                this.MainCharacter.Experience += itm.ExperienceQuantity;
             }
             this.mainCharacter.AddItem(itm);
         }
