@@ -18,7 +18,7 @@ namespace HeroesPrototype
     public class MainScene
     {
         public const string LostBattleSoundAddres = @"..\..\WAVs\41-defeated-in-combat.wav";
-        public const string WonBattleSoundAddres = @"..\..\WAVs\40-win-combat.wav"; 
+        public const string WonBattleSoundAddres = @"..\..\WAVs\40-win-combat.wav";
         public const int ScreenToMapUnits = 50;
         private readonly Graphics scene;
         private readonly Size2D sceneDimension;
@@ -32,11 +32,11 @@ namespace HeroesPrototype
 
         public MainScene(Graphics panelGraphics, Size2D sceneSize)
         {
-            
+
             this.scene = panelGraphics;
 
             this.sceneDimension = sceneSize;
-       
+
             this.currentLevel = new Level(this.sceneDimension);
 
             this.mainCharacter = new MainCharacter(currentLevel.StartPosition,
@@ -113,6 +113,13 @@ namespace HeroesPrototype
                 this.MovePosition(dxdy);
 
             }
+            else
+            {
+                if (keys == Keys.Up || keys == Keys.Down || keys == Keys.Left || keys == Keys.Right)
+                {
+                    MessageBox.Show("You don't have more moves for the day, please end the day!");
+                }
+            }
             if (keys == Keys.End)
             {
                 this.Calend.Day++;
@@ -153,7 +160,7 @@ namespace HeroesPrototype
                         if (obj is IBattle)//battle here
                         {
                             BattleMethod(ref newPlPos, obj);
-                           // return;
+                            // return;
                         }
 
                         else if (obj is Spawnable)
@@ -179,7 +186,7 @@ namespace HeroesPrototype
 
         private void BattleMethod(ref Point2D newPlPos, IDrawable obj)//method used to engage in battle and place the hero on the apropriate position after the battle
         {
-           
+
             Unit unit = obj as Unit;
             if (unit != null)
             {
@@ -216,20 +223,20 @@ namespace HeroesPrototype
                     else
                     {
                         this.BattleSounds.SoundLocation = LostBattleSoundAddres;
-                       
+
                         BattleSounds.Play();
-                        
+
                         int pillage = (int)battlePowerEnemy / 7 * 10;
 
                         if (mainCharacter.Gold <= pillage)
                         {
-                             mainCharacter.Gold = 0;
+                            mainCharacter.Gold = 0;
                         }
                         else
                         {
                             mainCharacter.Gold -= pillage;
                         }
-                       
+
                         int lossUnits = 100 - 100 * (heroDefense / battlePowerEnemy) / (defPowerEnemy / heroPower);
                         int c = mainCharacter.Units.Sum(item => item.Quantity) * lossUnits / 100;
                         int count = 0;
@@ -307,6 +314,6 @@ namespace HeroesPrototype
             this.mainCharacter.AddItem(itm);
         }
 
-        
+
     }
 }
