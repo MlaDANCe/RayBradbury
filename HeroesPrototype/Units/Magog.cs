@@ -8,13 +8,19 @@ namespace HeroesPrototype
 	public class Magog : UnitLevel2
 	{
         private readonly Bitmap sprite;
-	
-        public Magog(Point2D origin) : base("Magog", origin, 9, 6, 15, 180)
+
+        private const int attack = 9;
+        private const int defence = 6;
+        private const int health = 15;
+        private const int price = 180;
+
+        public Magog(Point2D origin)
+            : base("Magog", origin, attack, defence, health, price)
 		{
 		}
 
         public Magog(Point2D origin, Bitmap sprite)
-            : base("Magog", origin, 9, 6, 15, 180)
+            : base("Magog", origin, attack, defence, health, price)
         {
             this.Origin = origin;
             this.sprite = sprite;
