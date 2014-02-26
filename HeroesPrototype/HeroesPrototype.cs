@@ -8,7 +8,7 @@ namespace HeroesPrototype
     public partial class HeroesPrototype : Form
     {
         private MainScene scene;
-        public System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAV\06-stronghold-towns.wav");
+        public System.Media.SoundPlayer Sounds = new System.Media.SoundPlayer(@"..\..\WAVs\06-stronghold-towns.wav");
         // Sounds.PlayLooping();
             //Sounds.Play();
         
