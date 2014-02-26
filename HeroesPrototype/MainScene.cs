@@ -213,7 +213,8 @@ namespace HeroesPrototype
                         BattleSounds.Play();
                         int pillage = (int)battlePowerEnemy / 7 * 10;
                         mainCharacter.Gold += pillage;
-                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold!", pillage));
+                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold and {0} experience!", pillage)); 
+                        mainCharacter.Experience += pillage;
                         if (obj as Castle == null)
                         {
                             currentLevel.SetReplacedTerrain(newPlPos);
