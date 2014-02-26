@@ -162,9 +162,9 @@ namespace HeroesPrototype
                                 int heroDefense = mainCharacter.DefensePower();
                                 string unitType = unit.GetType().ToString();
                                 unitType = unitType.Substring(unitType.LastIndexOf(".")+1);
-                                DialogResult dialogResult = MessageBox.Show("Danger "+ unit.Quantity+" "+unitType +" !"+
-                                    "Enemy Attack " + battlePowerEnemy + ";  Enemy Defense " + defPowerEnemy + "!" +
-                                    "\nHero Attack " + mainCharacter.AttackPower().ToString() + ";  Hero Defense " + 
+                                DialogResult dialogResult = MessageBox.Show("Danger! "+ unit.Quantity+" "+unitType +" !"+
+                                    "\nEnemy Attack: " + battlePowerEnemy + ";  Enemy Defense: " + defPowerEnemy + "!" +
+                                    "\nHero Attack: " + mainCharacter.AttackPower().ToString() + ";  Hero Defense: " + 
                                     mainCharacter.DefensePower().ToString() + "!" + "\n Are you sure you want to battle?",
                                      "Battle stats", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
