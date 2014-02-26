@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using HeroesPrototype.CharacterAssets;
 using HeroesPrototype.Geometry;
 using HeroesPrototype.Items;
 using HeroesPrototype.MapObjects;
+using System.Text.RegularExpressions;
 
 namespace HeroesPrototype
 {
@@ -130,6 +132,7 @@ namespace HeroesPrototype
                     MessageBox.Show("The sun rises and a new day begins!");
                 }
             }
+
         }
 
         private void MovePosition(Point2D dxdy)
@@ -149,31 +152,61 @@ namespace HeroesPrototype
                     {
                         if (obj is IBattle)//battle here
                         {
-                            var unit = obj as Unit;
+                            Unit unit = obj as Unit;
                             if (unit != null)
                             {
-                                //to be moved inside object, enemy
+                                //to be moved inside object?
                                 int battlePowerEnemy = unit.Attack * unit.Quantity;
                                 int defPowerEnemy = unit.Defence * unit.Health * unit.Quantity;
                                 int heroPower = mainCharacter.AttackPower();
                                 int heroDefense = mainCharacter.DefensePower();
-
-                                DialogResult dialogResult = MessageBox.Show(
+                                string unitType = unit.GetType().ToString();
+                                unitType = unitType.Substring(unitType.LastIndexOf(".")+1);
+                                DialogResult dialogResult = MessageBox.Show("Danger "+ unit.Quantity+" "+unitType +" !"+
                                     "Enemy Attack " + battlePowerEnemy + ";  Enemy Defense " + defPowerEnemy + "!" +
-                                    "\nHero Attack " + mainCharacter.AttackPower().ToString() + ";  Hero Defense " + mainCharacter.DefensePower().ToString() + "!"
-                                     + "\n Are you sure you want to battle?",
+                                    "\nHero Attack " + mainCharacter.AttackPower().ToString() + ";  Hero Defense " + 
+                                    mainCharacter.DefensePower().ToString() + "!" + "\n Are you sure you want to battle?",
                                      "Battle stats", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                                 if (dialogResult == DialogResult.Yes)
                                 {
                                     if (heroDefense / battlePowerEnemy >= defPowerEnemy / heroPower)
                                     {
-                                        MessageBox.Show("You have won the battle!");
-
+                                        uint pillage= (uint)battlePowerEnemy/7*10;
+                                        mainCharacter.Gold += pillage;
+                                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold!",pillage));
+                                        if (obj as Castle == null)
+                                        {
+                                            currentLevel.SetReplacedTerrain(newPlPos);
+                                        }
                                     }
                                     else
                                     {
                                         MessageBox.Show("You have lost the battle!");
+                                        uint pillage = (uint)battlePowerEnemy / 7 * 10;
+                                        mainCharacter.Gold -= pillage;
+                                        int lossUnits = 100 - 100*(heroDefense/battlePowerEnemy)/(defPowerEnemy/heroPower);
+                                        int c = mainCharacter.Units.Sum(item => item.Quantity)*lossUnits/100;
+                                        int count = 0;
+                                        while (count < c && count< mainCharacter.Units.Count)
+                                        {
+                                         mainCharacter.Units.RemoveAt(count);
+                                            c++;
+                                        }
+                                        MessageBox.Show(String.Format("You have lost the battle!\n You have lost {0} goooold and {1}% of your units", pillage,lossUnits));
+                                       // currentLevel.SetReplacedTerrain(newPlPos);
+                                        //code for player returns to initial position
+                                       //newPlPos = mainCharacter.WorldPosition;
+                                       // currentLevel.InitialiseMap();
+                                       //mainCharacter = new MainCharacter(currentLevel.StartPosition,
+                                    //new Point2D(this.sceneDimension.Width / 2, this.sceneDimension.Height / 2));
+                                       // newPlPos = LevelLoader.playerStartPosition;
+                                       // this.mainCharacter.MoveTo(newPlPos);
+                                       // this.currentLevel.VisibleSpace = newVis;
+                                       // this.currentLevel.SetNotUpToDate();
+                                       // this.MainCharacter.Moves--;
+                                       ////currentLevel.InitialiseMap();
+                                        //  currentLevel.InitialiseMap();
                                     }
                                 }
                                 else if (dialogResult == DialogResult.No)
@@ -181,10 +214,7 @@ namespace HeroesPrototype
                                     return;
                                 }
                             }
-                            if (obj as Castle == null)
-                            {
-                                currentLevel.SetReplacedTerrain(newPlPos);
-                            }
+                            
                         }
 
                         else if (obj is Spawnable)
@@ -199,6 +229,7 @@ namespace HeroesPrototype
 
                     if (!this.currentLevel.IsPositionOccupied(newPlPos))
                     {
+                        //MessageBox.Show("moved");
                         this.mainCharacter.MoveTo(newPlPos);
                         this.currentLevel.VisibleSpace = newVis;
                         this.currentLevel.SetNotUpToDate();
@@ -263,11 +294,6 @@ namespace HeroesPrototype
                 MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
             }
             this.mainCharacter.AddItem(itm);
-        }
-
-        public Graphics TrainerMethod()
-        {
-            return this.scene;
         }
     }
 }

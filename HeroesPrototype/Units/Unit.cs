@@ -8,8 +8,8 @@ namespace HeroesPrototype
 {
 	public abstract class Unit : IDrawable, IBattle //,IDisappearing //can create a list of items in hero to store all the items
 	{
-	    private int _quantity=1;
-
+	    private int _quantity=10;
+        private static Random randomQuantity = new Random();
 	    public int Quantity
 	    {
 	        get { return _quantity; }
@@ -39,6 +39,8 @@ namespace HeroesPrototype
 			this.Health = health;
 			this.Origin = origin;
             this.Price = price;
+		
+		    Quantity = randomQuantity.Next(1, 100);
 		}
 
 		Bitmap IDrawable.GetSprite()
