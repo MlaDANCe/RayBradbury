@@ -36,7 +36,7 @@ namespace HeroesPrototype
                 else
                 {
                     this.charac.Units.Add(current);
-                    this.charac.Gold -= (uint)current.Price;
+                    this.charac.Gold -= (int)current.Price;
                     this.listBox1.Items.Remove(current);
                     if (this.listBox1.Items.Count > 0)
                     {

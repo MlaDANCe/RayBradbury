@@ -177,7 +177,7 @@ namespace HeroesPrototype
                                     {
                                         this.BattleSounds.SoundLocation = WonBattleSoundAddres;
                                         BattleSounds.Play();
-                                        uint pillage = (uint)battlePowerEnemy/7*10;
+                                        int pillage = (int)battlePowerEnemy/7*10;
                                         mainCharacter.Gold += pillage;
                                         MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold!",pillage));
                                         if (obj as Castle == null)
@@ -190,7 +190,7 @@ namespace HeroesPrototype
                                         this.BattleSounds.SoundLocation = LostBattleSoundAddres;
                                         BattleSounds.Play();
                                         MessageBox.Show("You have lost the battle!");
-                                        uint pillage = (uint)battlePowerEnemy / 7 * 10;
+                                        int pillage = (int)battlePowerEnemy / 7 * 10;
                                         mainCharacter.Gold -= pillage;
                                         int lossUnits = 100 - 100*(heroDefense/battlePowerEnemy)/(defPowerEnemy/heroPower);
                                         int c = mainCharacter.Units.Sum(item => item.Quantity)*lossUnits/100;
@@ -265,23 +265,23 @@ namespace HeroesPrototype
             Item itm = obj as Item;
             if (itm is Gold)
             {
-                this.MainCharacter.Gold += (uint)itm.GoldQuantity;
+                this.MainCharacter.Gold += (int)itm.GoldQuantity;
                 MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
             }
             else if (itm is Ore)
             {
-                this.MainCharacter.Ore += (uint)itm.GoldQuantity;
+                this.MainCharacter.Ore += (int)itm.GoldQuantity;
                 MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
             }
             else if (itm is Wood)
             {
-                this.MainCharacter.Wood += (uint)itm.GoldQuantity;
+                this.MainCharacter.Wood += (int)itm.GoldQuantity;
                 MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
             }
             else if (itm is CampFire)
             {
                 string woodOrOre;
-                if ((uint)itm.WoodQuantity > (uint)itm.OreQuantity)
+                if ((int)itm.WoodQuantity > (int)itm.OreQuantity)
                 {
                     woodOrOre = "Wood";
                 }
@@ -289,15 +289,15 @@ namespace HeroesPrototype
                 {
                     woodOrOre = "Ore";
                 }
-                this.MainCharacter.Gold += (uint)itm.GoldQuantity;
-                this.MainCharacter.Wood += (uint)itm.WoodQuantity;
-                this.MainCharacter.Ore += (uint)itm.OreQuantity;
+                this.MainCharacter.Gold += (int)itm.GoldQuantity;
+                this.MainCharacter.Wood += (int)itm.WoodQuantity;
+                this.MainCharacter.Ore += (int)itm.OreQuantity;
                 MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
             }
             else if (itm is TreasureChest)
             {
-                this.MainCharacter.Gold += (uint)itm.GoldQuantity;
-                this.MainCharacter.Experience += (uint)itm.ExperienceQuantity;
+                this.MainCharacter.Gold += (int)itm.GoldQuantity;
+                this.MainCharacter.Experience += (int)itm.ExperienceQuantity;
                 MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
             }
             this.mainCharacter.AddItem(itm);
