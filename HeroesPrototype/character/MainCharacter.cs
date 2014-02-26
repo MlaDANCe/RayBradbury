@@ -18,7 +18,7 @@ namespace HeroesPrototype.CharacterAssets
 		private Position position;
 
 
-        private int maxMoves = int.MaxValue;
+        private int maxMoves = 20;
         private int moves;
 
 		public Point2D WorldPosition { get; set; }
@@ -37,7 +37,7 @@ namespace HeroesPrototype.CharacterAssets
 			}
 		}
 
-		public MainCharacter(Point2D worldPosition, Point2D screenCoordinates):base(100,100,30)
+		public MainCharacter(Point2D worldPosition, Point2D screenCoordinates):base(1,1,30)
 		{
 			this.WorldPosition = worldPosition;
 			this.ScreenCoordinates = screenCoordinates;
