@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HeroesPrototype
 {
-    interface IBattle
+    interface IBattle//interface to be developped further, currently used to indicate that an object can engage in battle
     {
         
 

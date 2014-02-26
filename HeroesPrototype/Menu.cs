@@ -3,7 +3,7 @@ using HeroesPrototype.Geometry;
 
 namespace HeroesPrototype
 {
-	public class Menu
+	public class Menu// base class for sidebar, CharacterMenu and mainMenu
 	{
 		public Point2D Origin { get; set; }
 
