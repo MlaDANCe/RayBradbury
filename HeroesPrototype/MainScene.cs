@@ -232,6 +232,7 @@ namespace HeroesPrototype
                         MessageBox.Show(String.Format("You have lost the battle!\n You have lost {0} goooold and {1}% of your units", pillage, lossUnits));
                         HeroesPrototype.Sounds.PlayLooping();
                         this.mainCharacter.WorldPosition = currentLevel.PlayerInitPosit;
+                        this.MainCharacter.Moves = 0;
                         currentLevel.InitialiseMap();
                         currentLevel.SetNotUpToDate();
                     }
