@@ -183,6 +183,22 @@ namespace HeroesPrototype
                         {
                             AddToHero(obj);
                         }
+                        if ((obj as Castle)!=null)
+                        {
+                            if (!(obj as Castle).IsSpawnable)
+                            {
+                                if (mainCharacter.Level >= 20)
+                                {
+                                    MessageBox.Show("Final battle, you will win or die against the army of Mordor!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("You need to be at least leve 20 to be able to defeat your enemy!");
+                                }
+                            }
+                        }
+                            
+
                     }
 
                     if (!this.currentLevel.IsPositionOccupied(newPlPos))
