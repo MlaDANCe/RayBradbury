@@ -183,21 +183,34 @@ namespace HeroesPrototype
                         {
                             AddToHero(obj);
                         }
-                        if ((obj as Castle)!=null)
+                        if ((obj as Castle) != null)
                         {
                             if (!(obj as Castle).IsSpawnable)
                             {
                                 if (mainCharacter.Level >= 20)
                                 {
-                                    MessageBox.Show("Final battle, you will win or die against the army of Mordor!");
+                                    // MessageBox.Show("Final battle, you will win or die against the army of Mordor!");
+                                    DialogResult dialogResult = MessageBox.Show(
+                                        "Final battle, you will win or die against the army of Mordor! Are you sure you want to battle?",
+                                        "Boss Battle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
+                                    {
+                                        System.Media.SoundPlayer VictorySounds = new System.Media.SoundPlayer(@"..\..\WAVs\06-stronghold-towns.wav");// tyk trqbva da slojish adresa na WIN CAMPAIGN i vsi4ko raboti 
+
+                                        VictorySounds.Play();
+                                        MessageBox.Show("VICTORY!");
+                                        
+                                        Application.Exit();
+                                    }
+
                                 }
                                 else
                                 {
-                                    MessageBox.Show("You need to be at least leve 20 to be able to defeat your enemy!");
+                                    MessageBox.Show("You need to be at least level 20 to be able to defeat your enemy!");
                                 }
                             }
                         }
-                            
+
 
                     }
 
@@ -241,7 +254,7 @@ namespace HeroesPrototype
                         BattleSounds.Play();
                         int pillage = (int)battlePowerEnemy / 7 * 10;
                         mainCharacter.Gold += pillage;
-                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold and {0} experience!", pillage)); 
+                        MessageBox.Show(String.Format("You have won the battle!\n You have earned {0} goooold and {0} experience!", pillage));
                         mainCharacter.Experience += pillage;
                         if (obj as Castle == null)
                         {
@@ -305,18 +318,18 @@ namespace HeroesPrototype
             Item itm = obj as Item;
             if (itm is Gold)
             {
-				MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
-				this.MainCharacter.Gold += (int)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Gold!");
+                this.MainCharacter.Gold += (int)itm.GoldQuantity;
             }
             else if (itm is Ore)
             {
-				MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
-				this.MainCharacter.Ore += (int)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Ore!");
+                this.MainCharacter.Ore += (int)itm.GoldQuantity;
             }
             else if (itm is Wood)
             {
-				MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
-				this.MainCharacter.Wood += (int)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Wood!");
+                this.MainCharacter.Wood += (int)itm.GoldQuantity;
             }
             else if (itm is CampFire)
             {
@@ -329,15 +342,15 @@ namespace HeroesPrototype
                 {
                     woodOrOre = "Ore";
                 }
-				MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
-				this.MainCharacter.Gold += (int)itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Gold and 5 " + woodOrOre);
+                this.MainCharacter.Gold += (int)itm.GoldQuantity;
                 this.MainCharacter.Wood += (int)itm.WoodQuantity;
                 this.MainCharacter.Ore += (int)itm.OreQuantity;
             }
             else if (itm is TreasureChest)
             {
-				MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
-				this.MainCharacter.Gold += itm.GoldQuantity;
+                MessageBox.Show("You received " + itm.GoldQuantity + " Gold and " + itm.ExperienceQuantity + " Experience!");
+                this.MainCharacter.Gold += itm.GoldQuantity;
                 this.MainCharacter.Experience += itm.ExperienceQuantity;
             }
             this.mainCharacter.AddItem(itm);
