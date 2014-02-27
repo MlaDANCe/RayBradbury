@@ -173,6 +173,7 @@
     <Content Include="WAVs\29-lost-campaign.wav" />
     <Content Include="WAVs\40-win-combat.wav" />
     <Content Include="WAVs\41-defeated-in-combat.wav" />
+    <Content Include="WAVs\47-win-scenario.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

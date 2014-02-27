@@ -189,13 +189,12 @@ namespace HeroesPrototype
                             {
                                 if (mainCharacter.Level >= 20)
                                 {
-                                    // MessageBox.Show("Final battle, you will win or die against the army of Mordor!");
                                     DialogResult dialogResult = MessageBox.Show(
-                                        "Final battle, you will win or die against the army of Mordor! Are you sure you want to battle?",
+                                        "Final battle!! Who now has the strength to stand against the armies of Isengard and Mordor? To stand against the might of Sauron and Saruman and the union of the two towers?",
                                         "Boss Battle", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
-                                        System.Media.SoundPlayer VictorySounds = new System.Media.SoundPlayer(@"..\..\WAVs\06-stronghold-towns.wav");// tyk trqbva da slojish adresa na WIN CAMPAIGN i vsi4ko raboti 
+                                        System.Media.SoundPlayer VictorySounds = new System.Media.SoundPlayer(@"..\..\WAVs\47-win-scenario.wav");// tyk trqbva da slojish adresa na WIN CAMPAIGN 
 
                                         VictorySounds.Play();
                                         MessageBox.Show("VICTORY!");
